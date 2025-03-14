@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Zap, Code, Bookmark, BarChart, ClipboardCheck, FileText } from "lucide-react";
@@ -12,6 +13,7 @@ import UseCaseCard from "../components/UseCaseCard";
 import ApiCard from "../components/ApiCard";
 import TemplateCard from "../components/TemplateCard";
 import PageTransition from "../components/PageTransition";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "../components/ui/tabs";
 
 const PLATFORM_NAME = "Power Automate";
 const PLATFORM_PATH = "/power-automate";

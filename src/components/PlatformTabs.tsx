@@ -22,10 +22,26 @@ const PlatformTabs = ({ basePath, tabs, className }: PlatformTabsProps) => {
   const currentPath = location.pathname;
   
   // Determine which tab is active
-  const activeTab = tabs.find((tab) => 
-    currentPath === `${basePath}/${tab.path}` || 
-    (currentPath === basePath && tab.path === "")
-  )?.id || tabs[0].id;
+  const [activeTab, setActiveTab] = useState(() => {
+    const pathMatch = tabs.find((tab) => 
+      currentPath === `${basePath}/${tab.path}` || 
+      (currentPath === basePath && tab.path === "")
+    );
+    return pathMatch?.id || tabs[0].id;
+  });
+
+  // Update active tab when route changes
+  useEffect(() => {
+    const pathMatch = tabs.find((tab) => 
+      currentPath === `${basePath}/${tab.path}` || 
+      (currentPath === basePath && tab.path === "")
+    );
+    if (pathMatch) {
+      setActiveTab(pathMatch.id);
+    } else {
+      setActiveTab(tabs[0].id);
+    }
+  }, [currentPath, basePath, tabs]);
 
   const handleTabChange = (value: string) => {
     const selectedTab = tabs.find((tab) => tab.id === value);
@@ -63,6 +79,8 @@ const PlatformTabs = ({ basePath, tabs, className }: PlatformTabsProps) => {
           </TabsTrigger>
         ))}
       </TabsList>
+      
+      {/* The TabsContent elements are rendered in the respective page components */}
     </Tabs>
   );
 };
