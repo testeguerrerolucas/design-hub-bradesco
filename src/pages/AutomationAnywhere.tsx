@@ -1,632 +1,546 @@
 
-import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
-import PageTransition from "../components/PageTransition";
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Bot, Code, Bookmark, BarChart, ClipboardCheck } from "lucide-react";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import PlatformTabs from "../components/PlatformTabs";
 import PlatformBreadcrumb from "../components/PlatformBreadcrumb";
-import Hero from "../components/Hero";
-import { GlassCard } from "../components/GlassCard";
-import Feature from "../components/Feature";
-import { motion } from "framer-motion";
-import {
-  Bot,
-  Code,
-  FileCode,
-  Clock,
-  BarChart3,
-  Database,
-  Laptop,
-  ShieldCheck,
-  Brain,
-  Settings,
-  UserCheck,
-  LineChart
-} from "lucide-react";
+import BestPractices from "../components/BestPractices";
+import GlassCard from "../components/GlassCard";
+import UseCaseCard from "../components/UseCaseCard";
 import ApiCard from "../components/ApiCard";
 import TemplateCard from "../components/TemplateCard";
-import UseCaseCard from "../components/UseCaseCard";
-import BestPractices from "../components/BestPractices";
-import { Button } from "@/components/ui/button";
+import PageTransition from "../components/PageTransition";
 
-const tabs = [
-  { id: "overview", label: "Visão Geral", path: "" },
-  { id: "apis", label: "APIs", path: "apis" },
-  { id: "templates", label: "Templates", path: "templates" },
-  { id: "best-practices", label: "Boas Práticas", path: "best-practices" },
-  { id: "use-cases", label: "Casos de Uso", path: "use-cases" },
-];
+const PLATFORM_NAME = "Automation Anywhere";
+const PLATFORM_PATH = "/automation-anywhere";
 
 const AutomationAnywhere = () => {
-  const location = useLocation();
-  const currentPath = location.pathname;
-  const [activeSection, setActiveSection] = useState("overview");
+  const [activeTab, setActiveTab] = useState("overview");
 
-  useEffect(() => {
-    // Determine active section based on path
-    const path = currentPath.split("/")[2] || "";
-    const foundTab = tabs.find((tab) => tab.path === path);
-    setActiveSection(foundTab?.id || "overview");
-  }, [currentPath]);
+  const tabs = [
+    { id: "overview", label: "Visão Geral", path: "" },
+    { id: "use-cases", label: "Casos de Uso", path: "use-cases" },
+    { id: "templates", label: "Templates", path: "templates" },
+    { id: "best-practices", label: "Boas Práticas", path: "best-practices" },
+    { id: "apis", label: "APIs", path: "apis" },
+  ];
 
-  const renderContent = () => {
-    switch (activeSection) {
-      case "apis":
-        return <AutomationAnywhereAPIs />;
-      case "templates":
-        return <AutomationAnywhereTemplates />;
-      case "best-practices":
-        return <AutomationAnywhereBestPractices />;
-      case "use-cases":
-        return <AutomationAnywhereUseCases />;
-      default:
-        return <AutomationAnywhereOverview />;
-    }
-  };
+  const bestPractices = [
+    {
+      id: "1",
+      title: "Utilize Control Room",
+      description:
+        "Sempre utilize o Control Room para gerenciar e monitorar seus bots, garantindo segurança e governança.",
+      type: "do",
+    },
+    {
+      id: "2",
+      title: "Teste em ambientes isolados",
+      description:
+        "Antes de implementar em produção, teste seus bots em ambientes de desenvolvimento e homologação.",
+      type: "do",
+    },
+    {
+      id: "3",
+      title: "Evite hardcoding de credenciais",
+      description:
+        "Nunca inclua credenciais diretamente nos scripts. Use variáveis de credenciais seguras do Automation Anywhere.",
+      type: "dont",
+    },
+    {
+      id: "4",
+      title: "Documente seus bots",
+      description:
+        "Documente adequadamente cada bot com sua finalidade, dependências e fluxo de trabalho para facilitar a manutenção.",
+      type: "tip",
+    },
+    {
+      id: "5",
+      title: "Quebre em subtarefas",
+      description:
+        "Divida automações complexas em múltiplos bots menores para facilitar a manutenção e o reuso.",
+      type: "tip",
+    },
+    {
+      id: "6",
+      title: "Evite dependências de UI",
+      description:
+        "Quando possível, use APIs ou automação baseada em texto em vez de automação baseada em UI que pode quebrar com mudanças visuais.",
+      type: "dont",
+    },
+  ];
+
+  const templates = [
+    {
+      id: "1",
+      title: "Processamento de Faturas",
+      description:
+        "Template para automação do processamento de faturas com extração de dados via OCR e integração com sistemas financeiros.",
+      category: "Financeiro",
+      complexity: "Média",
+      imageUrl: "/placeholder.svg",
+    },
+    {
+      id: "2",
+      title: "Onboarding de Funcionários",
+      description:
+        "Automatiza o processo de onboarding criando acessos, enviando emails de boas-vindas e configurando equipamentos.",
+      category: "RH",
+      complexity: "Alta",
+      imageUrl: "/placeholder.svg",
+    },
+    {
+      id: "3",
+      title: "Relatórios Diários",
+      description:
+        "Gera e distribui relatórios diários a partir de múltiplas fontes de dados para stakeholders.",
+      category: "BI",
+      complexity: "Baixa",
+      imageUrl: "/placeholder.svg",
+    },
+    {
+      id: "4",
+      title: "Conciliação Bancária",
+      description:
+        "Automatiza a conciliação de extratos bancários com o sistema financeiro interno.",
+      category: "Financeiro",
+      complexity: "Alta",
+      imageUrl: "/placeholder.svg",
+    },
+    {
+      id: "5",
+      title: "Validação de Compliance",
+      description:
+        "Verifica conformidade de documentos e processos de acordo com políticas internas e regulatórias.",
+      category: "Compliance",
+      complexity: "Média",
+      imageUrl: "/placeholder.svg",
+    },
+    {
+      id: "6",
+      title: "Monitoramento de Sistemas",
+      description:
+        "Monitora a saúde e disponibilidade de sistemas críticos, gerando alertas em caso de problemas.",
+      category: "TI",
+      complexity: "Média",
+      imageUrl: "/placeholder.svg",
+    },
+  ];
+
+  const useCases = [
+    {
+      title: "Automação de Relatórios Financeiros",
+      description:
+        "Necessidade de gerar relatórios financeiros consolidados diariamente a partir de múltiplos sistemas legados.",
+      icon: <BarChart className="h-6 w-6" />,
+      solution:
+        "Bot de AA que se conecta aos sistemas, extrai dados, consolida e gera relatórios em formato padrão.",
+      platformPath: PLATFORM_PATH,
+      delay: 0,
+    },
+    {
+      title: "Processamento de Notas Fiscais",
+      description:
+        "Processamento manual de grande volume de notas fiscais, inserindo dados em sistemas financeiros.",
+      icon: <ClipboardCheck className="h-6 w-6" />,
+      solution:
+        "Automatização da extração de dados com IQ Bot e integração com sistemas financeiros.",
+      platformPath: PLATFORM_PATH,
+      delay: 1,
+    },
+    {
+      title: "Atualização de Dados em Sistemas Legados",
+      description:
+        "Necessidade de manter dados atualizados entre sistemas modernos e legados sem integração API.",
+      icon: <Bot className="h-6 w-6" />,
+      solution:
+        "Bots para sincronização automática de dados via interface de usuário dos sistemas legados.",
+      platformPath: PLATFORM_PATH,
+      delay: 2,
+    },
+    {
+      title: "Validação de Documentos de Clientes",
+      description:
+        "Validação manual de documentos enviados por clientes contra regras de compliance.",
+      icon: <Code className="h-6 w-6" />,
+      solution:
+        "Bot com capacidade de OCR para extrair informações e validar contra regras pré-definidas.",
+      platformPath: PLATFORM_PATH,
+      delay: 3,
+    },
+  ];
+
+  const apis = [
+    {
+      title: "Control Room API",
+      description:
+        "API REST para interagir com o Control Room, permitindo gerenciar bots, schedules e dispositivos programaticamente.",
+      endpoint: "/v1/authentication",
+      authType: "OAuth 2.0",
+      docsUrl: "#",
+    },
+    {
+      title: "Bot Insight API",
+      description:
+        "API para acessar dados analíticos gerados por bots, permitindo integração com ferramentas de BI externas.",
+      endpoint: "/v2/botinsight/data",
+      authType: "API Key",
+      docsUrl: "#",
+    },
+    {
+      title: "Workload Management API",
+      description:
+        "API para gerenciar filas de trabalho, permitindo adicionar itens à fila e monitorar seu processamento.",
+      endpoint: "/v3/wlm/queues",
+      authType: "OAuth 2.0",
+      docsUrl: "#",
+    },
+    {
+      title: "Repository Manager API",
+      description:
+        "API para gerenciar o repositório de bots, permitindo criar, modificar e excluir bots programaticamente.",
+      endpoint: "/v1/repository",
+      authType: "OAuth 2.0",
+      docsUrl: "#",
+    },
+  ];
 
   return (
     <PageTransition>
       <Header />
-      <Hero
-        title="Automation Anywhere"
-        subtitle="Automatize tarefas repetitivas utilizando robôs inteligentes com automação robótica de processos (RPA)"
-        align="left"
-        primaryButtonText="Explorar soluções"
-        primaryButtonLink="/automation-anywhere/use-cases"
-      />
+      <main className="pt-20 min-h-screen">
+        <section className="py-10 px-6 bg-gray-50">
+          <div className="container mx-auto">
+            <PlatformBreadcrumb
+              platform={PLATFORM_NAME}
+              platformPath={PLATFORM_PATH}
+            />
+            <div className="mb-8">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="flex items-center gap-4 mb-4"
+              >
+                <div className="bg-gradient-to-r from-[#00B4E5] to-[#00D8B1] w-12 h-12 rounded-full flex items-center justify-center">
+                  <Bot className="h-6 w-6 text-white" />
+                </div>
+                <h1 className="text-3xl md:text-4xl font-semibold">
+                  {PLATFORM_NAME}
+                </h1>
+              </motion.div>
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="text-gray-600 max-w-3xl"
+              >
+                Plataforma de automação robótica de processos (RPA) que usa
+                bots de software para emular e integrar as ações de um humano
+                interagindo em sistemas digitais para executar diversos
+                processos de negócios.
+              </motion.p>
+            </div>
 
-      <div className="container mx-auto px-6 py-8">
-        <PlatformBreadcrumb 
-          platform="Automation Anywhere" 
-          platformPath="/automation-anywhere"
-          section={activeSection === "overview" ? undefined : tabs.find(t => t.id === activeSection)?.label}
-        />
-        
-        <PlatformTabs basePath="/automation-anywhere" tabs={tabs} className="mb-12" />
-        
-        {renderContent()}
-      </div>
+            <PlatformTabs
+              basePath={PLATFORM_PATH}
+              tabs={tabs}
+              className="mb-8"
+            />
 
+            <div className="py-8">
+              <TabsContent value="overview" className="mt-0">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                  <div className="lg:col-span-2">
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5 }}
+                    >
+                      <h2 className="text-2xl font-semibold mb-4">
+                        O que é o Automation Anywhere?
+                      </h2>
+                      <div className="prose max-w-none mb-8">
+                        <p>
+                          Automation Anywhere é uma plataforma de Automação
+                          Robótica de Processos (RPA) empresarial que permite
+                          às organizações automatizar processos de negócios
+                          repetitivos e baseados em regras. A plataforma utiliza
+                          bots de software para emular as ações de um usuário
+                          humano, interagindo com interfaces digitais de
+                          aplicações para executar tarefas.
+                        </p>
+                        <p>
+                          A plataforma é composta por vários componentes,
+                          incluindo o Control Room para gerenciamento e
+                          orquestração de bots, o Bot Creator para
+                          desenvolvimento, e o Bot Runner para execução das
+                          automações. Também possui recursos avançados como IQ
+                          Bot para processamento cognitivo e Bot Insight para
+                          analytics.
+                        </p>
+                      </div>
+
+                      <h2 className="text-2xl font-semibold mb-4">
+                        Como utilizamos no Bradesco
+                      </h2>
+                      <div className="prose max-w-none mb-8">
+                        <p>
+                          No Bradesco, o Automation Anywhere é utilizado para
+                          automatizar processos operacionais críticos,
+                          especialmente aqueles que envolvem sistemas legados
+                          sem APIs disponíveis, processamento de documentos e
+                          extração de dados.
+                        </p>
+                        <p>
+                          A squad Low Code Hub atua como centro de excelência
+                          para a plataforma, oferecendo suporte técnico,
+                          governança, melhores práticas e desenvolvimento de
+                          automações estratégicas. Trabalhamos em conjunto com
+                          várias áreas do banco para identificar oportunidades
+                          de automação e implementar soluções que aumentam a
+                          eficiência operacional.
+                        </p>
+                      </div>
+
+                      <h2 className="text-2xl font-semibold mb-4">
+                        Principais recursos
+                      </h2>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                        <GlassCard>
+                          <div className="p-4">
+                            <h3 className="font-semibold mb-2 flex items-center gap-2">
+                              <Bot className="h-5 w-5 text-bradesco-red" />
+                              RPA avançado
+                            </h3>
+                            <p className="text-gray-600">
+                              Automação de processos complexos com capacidade
+                              de interagir com múltiplas aplicações.
+                            </p>
+                          </div>
+                        </GlassCard>
+                        <GlassCard>
+                          <div className="p-4">
+                            <h3 className="font-semibold mb-2 flex items-center gap-2">
+                              <Code className="h-5 w-5 text-bradesco-red" />
+                              IQ Bot
+                            </h3>
+                            <p className="text-gray-600">
+                              Processamento cognitivo para extração de dados de
+                              documentos não estruturados usando AI/ML.
+                            </p>
+                          </div>
+                        </GlassCard>
+                        <GlassCard>
+                          <div className="p-4">
+                            <h3 className="font-semibold mb-2 flex items-center gap-2">
+                              <BarChart className="h-5 w-5 text-bradesco-red" />
+                              Bot Insight
+                            </h3>
+                            <p className="text-gray-600">
+                              Analytics integrado que fornece insights sobre
+                              processos automatizados e ROI.
+                            </p>
+                          </div>
+                        </GlassCard>
+                        <GlassCard>
+                          <div className="p-4">
+                            <h3 className="font-semibold mb-2 flex items-center gap-2">
+                              <ClipboardCheck className="h-5 w-5 text-bradesco-red" />
+                              Workload Management
+                            </h3>
+                            <p className="text-gray-600">
+                              Gerenciamento de filas de trabalho para
+                              processamento em alto volume com escalabilidade.
+                            </p>
+                          </div>
+                        </GlassCard>
+                      </div>
+                    </motion.div>
+                  </div>
+
+                  <div>
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: 0.3 }}
+                    >
+                      <div className="bg-white p-6 rounded-xl shadow-subtle border border-gray-100">
+                        <h3 className="text-xl font-semibold mb-4">
+                          Links Rápidos
+                        </h3>
+                        <ul className="space-y-3">
+                          <li>
+                            <a
+                              href="#"
+                              className="flex items-center gap-2 text-bradesco-red hover:underline"
+                            >
+                              <Bookmark className="h-4 w-4" />
+                              Portal Automation Anywhere
+                            </a>
+                          </li>
+                          <li>
+                            <a
+                              href="#"
+                              className="flex items-center gap-2 text-bradesco-red hover:underline"
+                            >
+                              <Bookmark className="h-4 w-4" />
+                              Documentação Técnica
+                            </a>
+                          </li>
+                          <li>
+                            <a
+                              href="#"
+                              className="flex items-center gap-2 text-bradesco-red hover:underline"
+                            >
+                              <Bookmark className="h-4 w-4" />
+                              Solicitação de Acesso
+                            </a>
+                          </li>
+                          <li>
+                            <a
+                              href="#"
+                              className="flex items-center gap-2 text-bradesco-red hover:underline"
+                            >
+                              <Bookmark className="h-4 w-4" />
+                              Biblioteca de Componentes
+                            </a>
+                          </li>
+                          <li>
+                            <a
+                              href="#"
+                              className="flex items-center gap-2 text-bradesco-red hover:underline"
+                            >
+                              <Bookmark className="h-4 w-4" />
+                              Calendário de Treinamentos
+                            </a>
+                          </li>
+                        </ul>
+
+                        <div className="mt-8 bg-bradesco-red text-white p-4 rounded-lg">
+                          <h4 className="font-medium mb-2">
+                            Precisa de ajuda?
+                          </h4>
+                          <p className="text-sm mb-4 text-white/90">
+                            Nossa equipe está disponível para auxiliar no
+                            desenvolvimento de automações e resolver dúvidas
+                            técnicas.
+                          </p>
+                          <a
+                            href="#"
+                            className="bg-white text-bradesco-red px-3 py-1.5 rounded text-sm font-medium inline-block"
+                          >
+                            Fale Conosco
+                          </a>
+                        </div>
+                      </div>
+                    </motion.div>
+                  </div>
+                </div>
+              </TabsContent>
+
+              <TabsContent value="use-cases" className="mt-0">
+                <div className="mb-8">
+                  <h2 className="text-2xl font-semibold mb-4">
+                    Casos de Uso
+                  </h2>
+                  <p className="text-gray-600 mb-8">
+                    Conheça alguns exemplos de como o Automation Anywhere tem
+                    sido utilizado para resolver desafios reais no Bradesco.
+                  </p>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {useCases.map((useCase, index) => (
+                      <UseCaseCard key={index} {...useCase} />
+                    ))}
+                  </div>
+                </div>
+
+                <div className="bg-gray-50 p-6 rounded-xl border border-gray-200 mt-12">
+                  <h3 className="text-xl font-semibold mb-4">
+                    Está com uma necessidade parecida?
+                  </h3>
+                  <p className="text-gray-600 mb-4">
+                    Se você identifica uma necessidade similar em sua área,
+                    podemos ajudar com nossas soluções de automação.
+                    Converse com nossa equipe ou explore nossos produtos:
+                  </p>
+                  <div className="flex flex-wrap gap-4">
+                    <a
+                      href="/product/satisfaction-survey"
+                      className="bg-white border border-gray-200 hover:border-bradesco-red hover:shadow-md transition-all px-4 py-2 rounded-lg text-bradesco-red font-medium"
+                    >
+                      Formulário de Pesquisa
+                    </a>
+                    <a
+                      href="/product/platform-calculator"
+                      className="bg-white border border-gray-200 hover:border-bradesco-red hover:shadow-md transition-all px-4 py-2 rounded-lg text-bradesco-red font-medium"
+                    >
+                      Calculadora de Plataformas
+                    </a>
+                  </div>
+                </div>
+              </TabsContent>
+
+              <TabsContent value="templates" className="mt-0">
+                <div>
+                  <h2 className="text-2xl font-semibold mb-4">
+                    Templates Prontos
+                  </h2>
+                  <p className="text-gray-600 mb-8">
+                    Acelere o desenvolvimento de suas automações com nossos
+                    templates pré-configurados para o Automation Anywhere.
+                  </p>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {templates.map((template) => (
+                      <TemplateCard key={template.id} {...template} />
+                    ))}
+                  </div>
+                </div>
+              </TabsContent>
+
+              <TabsContent value="best-practices" className="mt-0">
+                <div>
+                  <h2 className="text-2xl font-semibold mb-4">
+                    Boas Práticas
+                  </h2>
+                  <p className="text-gray-600 mb-8">
+                    Recomendações para desenvolvimento eficiente e seguro de
+                    automações no Automation Anywhere.
+                  </p>
+
+                  <BestPractices practices={bestPractices} />
+                </div>
+              </TabsContent>
+
+              <TabsContent value="apis" className="mt-0">
+                <div>
+                  <h2 className="text-2xl font-semibold mb-4">
+                    APIs Disponíveis
+                  </h2>
+                  <p className="text-gray-600 mb-8">
+                    Integre programaticamente com o Automation Anywhere usando
+                    estas APIs REST.
+                  </p>
+
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    {apis.map((api, index) => (
+                      <ApiCard key={index} {...api} />
+                    ))}
+                  </div>
+                </div>
+              </TabsContent>
+            </div>
+          </div>
+        </section>
+      </main>
       <Footer />
     </PageTransition>
-  );
-};
-
-// Componentes para cada seção
-const AutomationAnywhereOverview = () => {
-  return (
-    <div className="space-y-16">
-      <section>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <motion.span
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="text-xs uppercase tracking-wider bg-bradesco-red/10 text-bradesco-red px-3 py-1 rounded-full mb-4 inline-block"
-            >
-              Automação Robótica
-            </motion.span>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-3xl md:text-4xl font-semibold mb-6"
-            >
-              O que é o Automation Anywhere?
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-gray-600 mb-8"
-            >
-              O Automation Anywhere é uma plataforma de Automação Robótica de Processos (RPA) que utiliza 
-              bots de software para automatizar tarefas repetitivas baseadas em regras. Com uma combinação 
-              de RPA, inteligência artificial e análise de processos, a plataforma permite automatizar processos 
-              de negócios completos.
-            </motion.p>
-
-            <div className="space-y-4">
-              <Feature
-                icon={<Bot className="h-5 w-5 text-bradesco-red" />}
-                title="RPA Inteligente"
-                description="Crie bots que automatizam tarefas repetitivas, simulando ações humanas em interfaces digitais."
-                delay={0}
-              />
-              <Feature
-                icon={<Brain className="h-5 w-5 text-bradesco-red" />}
-                title="Automação Cognitiva"
-                description="Utilize inteligência artificial para processar dados não estruturados e tomar decisões complexas."
-                delay={1}
-              />
-              <Feature
-                icon={<BarChart3 className="h-5 w-5 text-bradesco-red" />}
-                title="Análise de Processos"
-                description="Identifique oportunidades de automação com ferramentas de descoberta e análise de processos."
-                delay={2}
-              />
-            </div>
-          </div>
-
-          <div className="relative">
-            <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-[#00B4E5]/20 to-[#00D8B1]/20 blur-xl opacity-70" />
-            <div className="relative bg-white rounded-2xl p-8 shadow-elevated">
-              <div className="grid grid-cols-1 gap-6">
-                <div className="bg-gradient-to-r from-[#00B4E5] to-[#00D8B1] rounded-xl p-6 text-white">
-                  <Bot className="h-8 w-8 text-white mb-4" />
-                  <h3 className="text-xl font-semibold mb-2">Transforme sua Operação</h3>
-                  <p className="text-white/80 mb-4">
-                    Reduza custos, minimize erros e aumente a eficiência operacional com automação robótica.
-                  </p>
-                  <Button asChild className="bg-white hover:bg-gray-100 text-[#00B4E5]">
-                    <a href="https://www.automationanywhere.com/" target="_blank" rel="noopener noreferrer">
-                      Explorar plataforma
-                    </a>
-                  </Button>
-                </div>
-                
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-gray-50 rounded-xl p-4 hover:shadow-subtle transition-shadow">
-                    <ShieldCheck className="h-6 w-6 text-bradesco-red mb-3" />
-                    <h3 className="text-lg font-semibold mb-1">Segurança Avançada</h3>
-                    <p className="text-gray-600 text-sm">
-                      Controles de acesso e criptografia de dados
-                    </p>
-                  </div>
-                  
-                  <div className="bg-gray-50 rounded-xl p-4 hover:shadow-subtle transition-shadow">
-                    <LineChart className="h-6 w-6 text-bradesco-red mb-3" />
-                    <h3 className="text-lg font-semibold mb-1">Analytics em Tempo Real</h3>
-                    <p className="text-gray-600 text-sm">
-                      Monitore desempenho e ROI dos bots
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <div className="max-w-3xl mx-auto text-center mb-12">
-          <motion.span
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-xs uppercase tracking-wider bg-bradesco-red/10 text-bradesco-red px-3 py-1 rounded-full mb-4 inline-block"
-          >
-            Principais Recursos
-          </motion.span>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-3xl md:text-4xl font-semibold mb-6"
-          >
-            Por que usar o Automation Anywhere?
-          </motion.h2>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <GlassCard delay={0}>
-            <Settings className="h-12 w-12 text-bradesco-red mb-6" />
-            <h3 className="text-xl font-semibold mb-3">Fácil Configuração</h3>
-            <p className="text-gray-600">
-              Interface de arrastar e soltar que permite criar bots complexos sem necessidade de 
-              codificação extensiva, acelerando o desenvolvimento.
-            </p>
-          </GlassCard>
-          
-          <GlassCard delay={1}>
-            <Laptop className="h-12 w-12 text-bradesco-red mb-6" />
-            <h3 className="text-xl font-semibold mb-3">Compatibilidade Universal</h3>
-            <p className="text-gray-600">
-              Funciona com praticamente qualquer aplicação, incluindo desktops, web, Citrix, SAP, 
-              Oracle e sistemas legados sem APIs disponíveis.
-            </p>
-          </GlassCard>
-          
-          <GlassCard delay={2}>
-            <UserCheck className="h-12 w-12 text-bradesco-red mb-6" />
-            <h3 className="text-xl font-semibold mb-3">Escalabilidade</h3>
-            <p className="text-gray-600">
-              Implante e gerencie milhares de bots simultaneamente, permitindo automação em escala 
-              empresarial com controle centralizado.
-            </p>
-          </GlassCard>
-        </div>
-      </section>
-
-      <section>
-        <div className="max-w-3xl mx-auto text-center mb-12">
-          <motion.span
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-xs uppercase tracking-wider bg-bradesco-red/10 text-bradesco-red px-3 py-1 rounded-full mb-4 inline-block"
-          >
-            Exemplos de Uso
-          </motion.span>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-3xl md:text-4xl font-semibold mb-6"
-          >
-            Casos de Uso Populares
-          </motion.h2>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <UseCaseCard
-            title="Extração de Dados"
-            description="Precisa extrair dados de múltiplos sistemas ou documentos para consolidação?"
-            icon={<Database className="h-6 w-6" />}
-            solution="Utilize bots para extrair dados de sistemas legados, PDFs, emails e planilhas, consolidando-os em um único sistema."
-            platformPath="/automation-anywhere/use-cases"
-            delay={0}
-          />
-          
-          <UseCaseCard
-            title="Processamento de Transações"
-            description="Seu time gasta muito tempo processando transações manualmente?"
-            icon={<Clock className="h-6 w-6" />}
-            solution="Implemente bots que processam transações 24/7, sem erros e muito mais rápido que operadores humanos."
-            platformPath="/automation-anywhere/use-cases"
-            delay={1}
-          />
-        </div>
-      </section>
-    </div>
-  );
-};
-
-const AutomationAnywhereAPIs = () => {
-  return (
-    <div className="space-y-12">
-      <div className="max-w-3xl mx-auto text-center mb-12">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-3xl md:text-4xl font-semibold mb-6"
-        >
-          APIs do Automation Anywhere
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-gray-600"
-        >
-          Integre seus sistemas e aplicações com o Automation Anywhere usando estas APIs
-        </motion.p>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <ApiCard
-          title="Control Room API"
-          description="Gerencie bots, agendamentos e implantações programaticamente usando a API REST do Control Room."
-          endpoint="https://{seu-control-room}/v1/authentication"
-          docsUrl="https://docs.automationanywhere.com/bundle/enterprise-v11.3/page/enterprise/topics/aae-developer/aae-control-room-apis.html"
-          delay={0}
-        />
-        
-        <ApiCard
-          title="Bot Insight API"
-          description="Acesse dados de análise e métricas de desempenho dos seus bots automatizados."
-          endpoint="https://{seu-control-room}/v2/botinsight/data"
-          docsUrl="https://docs.automationanywhere.com/bundle/enterprise-v11.3/page/enterprise/topics/aae-architect-variables/bot-insight/bi-api-overview.html"
-          delay={1}
-        />
-        
-        <ApiCard
-          title="Credential Vault API"
-          description="Gerencie credenciais de forma segura para utilização em processos automatizados."
-          docsUrl="https://docs.automationanywhere.com/bundle/enterprise-v11.3/page/enterprise/topics/control-room/control-room-api/credential-vault-api.html"
-          delay={2}
-        />
-        
-        <ApiCard
-          title="Workload Management API"
-          description="Distribua e balanceie cargas de trabalho entre bots disponíveis em sua infraestrutura."
-          endpoint="https://{seu-control-room}/v3/wlm/queues"
-          docsUrl="https://docs.automationanywhere.com/bundle/enterprise-v2019/page/enterprise/topics/aae-developer/cloud-api-workload.html"
-          delay={3}
-        />
-        
-        <ApiCard
-          title="User Management API"
-          description="Crie, atualize e gerencie usuários e seus acessos à plataforma programaticamente."
-          endpoint="https://{seu-control-room}/v1/usermanagement/users"
-          docsUrl="https://docs.automationanywhere.com/bundle/enterprise-v11.3/page/enterprise/topics/control-room/control-room-api/user-management-apis.html"
-          delay={4}
-        />
-        
-        <ApiCard
-          title="Repository Management API"
-          description="Acesse e gerencie o repositório de bots, pastas e arquivos do Automation Anywhere."
-          endpoint="https://{seu-control-room}/v1/repository/folders"
-          docsUrl="https://docs.automationanywhere.com/bundle/enterprise-v11.3/page/enterprise/topics/control-room/control-room-api/repository-management-api.html"
-          delay={5}
-        />
-      </div>
-
-      <div className="mt-12 p-6 bg-gray-50 rounded-xl">
-        <h3 className="text-xl font-semibold mb-4">Integração via API</h3>
-        <p className="text-gray-600 mb-6">
-          As APIs do Automation Anywhere permitem integrar automações RPA com seus sistemas existentes. Siga estas etapas para começar:
-        </p>
-        <ol className="space-y-2 text-gray-600 list-decimal list-inside ml-4">
-          <li>Autentique-se usando a API de autenticação para obter um token JWT</li>
-          <li>Use o token nas solicitações subsequentes para outras APIs</li>
-          <li>Implemente tratamento de erros e renovação de token adequados</li>
-          <li>Configure bibliotecas de cliente para simplificar as chamadas de API</li>
-          <li>Monitore o uso da API e respeite limites de taxa para evitar bloqueios</li>
-        </ol>
-      </div>
-    </div>
-  );
-};
-
-const AutomationAnywhereTemplates = () => {
-  return (
-    <div className="space-y-12">
-      <div className="max-w-3xl mx-auto text-center mb-12">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-3xl md:text-4xl font-semibold mb-6"
-        >
-          Templates de Bots
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-gray-600"
-        >
-          Acelere sua jornada de automação com templates de bots prontos para customização
-        </motion.p>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <TemplateCard
-          title="Extrator de Dados PDF"
-          description="Bot que extrai dados estruturados e não estruturados de documentos PDF e os exporta para Excel ou sistemas."
-          image="/placeholder.svg"
-          downloadUrl="#"
-          previewUrl="#"
-          delay={0}
-        />
-        
-        <TemplateCard
-          title="Processador de Faturas"
-          description="Automatiza a extração, validação e lançamento de faturas em sistemas financeiros."
-          image="/placeholder.svg"
-          downloadUrl="#"
-          previewUrl="#"
-          delay={1}
-        />
-        
-        <TemplateCard
-          title="Conciliador Bancário"
-          description="Realiza conciliação entre extratos bancários e registros contábeis, identificando diferenças."
-          image="/placeholder.svg"
-          downloadUrl="#"
-          previewUrl="#"
-          delay={2}
-        />
-        
-        <TemplateCard
-          title="Gerador de Relatórios"
-          description="Coleta dados de múltiplas fontes, gera relatórios padronizados e os distribui automaticamente."
-          image="/placeholder.svg"
-          downloadUrl="#"
-          previewUrl="#"
-          delay={3}
-        />
-        
-        <TemplateCard
-          title="Validador de Dados"
-          description="Verifica a integridade e consistência de dados entre sistemas, identificando discrepâncias."
-          image="/placeholder.svg"
-          downloadUrl="#"
-          previewUrl="#"
-          delay={4}
-        />
-        
-        <TemplateCard
-          title="Migrador de Dados"
-          description="Transfere dados entre sistemas legados e modernos, realizando transformações necessárias."
-          image="/placeholder.svg"
-          downloadUrl="#"
-          previewUrl="#"
-          delay={5}
-        />
-      </div>
-
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-        className="bg-gradient-to-r from-[#00B4E5]/10 to-[#00D8B1]/10 p-8 rounded-2xl mt-12"
-      >
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <div>
-            <h3 className="text-2xl font-semibold mb-2">Precisa de um bot personalizado?</h3>
-            <p className="text-gray-600">Nossa equipe de especialistas pode desenvolver bots sob medida para suas necessidades</p>
-          </div>
-          <Button className="bg-bradesco-red hover:bg-bradesco-darkred">Solicitar Bot</Button>
-        </div>
-      </motion.div>
-    </div>
-  );
-};
-
-const AutomationAnywhereBestPractices = () => {
-  const practices = [
-    {
-      title: "Padronize a nomenclatura de bots e variáveis",
-      description: "Adote um sistema de nomenclatura consistente para bots, variáveis e metadados que facilite a identificação e manutenção."
-    },
-    {
-      title: "Modularize seus bots",
-      description: "Divida automações complexas em bots menores e reutilizáveis que possam ser combinados para formar processos completos."
-    },
-    {
-      title: "Implemente tratamento de exceções",
-      description: "Configure tratamento de erros abrangente para lidar com cenários inesperados e garantir a resiliência dos bots."
-    },
-    {
-      title: "Utilize o Credential Vault",
-      description: "Nunca armazene credenciais no código do bot. Sempre use o Credential Vault para gerenciar senhas e informações sensíveis."
-    },
-    {
-      title: "Documente meticulosamente",
-      description: "Cada bot deve ter documentação detalhada sobre seu propósito, pré-requisitos, entradas, saídas e casos de exceção."
-    },
-    {
-      title: "Implemente logs detalhados",
-      description: "Configure logs adequados para ajudar na solução de problemas e auditoria, mas evite registrar informações sensíveis."
-    },
-    {
-      title: "Teste em ambientes isolados",
-      description: "Sempre teste seus bots em ambientes de não-produção antes de implantá-los em sistemas de produção."
-    },
-    {
-      title: "Configure tempos limite apropriados",
-      description: "Defina timeouts adequados para operações que dependem de recursos externos ou podem ficar bloqueadas."
-    }
-  ];
-
-  return <BestPractices practices={practices} title="Boas Práticas para Automation Anywhere" icon={<Bot className="h-7 w-7 text-bradesco-red" />} />;
-};
-
-const AutomationAnywhereUseCases = () => {
-  return (
-    <div className="space-y-12">
-      <div className="max-w-3xl mx-auto text-center mb-12">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-3xl md:text-4xl font-semibold mb-6"
-        >
-          Casos de Uso no Bradesco
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-gray-600"
-        >
-          Conheça como o Automation Anywhere está transformando processos no Bradesco
-        </motion.p>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <UseCaseCard
-          title="Extração de Dados de Sistemas Legados"
-          description="Precisa acessar dados de sistemas antigos sem APIs disponíveis?"
-          icon={<Database className="h-6 w-6" />}
-          solution="Bots que simulam ações do usuário para extrair dados de sistemas legados sem necessidade de integrações complexas."
-          platformPath="/automation-anywhere/templates"
-          delay={0}
-        />
-        
-        <UseCaseCard
-          title="Processamento de Alto Volume"
-          description="Tem processos repetitivos que consomem muitas horas de trabalho manual?"
-          icon={<Clock className="h-6 w-6" />}
-          solution="Bots que trabalham 24/7 processando grandes volumes de transações, reduzindo backlog e tempo de processamento."
-          platformPath="/automation-anywhere/templates"
-          delay={1}
-        />
-
-        <UseCaseCard
-          title="Validação de Dados"
-          description="Precisa verificar a consistência de dados entre múltiplos sistemas?"
-          icon={<FileCheck className="h-6 w-6" />}
-          solution="Bots que comparam e validam dados entre diferentes sistemas, identificando discrepâncias para correção."
-          platformPath="/automation-anywhere/templates"
-          delay={2}
-        />
-        
-        <UseCaseCard
-          title="Geração de Relatórios"
-          description="Gasta muito tempo coletando dados e gerando relatórios manualmente?"
-          icon={<BarChart3 className="h-6 w-6" />}
-          solution="Bots que coletam dados de múltiplas fontes, consolidam e geram relatórios automaticamente no formato desejado."
-          platformPath="/automation-anywhere/templates"
-          delay={3}
-        />
-      </div>
-
-      <div className="bg-white p-8 rounded-xl shadow-subtle border border-gray-200 mt-8">
-        <h3 className="text-2xl font-semibold mb-6">Como implementar RPA na sua área</h3>
-        
-        <div className="space-y-6">
-          <div className="flex gap-4 items-start">
-            <div className="bg-bradesco-red/10 rounded-full h-8 w-8 flex items-center justify-center flex-shrink-0">
-              <span className="text-bradesco-red font-semibold">1</span>
-            </div>
-            <div>
-              <h4 className="text-lg font-medium mb-1">Identifique processos candidatos</h4>
-              <p className="text-gray-600">Procure por processos repetitivos, baseados em regras, com alto volume ou propensos a erros.</p>
-            </div>
-          </div>
-          
-          <div className="flex gap-4 items-start">
-            <div className="bg-bradesco-red/10 rounded-full h-8 w-8 flex items-center justify-center flex-shrink-0">
-              <span className="text-bradesco-red font-semibold">2</span>
-            </div>
-            <div>
-              <h4 className="text-lg font-medium mb-1">Documente o processo atual</h4>
-              <p className="text-gray-600">Mapeie detalhadamente o fluxo de trabalho, identificando todas as variações e exceções.</p>
-            </div>
-          </div>
-          
-          <div className="flex gap-4 items-start">
-            <div className="bg-bradesco-red/10 rounded-full h-8 w-8 flex items-center justify-center flex-shrink-0">
-              <span className="text-bradesco-red font-semibold">3</span>
-            </div>
-            <div>
-              <h4 className="text-lg font-medium mb-1">Desenvolva e teste bots</h4>
-              <p className="text-gray-600">Utilize nossos templates ou solicite o desenvolvimento de bots personalizados, testando exaustivamente.</p>
-            </div>
-          </div>
-          
-          <div className="flex gap-4 items-start">
-            <div className="bg-bradesco-red/10 rounded-full h-8 w-8 flex items-center justify-center flex-shrink-0">
-              <span className="text-bradesco-red font-semibold">4</span>
-            </div>
-            <div>
-              <h4 className="text-lg font-medium mb-1">Implante e monitore</h4>
-              <p className="text-gray-600">Implante os bots em produção e estabeleça monitoramento contínuo para garantir desempenho e confiabilidade.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   );
 };
 

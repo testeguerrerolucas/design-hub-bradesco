@@ -7,6 +7,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import PowerAutomate from "./pages/PowerAutomate";
+import AutomationAnywhere from "./pages/AutomationAnywhere";
+import SatisfactionSurvey from "./pages/products/SatisfactionSurvey";
+import PlatformCalculator from "./pages/products/PlatformCalculator";
 
 const queryClient = new QueryClient();
 
@@ -19,9 +23,11 @@ const App = () => (
         <AnimatePresence mode="wait">
           <Routes>
             <Route path="/" element={<Index />} />
-            <Route path="/power-automate" element={<NotFound />} />
-            <Route path="/automation-anywhere" element={<NotFound />} />
+            <Route path="/power-automate" element={<PowerAutomate />} />
+            <Route path="/automation-anywhere" element={<AutomationAnywhere />} />
             <Route path="/service-now" element={<NotFound />} />
+            <Route path="/product/satisfaction-survey" element={<SatisfactionSurvey />} />
+            <Route path="/product/platform-calculator" element={<PlatformCalculator />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </AnimatePresence>

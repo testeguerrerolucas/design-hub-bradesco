@@ -1,63 +1,57 @@
 
-import { GlassCard } from "./GlassCard";
-import { motion } from "framer-motion";
-import { CheckCircle } from "lucide-react";
-import { ReactNode } from "react";
-
-interface Practice {
-  title: string;
-  description: string;
-}
+import { Check, AlertCircle, Info } from "lucide-react";
+import GlassCard from "./GlassCard";
 
 interface BestPracticesProps {
-  practices: Practice[];
-  title?: string;
-  icon?: ReactNode;
+  practices: {
+    id: string;
+    title: string;
+    description: string;
+    type: "do" | "dont" | "tip";
+  }[];
 }
 
-const BestPractices = ({ practices, title = "Boas Práticas", icon }: BestPracticesProps) => {
+const BestPractices = ({ practices }: BestPracticesProps) => {
+  const getIcon = (type: "do" | "dont" | "tip") => {
+    switch (type) {
+      case "do":
+        return <Check className="h-5 w-5 text-green-600" />;
+      case "dont":
+        return <AlertCircle className="h-5 w-5 text-red-600" />;
+      case "tip":
+        return <Info className="h-5 w-5 text-blue-600" />;
+    }
+  };
+
+  const getHeaderClass = (type: "do" | "dont" | "tip") => {
+    switch (type) {
+      case "do":
+        return "bg-green-50 border-green-200";
+      case "dont":
+        return "bg-red-50 border-red-200";
+      case "tip":
+        return "bg-blue-50 border-blue-200";
+    }
+  };
+
   return (
-    <section className="py-16 px-6">
-      <div className="container mx-auto">
-        <div className="max-w-3xl mx-auto text-center mb-12">
-          <motion.span
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-xs uppercase tracking-wider bg-bradesco-red/10 text-bradesco-red px-3 py-1 rounded-full mb-4 inline-block"
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {practices.map((practice) => (
+        <GlassCard key={practice.id} className="h-full">
+          <div
+            className={`flex items-center gap-2 p-4 border-b ${getHeaderClass(
+              practice.type
+            )}`}
           >
-            Desenvolvimento
-          </motion.span>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-3xl md:text-4xl font-semibold mb-6 flex items-center justify-center gap-3"
-          >
-            {icon && <span>{icon}</span>}
-            {title}
-          </motion.h2>
-        </div>
-        
-        <div className="grid grid-cols-1 gap-6">
-          {practices.map((practice, index) => (
-            <GlassCard key={index} delay={index} className="hover:border-bradesco-red/20 transition-colors">
-              <div className="flex gap-4">
-                <div className="mt-1 flex-shrink-0">
-                  <CheckCircle className="h-6 w-6 text-bradesco-red" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">{practice.title}</h3>
-                  <p className="text-gray-600">{practice.description}</p>
-                </div>
-              </div>
-            </GlassCard>
-          ))}
-        </div>
-      </div>
-    </section>
+            {getIcon(practice.type)}
+            <h3 className="font-medium">{practice.title}</h3>
+          </div>
+          <div className="p-4">
+            <p className="text-gray-600">{practice.description}</p>
+          </div>
+        </GlassCard>
+      ))}
+    </div>
   );
 };
 
