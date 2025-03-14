@@ -1,8 +1,6 @@
-
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Zap, Code, Bookmark, BarChart, ClipboardCheck, FileText } from "lucide-react";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -35,42 +33,42 @@ const PowerAutomate = () => {
       title: "Use conexões gerenciadas",
       description:
         "Utilize as conexões gerenciadas do Power Automate para manter as credenciais seguras e facilitar a manutenção.",
-      type: "do",
+      type: "do" as const,
     },
     {
       id: "2",
       title: "Documente seus fluxos",
       description:
         "Adicione descrições claras aos fluxos e comentários nas etapas para facilitar a manutenção e colaboração.",
-      type: "do",
+      type: "do" as const,
     },
     {
       id: "3",
       title: "Evite loops infinitos",
       description:
         "Sempre defina condições claras de saída para loops para evitar consumo excessivo de recursos e falhas.",
-      type: "dont",
+      type: "dont" as const,
     },
     {
       id: "4",
       title: "Utilize soluções para organização",
       description:
         "Agrupe fluxos relacionados em soluções para melhor organização e facilidade de exportação/importação.",
-      type: "tip",
+      type: "tip" as const,
     },
     {
       id: "5",
       title: "Implemente tratamento de erros",
       description:
         "Utilize ações de scope com configuração de tratamento de erros para tornar seus fluxos mais robustos.",
-      type: "tip",
+      type: "tip" as const,
     },
     {
       id: "6",
       title: "Evite fórmulas complexas",
       description:
         "Para expressões complexas, divida a lógica em várias etapas para facilitar a depuração e manutenção.",
-      type: "dont",
+      type: "dont" as const,
     },
   ];
 
@@ -82,7 +80,7 @@ const PowerAutomate = () => {
         "Fluxo de aprovação de documentos com notificações por email e registro em SharePoint.",
       category: "Aprovações",
       complexity: "Baixa",
-      imageUrl: "/placeholder.svg",
+      image: "/placeholder.svg",
     },
     {
       id: "2",
@@ -91,7 +89,7 @@ const PowerAutomate = () => {
         "Extrai dados de múltiplas fontes, consolida e gera relatórios automaticamente.",
       category: "Dados",
       complexity: "Média",
-      imageUrl: "/placeholder.svg",
+      image: "/placeholder.svg",
     },
     {
       id: "3",
@@ -100,7 +98,7 @@ const PowerAutomate = () => {
         "Monitora SLAs em Service Now e envia alertas quando prazos estão próximos do vencimento.",
       category: "Notificações",
       complexity: "Média",
-      imageUrl: "/placeholder.svg",
+      image: "/placeholder.svg",
     },
     {
       id: "4",
@@ -109,7 +107,7 @@ const PowerAutomate = () => {
         "Automatiza o processo de cadastro de novos clientes em múltiplos sistemas.",
       category: "Processos",
       complexity: "Alta",
-      imageUrl: "/placeholder.svg",
+      image: "/placeholder.svg",
     },
     {
       id: "5",
@@ -118,7 +116,7 @@ const PowerAutomate = () => {
         "Envia pesquisas de satisfação após interações e consolida respostas em dashboard.",
       category: "Feedback",
       complexity: "Baixa",
-      imageUrl: "/placeholder.svg",
+      image: "/placeholder.svg",
     },
     {
       id: "6",
@@ -127,7 +125,7 @@ const PowerAutomate = () => {
         "Realiza backup automático de dados críticos em intervalos regulares com registro de logs.",
       category: "Segurança",
       complexity: "Média",
-      imageUrl: "/placeholder.svg",
+      image: "/placeholder.svg",
     },
   ];
 

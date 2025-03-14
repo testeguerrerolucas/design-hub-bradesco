@@ -2,6 +2,7 @@
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { useLocation, useNavigate } from "react-router-dom";
 import { cn } from "@/lib/utils";
+import { useEffect, useState } from "react";
 
 interface Tab {
   id: string;
@@ -37,8 +38,20 @@ const PlatformTabs = ({ basePath, tabs, className }: PlatformTabsProps) => {
     }
   };
 
+  // Add console logging to debug navigation
+  useEffect(() => {
+    console.log("Current path:", currentPath);
+    console.log("Base path:", basePath);
+    console.log("Active tab:", activeTab);
+  }, [currentPath, basePath, activeTab]);
+
   return (
-    <Tabs value={activeTab} onValueChange={handleTabChange} className={cn("w-full", className)}>
+    <Tabs 
+      defaultValue={activeTab} 
+      value={activeTab} 
+      onValueChange={handleTabChange} 
+      className={cn("w-full", className)}
+    >
       <TabsList className="w-full max-w-3xl mx-auto bg-white/50 backdrop-blur-sm border border-gray-200 shadow-sm">
         {tabs.map((tab) => (
           <TabsTrigger 
