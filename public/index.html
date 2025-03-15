@@ -7,18 +7,11 @@
     <title>Low Code Hub - Bradesco</title>
     <meta name="description" content="Equipe de orquestração de processos do Bradesco" />
     <meta name="author" content="Low Code Hub" />
-    <meta property="og:image" content="/og-image.png" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles.css">
   </head>
 
   <body>
-    <div id="root">
-      <!-- React app will be mounted here -->
-    </div>
-    
-    <!-- Optional: If you want to use the HTML version directly -->
-    <!--
     <header class="header">
       <div class="container">
         <div class="logo">
@@ -30,10 +23,11 @@
             <li><a href="#" class="active">Home</a></li>
             <li><a href="#equipe">Nossa Equipe</a></li>
             <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#plataformas">Plataformas</a></li>
             <li><a href="#contato">Contato</a></li>
           </ul>
         </nav>
-        <button class="menu-toggle">
+        <button class="menu-toggle" aria-label="Menu">
           <span></span>
           <span></span>
           <span></span>
@@ -44,9 +38,9 @@
     <section class="hero">
       <div class="container">
         <h1>Low Code Hub - Equipe de Orquestração</h1>
-        <p>Conheça a equipe de orquestração de processos da Engenharia de Plataforma do Bradesco</p>
+        <p>Automatizando processos internos para desenvolvedores do Bradesco</p>
         <div class="buttons">
-          <a href="#projetos" class="btn btn-primary">Conheça nossos projetos</a>
+          <a href="#projetos" class="btn btn-primary">Nossos projetos</a>
           <a href="#equipe" class="btn btn-secondary">Nossa equipe</a>
         </div>
       </div>
@@ -58,7 +52,7 @@
           <span class="badge">Nossa Equipe</span>
           <h2>Conheça os integrantes da nossa squad</h2>
           <p>Nossa equipe é formada por profissionais dedicados que trabalham na orquestração
-            de processos para a Engenharia de Plataforma do Bradesco.</p>
+            de processos internos para os desenvolvedores do Bradesco, utilizando metodologia ágil.</p>
         </div>
         
         <div class="team-grid">
@@ -115,83 +109,83 @@
         <div class="section-header">
           <span class="badge">Nossos Projetos</span>
           <h2>Projetos realizados pela equipe</h2>
-          <p>Conheça alguns dos projetos de orquestração que nossa equipe desenvolveu para
-            o Bradesco.</p>
+          <p>Desenvolvemos soluções que auxiliam os desenvolvedores do Bradesco a escolher e utilizar
+             as melhores plataformas de automação.</p>
         </div>
         
         <div class="project-grid">
           <div class="project-card">
             <div class="project-image">
-              <img src="/placeholder.svg" alt="Orquestração de CI/CD">
+              <img src="/placeholder.svg" alt="Calculadora de Plataformas">
             </div>
             <div class="project-content">
-              <h3>Orquestração de CI/CD</h3>
-              <p>Sistema de integração e entrega contínua para a Engenharia de Plataforma</p>
+              <h3>Calculadora de Recomendação de Plataformas</h3>
+              <p>Ferramenta que recomenda a melhor plataforma de automação com base nas necessidades específicas do projeto</p>
+              <a href="/product/platform-calculator" class="btn btn-small">Ver projeto</a>
             </div>
           </div>
           
           <div class="project-card">
             <div class="project-image">
-              <img src="/placeholder.svg" alt="Automação de Processos Internos">
+              <img src="/placeholder.svg" alt="Pesquisa de Satisfação">
             </div>
             <div class="project-content">
-              <h3>Automação de Processos Internos</h3>
-              <p>Fluxos de automação para processos administrativos da equipe</p>
-            </div>
-          </div>
-          
-          <div class="project-card">
-            <div class="project-image">
-              <img src="/placeholder.svg" alt="Central de Gerenciamento">
-            </div>
-            <div class="project-content">
-              <h3>Central de Gerenciamento</h3>
-              <p>Dashboard unificado para monitoramento de processos e sistemas</p>
-            </div>
-          </div>
-          
-          <div class="project-card">
-            <div class="project-image">
-              <img src="/placeholder.svg" alt="Integração de APIs">
-            </div>
-            <div class="project-content">
-              <h3>Integração de APIs</h3>
-              <p>Sistema de orquestração de APIs para serviços internos</p>
-            </div>
-          </div>
-          
-          <div class="project-card">
-            <div class="project-image">
-              <img src="/placeholder.svg" alt="Monitoramento de SLAs">
-            </div>
-            <div class="project-content">
-              <h3>Monitoramento de SLAs</h3>
-              <p>Ferramenta para acompanhamento de acordos de nível de serviço</p>
-            </div>
-          </div>
-          
-          <div class="project-card">
-            <div class="project-image">
-              <img src="/placeholder.svg" alt="Pipeline de Deployment">
-            </div>
-            <div class="project-content">
-              <h3>Pipeline de Deployment</h3>
-              <p>Sistema automatizado para implantação de aplicações</p>
+              <h3>Formulário de Pesquisa de Satisfação</h3>
+              <p>Sistema para coletar feedback sobre a experiência dos usuários com as diferentes plataformas de automação</p>
+              <a href="/product/satisfaction-survey" class="btn btn-small">Ver projeto</a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="contato" class="section">
+    <section id="plataformas" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge">Plataformas</span>
+          <h2>Plataformas de Automação</h2>
+          <p>Conheça as principais plataformas de automação que recomendamos e oferecemos suporte</p>
+        </div>
+        
+        <div class="platforms-grid">
+          <div class="platform-card">
+            <div class="platform-icon">
+              <img src="/placeholder.svg" alt="Power Automate">
+            </div>
+            <h3>Power Automate</h3>
+            <p>Automação de processos de negócio com foco em integração com o ecossistema Microsoft</p>
+            <a href="/power-automate" class="btn btn-outline">Saiba mais</a>
+          </div>
+          
+          <div class="platform-card">
+            <div class="platform-icon">
+              <img src="/placeholder.svg" alt="Automation Anywhere">
+            </div>
+            <h3>Automation Anywhere</h3>
+            <p>Plataforma de RPA para automação de tarefas repetitivas com recursos avançados de IA</p>
+            <a href="/automation-anywhere" class="btn btn-outline">Saiba mais</a>
+          </div>
+          
+          <div class="platform-card">
+            <div class="platform-icon">
+              <img src="/placeholder.svg" alt="ServiceNow">
+            </div>
+            <h3>ServiceNow</h3>
+            <p>Plataforma para automação de fluxos de trabalho e gerenciamento de serviços de TI</p>
+            <a href="/service-now" class="btn btn-outline">Saiba mais</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="section bg-light">
       <div class="container">
         <div class="grid-two">
           <div class="mission">
             <span class="badge">Nossa Missão</span>
-            <h2>Como apoiamos a Engenharia de Plataforma</h2>
-            <p>Nossa squad é especializada em orquestrar processos que facilitam o trabalho dos
-              desenvolvedores, automatizando fluxos e oferecendo soluções que melhoram
-              a produtividade da equipe de Engenharia de Plataforma do Bradesco.</p>
+            <h2>Como apoiamos os Desenvolvedores do Bradesco</h2>
+            <p>Nossa squad é especializada em automatizar processos internos que facilitam o trabalho dos
+              desenvolvedores, proporcionando maior produtividade e qualidade nas entregas.</p>
             
             <div class="features">
               <div class="feature">
@@ -206,7 +200,7 @@
                 </div>
                 <div class="feature-content">
                   <h3>Orquestração de Processos</h3>
-                  <p>Identificamos e orquestramos processos operacionais, liberando tempo dos desenvolvedores para tarefas de maior valor.</p>
+                  <p>Automatizamos processos operacionais, liberando tempo dos desenvolvedores para tarefas de maior valor.</p>
                 </div>
               </div>
               
@@ -220,8 +214,8 @@
                   </svg>
                 </div>
                 <div class="feature-content">
-                  <h3>Automação de Fluxos</h3>
-                  <p>Desenvolvemos soluções que automatizam fluxos de trabalho e aceleram a entrega de valor.</p>
+                  <h3>Recomendação de Plataformas</h3>
+                  <p>Ajudamos a escolher a plataforma ideal para cada tipo de automação, otimizando recursos e resultados.</p>
                 </div>
               </div>
               
@@ -234,8 +228,8 @@
                   </svg>
                 </div>
                 <div class="feature-content">
-                  <h3>Integração Contínua</h3>
-                  <p>Criamos pipelines e ferramentas que facilitam a integração e entrega contínua de software.</p>
+                  <h3>Suporte Técnico</h3>
+                  <p>Oferecemos suporte especializado para implementação e uso das plataformas de automação.</p>
                 </div>
               </div>
               
@@ -252,8 +246,8 @@
                   </svg>
                 </div>
                 <div class="feature-content">
-                  <h3>Colaboração entre Equipes</h3>
-                  <p>Facilitamos a comunicação e colaboração entre as diferentes equipes da Engenharia de Plataforma.</p>
+                  <h3>Capacitação</h3>
+                  <p>Desenvolvemos conteúdos e treinamentos para capacitar os desenvolvedores no uso das ferramentas.</p>
                 </div>
               </div>
             </div>
@@ -262,8 +256,8 @@
           <div class="info-cards">
             <div class="info-card">
               <h3>Nossa Visão</h3>
-              <p>Ser referência em orquestração de processos para a Engenharia de Plataforma,
-                facilitando o trabalho dos desenvolvedores e aumentando a produtividade do time.</p>
+              <p>Ser referência em automação de processos internos para os desenvolvedores do Bradesco,
+                aumentando sua produtividade e qualidade nas entregas.</p>
             </div>
             
             <div class="info-card">
@@ -290,7 +284,7 @@
               <div class="logo-circle">L</div>
               <span class="logo-text">Low Code Hub</span>
             </div>
-            <p>Automatizando e facilitando o desenvolvimento para a tribo de
+            <p>Automatizando processos internos para os desenvolvedores da tribo de
               Engenharia de Plataforma do Bradesco</p>
             <div class="social">
               <div class="social-icon">B</div>
@@ -303,6 +297,7 @@
               <li><a href="#">Home</a></li>
               <li><a href="#equipe">Nossa Equipe</a></li>
               <li><a href="#projetos">Projetos</a></li>
+              <li><a href="#plataformas">Plataformas</a></li>
               <li><a href="#contato">Contato</a></li>
             </ul>
           </div>
@@ -326,15 +321,7 @@
         </div>
       </div>
     </footer>
-    -->
     
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
-    
-    <!-- Optional: If you want to use the HTML version directly -->
-    <!--
     <script src="/script.js"></script>
-    -->
   </body>
 </html>

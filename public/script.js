@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  // Mobile menu toggle (if you're implementing pure HTML version)
+  // Mobile menu toggle
   if (toggleMenu && mobileMenu) {
     toggleMenu.addEventListener('click', function() {
       mobileMenu.classList.toggle('active');
@@ -43,12 +43,18 @@ document.addEventListener('DOMContentLoaded', function() {
           link.classList.remove('active');
         });
         this.classList.add('active');
+        
+        // Close mobile menu if open
+        if (mobileMenu && mobileMenu.classList.contains('active')) {
+          mobileMenu.classList.remove('active');
+          toggleMenu.classList.remove('active');
+        }
       }
     });
   });
 
   // Animate elements when they come into view
-  const animateElements = document.querySelectorAll('.team-card, .project-card, .feature, .info-card');
+  const animateElements = document.querySelectorAll('.team-card, .project-card, .platform-card, .feature, .info-card');
   
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
