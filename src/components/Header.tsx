@@ -15,6 +15,7 @@ const Header = () => {
     { name: "ServiceNow", path: "/service-now" },
   ];
 
+  // Handle scroll effect for header styling
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
@@ -24,9 +25,12 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Close mobile menu when route changes
   useEffect(() => {
     setIsMobileMenuOpen(false);
   }, [location.pathname]);
+
+  console.log("Current location in Header:", location.pathname);
 
   return (
     <header
@@ -53,12 +57,15 @@ const Header = () => {
               key={item.name}
               to={item.path}
               className={`relative font-medium text-sm transition-colors hover:text-bradesco-red ${
-                location.pathname === item.path
+                location.pathname === item.path || location.pathname.startsWith(`${item.path}/`)
                   ? "text-bradesco-red"
                   : "text-gray-800"
               } after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-bradesco-red after:transition-transform after:duration-300 hover:after:origin-bottom-left hover:after:scale-x-100 ${
-                location.pathname === item.path ? "after:scale-x-100" : ""
+                location.pathname === item.path || location.pathname.startsWith(`${item.path}/`) 
+                  ? "after:scale-x-100" 
+                  : ""
               }`}
+              onClick={() => console.log(`Clicked on nav item: ${item.path}`)}
             >
               {item.name}
             </Link>
@@ -91,10 +98,14 @@ const Header = () => {
               key={item.name}
               to={item.path}
               className={`text-xl font-medium ${
-                location.pathname === item.path
+                location.pathname === item.path || location.pathname.startsWith(`${item.path}/`)
                   ? "text-bradesco-red"
                   : "text-gray-800"
               }`}
+              onClick={() => {
+                console.log(`Clicked on mobile nav item: ${item.path}`);
+                setIsMobileMenuOpen(false);
+              }}
             >
               {item.name}
             </Link>

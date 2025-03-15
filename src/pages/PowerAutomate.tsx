@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Zap, Code, Bookmark, BarChart, ClipboardCheck, FileText } from "lucide-react";
@@ -19,6 +18,7 @@ const PLATFORM_NAME = "Power Automate";
 const PLATFORM_PATH = "/power-automate";
 
 const PowerAutomate = () => {
+  console.log("PowerAutomate component rendered");
   const [activeTab, setActiveTab] = useState("overview");
 
   const tabs = [

@@ -23,43 +23,45 @@ const PlatformTabs = ({ basePath, tabs, className }: PlatformTabsProps) => {
   
   // Determine which tab is active
   const [activeTab, setActiveTab] = useState(() => {
-    const pathMatch = tabs.find((tab) => 
-      currentPath === `${basePath}/${tab.path}` || 
-      (currentPath === basePath && tab.path === "")
-    );
+    // Check if the current path matches any tab path
+    const pathMatch = tabs.find((tab) => {
+      const tabFullPath = tab.path === "" ? basePath : `${basePath}/${tab.path}`;
+      return currentPath === tabFullPath;
+    });
     return pathMatch?.id || tabs[0].id;
   });
 
   // Update active tab when route changes
   useEffect(() => {
-    const pathMatch = tabs.find((tab) => 
-      currentPath === `${basePath}/${tab.path}` || 
-      (currentPath === basePath && tab.path === "")
-    );
+    console.log("Current path in PlatformTabs:", currentPath);
+    console.log("Base path in PlatformTabs:", basePath);
+    
+    // Check if the current path matches any tab path
+    const pathMatch = tabs.find((tab) => {
+      const tabFullPath = tab.path === "" ? basePath : `${basePath}/${tab.path}`;
+      console.log("Comparing with tab path:", tabFullPath);
+      return currentPath === tabFullPath;
+    });
+    
     if (pathMatch) {
+      console.log("Found matching tab:", pathMatch.id);
       setActiveTab(pathMatch.id);
     } else {
+      console.log("No matching tab found, defaulting to first tab:", tabs[0].id);
       setActiveTab(tabs[0].id);
     }
   }, [currentPath, basePath, tabs]);
 
   const handleTabChange = (value: string) => {
+    console.log("Tab change requested to:", value);
     const selectedTab = tabs.find((tab) => tab.id === value);
+    
     if (selectedTab) {
-      if (selectedTab.path === "") {
-        navigate(basePath);
-      } else {
-        navigate(`${basePath}/${selectedTab.path}`);
-      }
+      const newPath = selectedTab.path === "" ? basePath : `${basePath}/${selectedTab.path}`;
+      console.log("Navigating to:", newPath);
+      navigate(newPath);
     }
   };
-
-  // Add console logging to debug navigation
-  useEffect(() => {
-    console.log("Current path:", currentPath);
-    console.log("Base path:", basePath);
-    console.log("Active tab:", activeTab);
-  }, [currentPath, basePath, activeTab]);
 
   return (
     <Tabs 
