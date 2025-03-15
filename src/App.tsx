@@ -11,7 +11,6 @@ import ServiceNow from "./pages/ServiceNow";
 import SatisfactionSurvey from "./pages/products/SatisfactionSurvey";
 import PlatformCalculator from "./pages/products/PlatformCalculator";
 import NotFound from "./pages/NotFound";
-import Index from "./pages/Index";
 
 // Create a new QueryClient
 const queryClient = new QueryClient();
@@ -27,8 +26,8 @@ const App = () => {
         <BrowserRouter>
           <AnimatePresence mode="wait">
             <Routes>
-              {/* Define Index as the initial page */}
-              <Route path="/" element={<Index />} />
+              {/* Define PowerAutomate as the initial page */}
+              <Route path="/" element={<PowerAutomate />} />
               <Route path="/power-automate" element={<PowerAutomate />} />
               <Route path="/power-automate/*" element={<PowerAutomate />} />
               <Route path="/automation-anywhere" element={<AutomationAnywhere />} />
