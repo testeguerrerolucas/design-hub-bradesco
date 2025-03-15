@@ -1,0 +1,449 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Power Automate | Low Code Hub</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .platform-hero {
+      background: linear-gradient(135deg, #0066FF 0%, #2B88D8 100%);
+      color: white;
+      padding: 8rem 0 5rem;
+    }
+    .platform-hero h1 {
+      color: white;
+    }
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 2rem;
+    }
+    .breadcrumb a:hover {
+      color: white;
+    }
+    .platform-hero p {
+      color: rgba(255, 255, 255, 0.9);
+      max-width: 700px;
+    }
+    .section-tabs {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 1rem;
+    }
+    .section-tab {
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      font-weight: 500;
+      transition: var(--transition-standard);
+    }
+    .section-tab.active {
+      background-color: var(--bradesco-red);
+      color: white;
+    }
+    .section-tab:not(.active):hover {
+      background-color: #f0f0f0;
+    }
+    .api-card {
+      background: #fff;
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      border: 1px solid #eee;
+      margin-bottom: 1.5rem;
+    }
+    .api-card h3 {
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .api-method {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.25rem;
+      background-color: #e2f5ff;
+      color: #0075ca;
+    }
+    .api-endpoint {
+      font-family: monospace;
+      background-color: #f5f5f5;
+      padding: 0.5rem 1rem;
+      border-radius: 0.25rem;
+      margin: 0.5rem 0 1rem;
+      font-size: 0.875rem;
+    }
+    .code-block {
+      background-color: #2d2d2d;
+      color: #f8f8f2;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      overflow-x: auto;
+      font-family: monospace;
+      margin: 1.5rem 0;
+    }
+    .practice-card {
+      background-color: white;
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      box-shadow: var(--shadow-subtle);
+      margin-bottom: 1.5rem;
+      border-left: 4px solid var(--bradesco-red);
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <div class="logo-icon">L</div>
+        <span class="logo-text">Low Code Hub</span>
+      </div>
+      <nav class="nav-desktop">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="index.html#team" class="nav-link">Equipe</a>
+        <a href="index.html#projects" class="nav-link">Projetos</a>
+        <a href="index.html#platforms" class="nav-link active">Plataformas</a>
+      </nav>
+      <button class="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <nav class="nav-mobile">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="index.html#team" class="nav-link">Equipe</a>
+      <a href="index.html#projects" class="nav-link">Projetos</a>
+      <a href="index.html#platforms" class="nav-link active">Plataformas</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="platform-hero">
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a> / <a href="index.html#platforms">Plataformas</a> / <span>Power Automate</span>
+        </div>
+        <h1>Power Automate</h1>
+        <p>Plataforma da Microsoft para automação de fluxos de trabalho com interface visual intuitiva e integração nativa com produtos Microsoft.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-tabs">
+          <div class="section-tab active" data-tab="overview">Visão Geral</div>
+          <div class="section-tab" data-tab="api">APIs</div>
+          <div class="section-tab" data-tab="practices">Melhores Práticas</div>
+          <div class="section-tab" data-tab="examples">Exemplos</div>
+        </div>
+
+        <div class="tab-content" id="overview">
+          <div class="row" style="display: flex; flex-wrap: wrap; gap: 2rem;">
+            <div style="flex: 1; min-width: 300px;">
+              <h2 class="section-title">Sobre o Power Automate</h2>
+              <p>O Power Automate (anteriormente Microsoft Flow) é uma plataforma da Microsoft que permite criar fluxos de trabalho automatizados entre seus aplicativos e serviços favoritos para sincronizar arquivos, receber notificações, coletar dados e muito mais.</p>
+              
+              <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Principais Recursos</h3>
+              <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 1rem; display: flex; align-items: flex-start; gap: 0.75rem;">
+                  <div style="min-width: 24px; height: 24px; background-color: var(--bradesco-red); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">1</div>
+                  <div>
+                    <strong>Interface visual intuitiva</strong>
+                    <p>Criação de automações com interface drag-and-drop, sem necessidade de conhecimentos avançados de programação.</p>
+                  </div>
+                </li>
+                <li style="margin-bottom: 1rem; display: flex; align-items: flex-start; gap: 0.75rem;">
+                  <div style="min-width: 24px; height: 24px; background-color: var(--bradesco-red); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">2</div>
+                  <div>
+                    <strong>Centenas de conectores</strong>
+                    <p>Integração com mais de 300 serviços e aplicativos, incluindo todos os produtos Microsoft e muitos serviços de terceiros.</p>
+                  </div>
+                </li>
+                <li style="margin-bottom: 1rem; display: flex; align-items: flex-start; gap: 0.75rem;">
+                  <div style="min-width: 24px; height: 24px; background-color: var(--bradesco-red); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">3</div>
+                  <div>
+                    <strong>Automação robótica (RPA)</strong>
+                    <p>Automação de tarefas em aplicativos da web e desktop que não possuem APIs disponíveis.</p>
+                  </div>
+                </li>
+                <li style="margin-bottom: 1rem; display: flex; align-items: flex-start; gap: 0.75rem;">
+                  <div style="min-width: 24px; height: 24px; background-color: var(--bradesco-red); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">4</div>
+                  <div>
+                    <strong>Templates prontos</strong>
+                    <p>Biblioteca de modelos pré-configurados para casos de uso comuns, acelerando a implementação.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div style="flex: 1; min-width: 300px;">
+              <div style="background-color: #f7f7f7; padding: 2rem; border-radius: 1rem;">
+                <h3 style="margin-bottom: 1.5rem;">Quando usar o Power Automate?</h3>
+                
+                <div style="margin-bottom: 1.5rem;">
+                  <h4 style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                    <span style="width: 18px; height: 18px; background-color: #4CAF50; border-radius: 50%; margin-right: 0.5rem;"></span>
+                    Ideal para
+                  </h4>
+                  <ul style="padding-left: 1.5rem;">
+                    <li>Integração com produtos Microsoft 365</li>
+                    <li>Fluxos de aprovação</li>
+                    <li>Notificações e alertas</li>
+                    <li>Automação de tarefas simples a médias</li>
+                    <li>Equipes com pouca experiência técnica</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                    <span style="width: 18px; height: 18px; background-color: #F44336; border-radius: 50%; margin-right: 0.5rem;"></span>
+                    Não recomendado para
+                  </h4>
+                  <ul style="padding-left: 1.5rem;">
+                    <li>Processos muito complexos</li>
+                    <li>Automações de alto volume</li>
+                    <li>Sistemas legados sem API nem UI</li>
+                    <li>Processamento de dados muito intensivo</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-content" id="api" style="display: none;">
+          <h2 class="section-title">APIs e Conectores</h2>
+          <p class="section-description">O Power Automate oferece centenas de conectores para integração com diferentes sistemas. Abaixo estão alguns exemplos de como interagir com eles.</p>
+
+          <div class="api-card">
+            <h3><span class="api-method">HTTP</span> Chamada REST básica</h3>
+            <div class="api-endpoint">POST https://api.powerautomate.com/v2.0/flows</div>
+            <p>Cria um novo fluxo no Power Automate usando a API HTTP.</p>
+            <div class="code-block">
+<pre>// Exemplo de requisição para criar um fluxo
+const requestOptions = {
+  method: 'POST',
+  headers: { 
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer ' + token 
+  },
+  body: JSON.stringify({
+    name: "Meu Novo Fluxo",
+    definition: {
+      triggers: {
+        manual: {
+          type: "Request",
+          kind: "Http",
+          inputs: { schema: {} }
+        }
+      },
+      actions: {
+        Send_an_email: {
+          type: "ApiConnection",
+          inputs: {
+            host: { connection: { name: "@parameters('$connections')['shared_office365']['connectionId']" } },
+            method: "post",
+            body: {
+              To: "exemplo@bradesco.com.br",
+              Subject: "Notificação Automática",
+              Body: "Este é um email automático do Power Automate"
+            }
+          }
+        }
+      }
+    }
+  })
+};
+
+fetch("https://api.powerautomate.com/v2.0/flows", requestOptions)
+  .then(response => response.json())
+  .then(data => console.log(data));</pre>
+            </div>
+          </div>
+
+          <div class="api-card">
+            <h3><span class="api-method">Connector</span> Sharepoint</h3>
+            <p>Exemplo de como utilizar o conector do SharePoint em um fluxo.</p>
+            <div class="code-block">
+<pre>// Fluxo para obter itens de uma lista do SharePoint
+{
+  "type": "flow",
+  "trigger": {
+    "type": "Request",
+    "kind": "Http"
+  },
+  "actions": {
+    "Get_items": {
+      "type": "ApiConnection",
+      "inputs": {
+        "host": {
+          "connection": {
+            "name": "@parameters('$connections')['sharepoint']['connectionId']"
+          }
+        },
+        "method": "get",
+        "path": "/datasets/@{encodeURIComponent('https://bradesco.sharepoint.com/sites/LowCodeHub')}/tables/@{encodeURIComponent('ListaNome')}/items"
+      }
+    }
+  }
+}</pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-content" id="practices" style="display: none;">
+          <h2 class="section-title">Melhores Práticas</h2>
+          <p class="section-description">Recomendações para desenvolver fluxos eficientes e sustentáveis no Power Automate.</p>
+
+          <div class="practice-card">
+            <h3>Nomenclatura padronizada</h3>
+            <p>Utilize um padrão de nomenclatura claro e consistente para os fluxos, facilitando a manutenção e a identificação do propósito de cada automação.</p>
+            <div style="background-color: #f5f5f5; padding: 1rem; border-radius: 0.25rem; margin-top: 1rem;">
+              <strong>Exemplo:</strong> [Departamento]-[Processo]-[Ação]<br>
+              <code>TI-OnboardingDev-AprovacaoAcesso</code>
+            </div>
+          </div>
+
+          <div class="practice-card">
+            <h3>Documentação incorporada</h3>
+            <p>Documente o fluxo utilizando descrições em cada ação e incluindo comentários explicativos. Isso facilita a manutenção por outros membros da equipe.</p>
+          </div>
+
+          <div class="practice-card">
+            <h3>Tratamento de erros</h3>
+            <p>Implemente tratamento de erros adequado para lidar com falhas na execução. Utilize ações de "Scope" com configurações de tratamento de erro para isolar e gerenciar falhas.</p>
+          </div>
+
+          <div class="practice-card">
+            <h3>Segmentação de fluxos complexos</h3>
+            <p>Divida automações complexas em fluxos menores e mais gerenciáveis que se comunicam entre si. Isso melhora a manutenção e o desempenho.</p>
+          </div>
+
+          <div class="practice-card">
+            <h3>Variáveis para valores reutilizáveis</h3>
+            <p>Utilize variáveis para armazenar valores que são utilizados múltiplas vezes no fluxo, facilitando a manutenção e reduzindo a chance de erros.</p>
+          </div>
+        </div>
+
+        <div class="tab-content" id="examples" style="display: none;">
+          <h2 class="section-title">Exemplos de Automação</h2>
+          <p class="section-description">Casos de uso reais implementados com Power Automate para a Engenharia de Plataforma do Bradesco.</p>
+
+          <div class="row" style="display: flex; flex-wrap: wrap; gap: 2rem; margin-bottom: 3rem;">
+            <div style="flex: 1; min-width: 300px; background-color: white; border-radius: 1rem; overflow: hidden; box-shadow: var(--shadow-subtle);">
+              <div style="background: linear-gradient(to right, #0066FF, #2B88D8); padding: 2rem; color: white;">
+                <h3>Fluxo de Aprovação de Pull Requests</h3>
+                <p style="color: rgba(255, 255, 255, 0.8); margin-top: 0.5rem;">Automação do processo de revisão e aprovação de código</p>
+              </div>
+              <div style="padding: 2rem;">
+                <h4 style="margin-bottom: 1rem;">Funcionalidades</h4>
+                <ul style="padding-left: 1.5rem; margin-bottom: 1.5rem;">
+                  <li>Notificação automática ao criar um novo PR</li>
+                  <li>Formulário de aprovação via e-mail ou Teams</li>
+                  <li>Consolidação de comentários de revisão</li>
+                  <li>Métricas de tempo de aprovação</li>
+                </ul>
+                <h4 style="margin-bottom: 1rem;">Tecnologias integradas</h4>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                  <span class="feature-tag">GitHub</span>
+                  <span class="feature-tag">Azure DevOps</span>
+                  <span class="feature-tag">Teams</span>
+                  <span class="feature-tag">Outlook</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="flex: 1; min-width: 300px; background-color: white; border-radius: 1rem; overflow: hidden; box-shadow: var(--shadow-subtle);">
+              <div style="background: linear-gradient(to right, #0066FF, #2B88D8); padding: 2rem; color: white;">
+                <h3>Monitoramento de Ambientes</h3>
+                <p style="color: rgba(255, 255, 255, 0.8); margin-top: 0.5rem;">Automação para alertas e relatórios sobre ambientes de desenvolvimento</p>
+              </div>
+              <div style="padding: 2rem;">
+                <h4 style="margin-bottom: 1rem;">Funcionalidades</h4>
+                <ul style="padding-left: 1.5rem; margin-bottom: 1.5rem;">
+                  <li>Verificação periódica de status dos serviços</li>
+                  <li>Alertas automáticos em caso de falha</li>
+                  <li>Dashboard de métricas em tempo real</li>
+                  <li>Relatórios semanais de disponibilidade</li>
+                </ul>
+                <h4 style="margin-bottom: 1rem;">Tecnologias integradas</h4>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                  <span class="feature-tag">Azure Monitor</span>
+                  <span class="feature-tag">Teams</span>
+                  <span class="feature-tag">Power BI</span>
+                  <span class="feature-tag">SharePoint</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="background-color: #f7f7f7; padding: 2rem; border-radius: 1rem;">
+            <h3 style="margin-bottom: 1.5rem;">Entre em contato com nossa equipe</h3>
+            <p style="margin-bottom: 1.5rem;">Precisa implementar uma automação com Power Automate? Nossa equipe pode ajudar a avaliar a viabilidade e desenvolver a solução ideal para o seu caso.</p>
+            <a href="mailto:lowcodehub@bradesco.com.br" class="btn btn-primary">Solicitar automação</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <div class="logo-icon">L</div>
+          <span class="logo-text">Low Code Hub</span>
+        </div>
+        <p class="footer-description">Squad de automação da tribo de Engenharia de Plataforma do Bradesco.</p>
+      </div>
+      <div class="footer-bottom">
+        <p class="copyright">© 2023 Bradesco. Todos os direitos reservados.</p>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="index.html#team">Equipe</a>
+          <a href="index.html#projects">Projetos</a>
+          <a href="index.html#platforms">Plataformas</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const tabs = document.querySelectorAll('.section-tab');
+      const tabContents = document.querySelectorAll('.tab-content');
+      
+      tabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+          const tabId = this.getAttribute('data-tab');
+          
+          // Update active tab
+          tabs.forEach(t => t.classList.remove('active'));
+          this.classList.add('active');
+          
+          // Show corresponding content
+          tabContents.forEach(content => {
+            content.style.display = 'none';
+            if (content.id === tabId) {
+              content.style.display = 'block';
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>

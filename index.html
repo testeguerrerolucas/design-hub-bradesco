@@ -1,18 +1,239 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>design-hub-bradesco</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
-    <meta property="og:image" content="/og-image.png" />
-  </head>
 
-  <body>
-    <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Low Code Hub - Bradesco</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <div class="logo-icon">L</div>
+        <span class="logo-text">Low Code Hub</span>
+      </div>
+      <nav class="nav-desktop">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#team" class="nav-link">Equipe</a>
+        <a href="#projects" class="nav-link">Projetos</a>
+        <a href="#platforms" class="nav-link">Plataformas</a>
+      </nav>
+      <button class="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <nav class="nav-mobile">
+      <a href="#home" class="nav-link">Home</a>
+      <a href="#team" class="nav-link">Equipe</a>
+      <a href="#projects" class="nav-link">Projetos</a>
+      <a href="#platforms" class="nav-link">Plataformas</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <span class="badge">Low Code Hub</span>
+          <h1>Automatizando processos para os desenvolvedores do Bradesco</h1>
+          <p>Nossa squad é especializada em criar automações que facilitam o trabalho dos desenvolvedores da tribo de Engenharia de Plataforma.</p>
+          <div class="hero-buttons">
+            <a href="#platforms" class="btn btn-primary">Conheça nossas plataformas</a>
+            <a href="#team" class="btn btn-secondary">Nossa equipe</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-overlay"></div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team section">
+      <div class="container">
+        <span class="section-tag">Nossa Equipe</span>
+        <h2 class="section-title">Conheça os integrantes da squad</h2>
+        <p class="section-description">Somos uma equipe multidisciplinar que trabalha com métodos ágeis para automatizar processos internos do Bradesco.</p>
+        
+        <div class="team-grid">
+          <div class="team-card">
+            <div class="team-avatar">
+              <div class="team-avatar-placeholder">ES</div>
+            </div>
+            <h3>Elson Soares</h3>
+            <p class="team-role">Product Owner</p>
+            <p class="team-description">Responsável pela priorização e gerenciamento das demandas da squad.</p>
+          </div>
+          
+          <div class="team-card">
+            <div class="team-avatar">
+              <div class="team-avatar-placeholder">VG</div>
+            </div>
+            <h3>Viviane Gaspar</h3>
+            <p class="team-role">Scrum Master</p>
+            <p class="team-description">Garante a aplicação dos métodos ágeis e facilita o trabalho da equipe.</p>
+          </div>
+          
+          <div class="team-card">
+            <div class="team-avatar">
+              <div class="team-avatar-placeholder">BP</div>
+            </div>
+            <h3>Bruno</h3>
+            <p class="team-role">Desenvolvedor</p>
+            <p class="team-description">Especialista em automações e desenvolvimento de soluções low-code.</p>
+          </div>
+          
+          <div class="team-card">
+            <div class="team-avatar">
+              <div class="team-avatar-placeholder">AS</div>
+            </div>
+            <h3>Ana</h3>
+            <p class="team-role">Desenvolvedora</p>
+            <p class="team-description">Trabalha com a criação de automações e interfaces para nossas ferramentas.</p>
+          </div>
+          
+          <div class="team-card">
+            <div class="team-avatar">
+              <div class="team-avatar-placeholder">PS</div>
+            </div>
+            <h3>Pedro</h3>
+            <p class="team-role">Desenvolvedor</p>
+            <p class="team-description">Foca na integração de sistemas e criação de soluções de automação.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects section bg-light">
+      <div class="container">
+        <span class="section-tag">Nossos Projetos</span>
+        <h2 class="section-title">Ferramentas que desenvolvemos</h2>
+        <p class="section-description">Criamos soluções para facilitar o trabalho dos desenvolvedores do Bradesco e ajudar na escolha de plataformas.</p>
+        
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-icon calculator-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="4" y="3" width="16" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                <path d="M8 7H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M8 12H10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M14 12H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M8 17H10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M14 17H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Calculadora de Plataformas</h3>
+            <p>Ferramenta que recomenda qual plataforma de automação é mais adequada para cada caso de uso, considerando diversos fatores técnicos e de negócio.</p>
+            <a href="calculator.html" class="btn-link">Experimente agora <span class="arrow-right">→</span></a>
+          </div>
+          
+          <div class="project-card">
+            <div class="project-icon survey-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 11L12 14L15 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>Pesquisa de Satisfação</h3>
+            <p>Formulário para coletar feedback dos usuários sobre as plataformas de automação, ajudando a melhorar continuamente nossas recomendações.</p>
+            <a href="survey.html" class="btn-link">Responder pesquisa <span class="arrow-right">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Platforms Section -->
+    <section id="platforms" class="platforms section">
+      <div class="container">
+        <span class="section-tag">Nossas Plataformas</span>
+        <h2 class="section-title">Conheça as plataformas que utilizamos</h2>
+        <p class="section-description">Trabalhamos com as principais ferramentas de automação para atender às necessidades dos desenvolvedores do Bradesco.</p>
+        
+        <div class="platforms-grid">
+          <div class="platform-card">
+            <div class="platform-icon power-automate">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>Power Automate</h3>
+            <p>Plataforma da Microsoft para automação de fluxos de trabalho com interface visual intuitiva e integração nativa com produtos Microsoft.</p>
+            <div class="platform-features">
+              <span class="feature-tag">Fluxos de aprovação</span>
+              <span class="feature-tag">Integrações Microsoft</span>
+              <span class="feature-tag">Interface visual</span>
+            </div>
+            <a href="power-automate.html" class="btn btn-outlined">Saiba mais</a>
+          </div>
+          
+          <div class="platform-card">
+            <div class="platform-icon automation-anywhere">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 4C13.0609 4 14.0783 4.42143 14.8284 5.17157C15.5786 5.92172 16 6.93913 16 8C16 9.06087 15.5786 10.0783 14.8284 10.8284C14.0783 11.5786 13.0609 12 12 12C10.9391 12 9.92172 11.5786 9.17157 10.8284C8.42143 10.0783 8 9.06087 8 8C8 6.93913 8.42143 5.92172 9.17157 5.17157C9.92172 4.42143 10.9391 4 12 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M6 21V19C6 17.9391 6.42143 16.9217 7.17157 16.1716C7.92172 15.4214 8.93913 15 10 15H14C15.0609 15 16.0783 15.4214 16.8284 16.1716C17.5786 16.9217 18 17.9391 18 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M21.8684 9.24C21.5967 9.16074 21.2975 9.24156 21.1064 9.4464C20.9301 9.64168 20.8882 9.92352 20.9991 10.16C21.4119 11.0039 21.6337 11.9275 21.648 12.866C21.6624 13.8045 21.4688 14.7345 21.0813 15.5922C20.6938 16.4499 20.1213 17.2127 19.4054 17.824C18.6895 18.4354 17.8486 18.881 16.9438 19.1299C16.039 19.3788 15.0931 19.425 14.1701 19.265C13.2471 19.1051 12.3667 18.7425 11.5938 18.2031C10.8566 17.6871 10.2362 17.024 9.77401 16.2544C9.58198 15.9548 9.41 15.6429 9.25836 15.32C9.15384 15.0932 8.89804 14.9751 8.65564 15.0169C8.41324 15.0587 8.2307 15.2815 8.22889 15.5296C8.22699 15.6016 8.23348 15.6736 8.24883 15.744C8.38869 16.1979 8.56869 16.6372 8.78682 17.056C9.18965 17.7791 9.71161 18.4285 10.3319 18.976C11.2351 19.7624 12.3307 20.3294 13.5091 20.6272C14.6876 20.925 15.9139 20.9449 17.1013 20.6851C18.2888 20.4254 19.4004 19.8939 20.3259 19.1362C21.2514 18.3784 21.9642 17.42 22.4064 16.3413C22.8485 15.2626 23.0062 14.0953 22.8653 12.9416C22.7244 11.7879 22.2889 10.6787 21.5951 9.70405C21.4359 9.4848 21.134 9.32884 21.8684 9.24Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>Automation Anywhere</h3>
+            <p>Plataforma de RPA (Robotic Process Automation) para automatizar tarefas repetitivas com bots inteligentes que interagem com sistemas existentes.</p>
+            <div class="platform-features">
+              <span class="feature-tag">Automação robótica</span>
+              <span class="feature-tag">Sistemas legados</span>
+              <span class="feature-tag">OCR/Processamento</span>
+            </div>
+            <a href="automation-anywhere.html" class="btn btn-outlined">Saiba mais</a>
+          </div>
+          
+          <div class="platform-card">
+            <div class="platform-icon service-now">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 9L12 4L21 9V20.4C21 20.7314 20.8683 21.0494 20.6339 21.2839C20.3995 21.5183 20.0815 21.65 19.75 21.65H4.25C3.91848 21.65 3.60054 21.5183 3.36612 21.2839C3.1317 21.0494 3 20.7314 3 20.4V9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M9 21.5V12H15V21.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>ServiceNow</h3>
+            <p>Plataforma de gestão de serviços na nuvem que permite automatizar fluxos de trabalho, gerenciar incidentes e criar portais de serviço.</p>
+            <div class="platform-features">
+              <span class="feature-tag">Gestão de serviços</span>
+              <span class="feature-tag">Portais de TI</span>
+              <span class="feature-tag">Fluxos de aprovação</span>
+            </div>
+            <a href="service-now.html" class="btn btn-outlined">Saiba mais</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <div class="logo-icon">L</div>
+          <span class="logo-text">Low Code Hub</span>
+        </div>
+        <p class="footer-description">Squad de automação da tribo de Engenharia de Plataforma do Bradesco.</p>
+      </div>
+      <div class="footer-bottom">
+        <p class="copyright">© 2023 Bradesco. Todos os direitos reservados.</p>
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a href="#team">Equipe</a>
+          <a href="#projects">Projetos</a>
+          <a href="#platforms">Plataformas</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
 </html>
