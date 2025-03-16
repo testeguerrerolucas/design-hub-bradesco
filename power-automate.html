@@ -9,6 +9,98 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .platform-hero {
+      background: linear-gradient(135deg, #0066FF 0%, #2B88D8 100%);
+      color: white;
+      padding: 8rem 0 5rem;
+    }
+    .platform-hero h1 {
+      color: white;
+    }
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 2rem;
+    }
+    .breadcrumb a:hover {
+      color: white;
+    }
+    .platform-hero p {
+      color: rgba(255, 255, 255, 0.9);
+      max-width: 700px;
+    }
+    .section-tabs {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 1rem;
+    }
+    .section-tab {
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      font-weight: 500;
+      transition: var(--transition-standard);
+    }
+    .section-tab.active {
+      background-color: var(--bradesco-red);
+      color: white;
+    }
+    .section-tab:not(.active):hover {
+      background-color: #f0f0f0;
+    }
+    .api-card {
+      background: #fff;
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      border: 1px solid #eee;
+      margin-bottom: 1.5rem;
+    }
+    .api-card h3 {
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .api-method {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.25rem;
+      background-color: #e2f5ff;
+      color: #0075ca;
+    }
+    .api-endpoint {
+      font-family: monospace;
+      background-color: #f5f5f5;
+      padding: 0.5rem 1rem;
+      border-radius: 0.25rem;
+      margin: 0.5rem 0 1rem;
+      font-size: 0.875rem;
+    }
+    .code-block {
+      background-color: #2d2d2d;
+      color: #f8f8f2;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      overflow-x: auto;
+      font-family: monospace;
+      margin: 1.5rem 0;
+    }
+    .practice-card {
+      background-color: white;
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      box-shadow: var(--shadow-subtle);
+      margin-bottom: 1.5rem;
+      border-left: 4px solid var(--bradesco-red);
+    }
+  </style>
 </head>
 <body>
   <header class="header">
@@ -58,14 +150,10 @@
         </div>
 
         <div class="tab-content" id="overview">
-          <div class="row" style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center;">
-            <div style="flex: 1; min-width: 300px; max-width: 600px; text-align: left;">
+          <div class="row" style="display: flex; flex-wrap: wrap; gap: 2rem;">
+            <div style="flex: 1; min-width: 300px;">
               <h2 class="section-title">Sobre o Power Automate</h2>
               <p>O Power Automate (anteriormente Microsoft Flow) é uma plataforma da Microsoft que permite criar fluxos de trabalho automatizados entre seus aplicativos e serviços favoritos para sincronizar arquivos, receber notificações, coletar dados e muito mais.</p>
-              
-              <p style="margin-top: 1rem;">Com uma interface visual intuitiva de arrastar e soltar, o Power Automate permite que qualquer pessoa, independentemente de suas habilidades técnicas, crie automações poderosas que economizam tempo e reduzem tarefas manuais e repetitivas.</p>
-              
-              <p style="margin-top: 1rem;">No Bradesco, o Power Automate é utilizado para uma variedade de casos de uso, desde a automação de processos de aprovação até a integração de diferentes sistemas e plataformas.</p>
               
               <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Principais Recursos</h3>
               <ul style="list-style: none; padding: 0;">
@@ -97,25 +185,11 @@
                     <p>Biblioteca de modelos pré-configurados para casos de uso comuns, acelerando a implementação.</p>
                   </div>
                 </li>
-                <li style="margin-bottom: 1rem; display: flex; align-items: flex-start; gap: 0.75rem;">
-                  <div style="min-width: 24px; height: 24px; background-color: var(--bradesco-red); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">5</div>
-                  <div>
-                    <strong>Gatilhos automáticos</strong>
-                    <p>Inicie fluxos com base em eventos como novos e-mails, atualizações de banco de dados ou atividades em redes sociais.</p>
-                  </div>
-                </li>
-                <li style="margin-bottom: 1rem; display: flex; align-items: flex-start; gap: 0.75rem;">
-                  <div style="min-width: 24px; height: 24px; background-color: var(--bradesco-red); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">6</div>
-                  <div>
-                    <strong>Controle de fluxo avançado</strong>
-                    <p>Implemente condições, loops e tratamento de erros para criar fluxos complexos e robustos.</p>
-                  </div>
-                </li>
               </ul>
             </div>
 
-            <div style="flex: 1; min-width: 300px; max-width: 450px;">
-              <div style="background-color: #f7f7f7; padding: 2rem; border-radius: 1rem; text-align: left;">
+            <div style="flex: 1; min-width: 300px;">
+              <div style="background-color: #f7f7f7; padding: 2rem; border-radius: 1rem;">
                 <h3 style="margin-bottom: 1.5rem;">Quando usar o Power Automate?</h3>
                 
                 <div style="margin-bottom: 1.5rem;">
@@ -129,9 +203,6 @@
                     <li>Notificações e alertas</li>
                     <li>Automação de tarefas simples a médias</li>
                     <li>Equipes com pouca experiência técnica</li>
-                    <li>Automação de processos de negócios</li>
-                    <li>Integração entre sistemas modernos</li>
-                    <li>Processamento e transformação de dados</li>
                   </ul>
                 </div>
 
@@ -145,41 +216,8 @@
                     <li>Automações de alto volume</li>
                     <li>Sistemas legados sem API nem UI</li>
                     <li>Processamento de dados muito intensivo</li>
-                    <li>Soluções que exigem latência mínima</li>
-                    <li>Casos que exigem manipulação visual avançada</li>
-                    <li>Interações físicas com hardware</li>
                   </ul>
                 </div>
-              </div>
-              
-              <div style="background-color: #FFF4E6; border-left: 4px solid #FF9800; padding: 1.5rem; border-radius: 0 0.5rem 0.5rem 0; margin-top: 2rem; text-align: left;">
-                <h4 style="margin-bottom: 0.75rem; color: #E65100;">Nota de Licenciamento</h4>
-                <p>O Power Automate está incluído no Microsoft 365, mas fluxos mais complexos e conectores premium podem exigir licenças adicionais. Consulte a equipe de Low Code Hub para avaliar suas necessidades.</p>
-              </div>
-            </div>
-          </div>
-          
-          <div style="margin-top: 4rem;">
-            <h3 class="section-title">Recursos do Power Automate</h3>
-            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem;">
-              <div style="background-color: white; border-radius: 1rem; padding: 2rem; box-shadow: var(--shadow-subtle); text-align: left; border-top: 4px solid #0078D4;">
-                <h4 style="margin-bottom: 1rem; color: #0078D4;">Cloud Flows</h4>
-                <p>Automatize processos entre mais de 300 serviços e aplicativos, desde Microsoft 365 até aplicativos de terceiros, utilizando uma interface de design visual.</p>
-              </div>
-              
-              <div style="background-color: white; border-radius: 1rem; padding: 2rem; box-shadow: var(--shadow-subtle); text-align: left; border-top: 4px solid #0078D4;">
-                <h4 style="margin-bottom: 1rem; color: #0078D4;">Desktop Flows (RPA)</h4>
-                <p>Automatize aplicações e processos baseados em desktop utilizando gravação de UI, automatizando tarefas realizadas em interfaces de usuário.</p>
-              </div>
-              
-              <div style="background-color: white; border-radius: 1rem; padding: 2rem; box-shadow: var(--shadow-subtle); text-align: left; border-top: 4px solid #0078D4;">
-                <h4 style="margin-bottom: 1rem; color: #0078D4;">Process Advisor</h4>
-                <p>Identifique processos que podem ser automatizados e receba recomendações sobre onde aplicar a automação para maximizar o impacto.</p>
-              </div>
-              
-              <div style="background-color: white; border-radius: 1rem; padding: 2rem; box-shadow: var(--shadow-subtle); text-align: left; border-top: 4px solid #0078D4;">
-                <h4 style="margin-bottom: 1rem; color: #0078D4;">Business Process Flows</h4>
-                <p>Crie processos guiados para padronizar operações de negócios, garantindo que todos sigam as mesmas etapas em processos importantes.</p>
               </div>
             </div>
           </div>
@@ -189,12 +227,11 @@
           <h2 class="section-title">APIs e Conectores</h2>
           <p class="section-description">O Power Automate oferece centenas de conectores para integração com diferentes sistemas. Abaixo estão alguns exemplos de como interagir com eles.</p>
 
-          <div class="api-grid">
-            <div class="api-card">
-              <h3><span class="api-method">HTTP</span> Chamada REST básica</h3>
-              <div class="api-endpoint">POST https://api.powerautomate.com/v2.0/flows</div>
-              <p>Cria um novo fluxo no Power Automate usando a API HTTP.</p>
-              <div class="code-block">
+          <div class="api-card">
+            <h3><span class="api-method">HTTP</span> Chamada REST básica</h3>
+            <div class="api-endpoint">POST https://api.powerautomate.com/v2.0/flows</div>
+            <p>Cria um novo fluxo no Power Automate usando a API HTTP.</p>
+            <div class="code-block">
 <pre>// Exemplo de requisição para criar um fluxo
 const requestOptions = {
   method: 'POST',
@@ -233,14 +270,13 @@ const requestOptions = {
 fetch("https://api.powerautomate.com/v2.0/flows", requestOptions)
   .then(response => response.json())
   .then(data => console.log(data));</pre>
-              </div>
             </div>
+          </div>
 
-            <div class="api-card">
-              <h3><span class="api-method">Connector</span> SharePoint</h3>
-              <div class="api-endpoint">GET /datasets/{site}/tables/{lista}/items</div>
-              <p>Obtém itens de uma lista do SharePoint.</p>
-              <div class="code-block">
+          <div class="api-card">
+            <h3><span class="api-method">Connector</span> Sharepoint</h3>
+            <p>Exemplo de como utilizar o conector do SharePoint em um fluxo.</p>
+            <div class="code-block">
 <pre>// Fluxo para obter itens de uma lista do SharePoint
 {
   "type": "flow",
@@ -263,329 +299,6 @@ fetch("https://api.powerautomate.com/v2.0/flows", requestOptions)
     }
   }
 }</pre>
-              </div>
-            </div>
-            
-            <div class="api-card">
-              <h3><span class="api-method">Connector</span> SQL Server</h3>
-              <div class="api-endpoint">POST /datasets/{server}/{database}/tables/{table}/items</div>
-              <p>Insere registros em uma tabela SQL Server.</p>
-              <div class="code-block">
-<pre>// Fluxo para inserir dados no SQL Server
-{
-  "type": "flow",
-  "trigger": {
-    "type": "Request",
-    "kind": "Http"
-  },
-  "actions": {
-    "Insert_row": {
-      "type": "ApiConnection",
-      "inputs": {
-        "host": {
-          "connection": {
-            "name": "@parameters('$connections')['sql']['connectionId']"
-          }
-        },
-        "method": "post",
-        "path": "/datasets/@{encodeURIComponent('server')}/tables/@{encodeURIComponent('[dbo].[Tabela]')}/items",
-        "body": {
-          "Nome": "Exemplo",
-          "DataCriacao": "@utcNow()",
-          "Status": "Ativo"
-        }
-      }
-    }
-  }
-}</pre>
-              </div>
-            </div>
-            
-            <div class="api-card">
-              <h3><span class="api-method">Connector</span> Microsoft Teams</h3>
-              <div class="api-endpoint">POST /v3/teams/{team}/channels/{channel}/messages</div>
-              <p>Envia mensagens para um canal no Microsoft Teams.</p>
-              <div class="code-block">
-<pre>// Fluxo para enviar mensagem ao Teams
-{
-  "type": "flow",
-  "trigger": {
-    "type": "Schedule",
-    "inputs": {
-      "schedule": {
-        "frequency": "Day",
-        "interval": 1
-      }
-    }
-  },
-  "actions": {
-    "Post_message": {
-      "type": "ApiConnection",
-      "inputs": {
-        "host": {
-          "connection": {
-            "name": "@parameters('$connections')['teams']['connectionId']"
-          }
-        },
-        "method": "post",
-        "body": {
-          "messageBody": "Lembrete: Reunião diária às 10:00",
-          "recipient": {
-            "groupId": "teamId",
-            "channelId": "channelId"
-          }
-        },
-        "path": "/v3/teams/@{encodeURIComponent('teamId')}/channels/@{encodeURIComponent('channelId')}/messages"
-      }
-    }
-  }
-}</pre>
-              </div>
-            </div>
-            
-            <div class="api-card">
-              <h3><span class="api-method">Connector</span> Excel Online</h3>
-              <div class="api-endpoint">POST /tables/{table}/rows</div>
-              <p>Adiciona linhas a uma tabela do Excel Online.</p>
-              <div class="code-block">
-<pre>// Fluxo para adicionar linha ao Excel
-{
-  "type": "flow",
-  "trigger": {
-    "type": "Request",
-    "kind": "Http"
-  },
-  "actions": {
-    "Add_a_row_into_a_table": {
-      "type": "ApiConnection",
-      "inputs": {
-        "host": {
-          "connection": {
-            "name": "@parameters('$connections')['excelonlinebusiness']['connectionId']"
-          }
-        },
-        "method": "post",
-        "body": {
-          "Projeto": "@triggerBody()?['projeto']",
-          "Status": "@triggerBody()?['status']",
-          "Responsável": "@triggerBody()?['responsavel']",
-          "DataInicio": "@formatDateTime(triggerBody()?['dataInicio'], 'yyyy-MM-dd')"
-        },
-        "path": "/datasets/@{encodeURIComponent('https://bradesco.sharepoint.com/sites/LowCodeHub/')}/tables/@{encodeURIComponent('Tabela1')}/rows"
-      }
-    }
-  }
-}</pre>
-              </div>
-            </div>
-            
-            <div class="api-card">
-              <h3><span class="api-method">HTTP</span> Acesso a API Externa</h3>
-              <div class="api-endpoint">GET https://api.externa.com/recursos</div>
-              <p>Conecta a uma API externa usando a ação HTTP no Power Automate.</p>
-              <div class="code-block">
-<pre>// Fluxo para acessar API externa
-{
-  "type": "flow",
-  "trigger": {
-    "type": "Recurrence",
-    "inputs": {
-      "frequency": "Hour",
-      "interval": 1
-    }
-  },
-  "actions": {
-    "HTTP": {
-      "type": "Http",
-      "inputs": {
-        "method": "GET",
-        "uri": "https://api.externa.com/recursos",
-        "headers": {
-          "Content-Type": "application/json",
-          "Authorization": "Bearer @{variables('ApiKey')}"
-        }
-      }
-    },
-    "Parse_JSON": {
-      "type": "ParseJson",
-      "inputs": {
-        "content": "@body('HTTP')",
-        "schema": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "id": { "type": "string" },
-              "nome": { "type": "string" },
-              "valor": { "type": "number" }
-            }
-          }
-        }
-      }
-    }
-  }
-}</pre>
-              </div>
-            </div>
-            
-            <div class="api-card">
-              <h3><span class="api-method">Connector</span> Aprovações</h3>
-              <div class="api-endpoint">POST /approvals</div>
-              <p>Cria um fluxo de aprovação para tomada de decisões.</p>
-              <div class="code-block">
-<pre>// Fluxo para criar aprovação
-{
-  "type": "flow",
-  "trigger": {
-    "type": "Request",
-    "kind": "Http"
-  },
-  "actions": {
-    "Create_approval": {
-      "type": "ApiConnectionWebhook",
-      "inputs": {
-        "host": {
-          "connection": {
-            "name": "@parameters('$connections')['approvals']['connectionId']"
-          }
-        },
-        "body": {
-          "approval": {
-            "requestor": "usuario@bradesco.com.br",
-            "itemName": "Solicitação de Acesso",
-            "details": "Solicitação de acesso ao sistema XYZ",
-            "itemUrl": "https://portal.bradesco.com.br/solicitacoes",
-            "notificationUrl": null,
-            "approvers": ["gerente@bradesco.com.br"],
-            "enableNotifications": true,
-            "requestsCount": 1,
-            "type": "respond"
-          }
-        },
-        "path": "/approvals"
-      }
-    }
-  }
-}</pre>
-              </div>
-            </div>
-            
-            <div class="api-card">
-              <h3><span class="api-method">Custom</span> API Connector</h3>
-              <div class="api-endpoint">Custom API Connection</div>
-              <p>Cria um conector personalizado para APIs internas do Bradesco.</p>
-              <div class="code-block">
-<pre>// Definição de um conector personalizado
-{
-  "swagger": "2.0",
-  "info": {
-    "title": "API Bradesco",
-    "description": "Conector para APIs internas do Bradesco",
-    "version": "1.0"
-  },
-  "host": "api.interna.bradesco.com.br",
-  "basePath": "/v1",
-  "schemes": ["https"],
-  "consumes": ["application/json"],
-  "produces": ["application/json"],
-  "securityDefinitions": {
-    "oauth2_auth": {
-      "type": "oauth2",
-      "flow": "accessCode",
-      "authorizationUrl": "https://auth.bradesco.com.br/oauth2/authorize",
-      "tokenUrl": "https://auth.bradesco.com.br/oauth2/token",
-      "scopes": {}
-    }
-  },
-  "paths": {
-    "/clientes": {
-      "get": {
-        "summary": "Obter Clientes",
-        "description": "Retorna lista de clientes",
-        "operationId": "GetClientes",
-        "parameters": [
-          {
-            "name": "filtro",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "description": "Filtro opcional"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Sucesso",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/Cliente"
-              }
-            }
-          }
-        }
-      }
-    }
-  },
-  "definitions": {
-    "Cliente": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "ID do cliente"
-        },
-        "nome": {
-          "type": "string",
-          "description": "Nome completo"
-        }
-      }
-    }
-  }
-}</pre>
-              </div>
-            </div>
-          </div>
-          
-          <div style="background-color: #E8F5E9; border-radius: 0.75rem; padding: 2rem; margin-top: 3rem; text-align: left;">
-            <h3 style="margin-bottom: 1rem; color: #2E7D32;">Conectores Populares no Bradesco</h3>
-            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem;">
-              <div>
-                <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">Microsoft 365</h4>
-                <ul style="list-style: disc; padding-left: 1.5rem;">
-                  <li>SharePoint</li>
-                  <li>Teams</li>
-                  <li>Outlook</li>
-                  <li>OneDrive</li>
-                  <li>Excel</li>
-                </ul>
-              </div>
-              <div>
-                <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">Bancos de Dados</h4>
-                <ul style="list-style: disc; padding-left: 1.5rem;">
-                  <li>SQL Server</li>
-                  <li>Azure SQL</li>
-                  <li>Oracle</li>
-                  <li>MongoDB</li>
-                </ul>
-              </div>
-              <div>
-                <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">DevOps</h4>
-                <ul style="list-style: disc; padding-left: 1.5rem;">
-                  <li>Azure DevOps</li>
-                  <li>GitHub</li>
-                  <li>GitLab</li>
-                  <li>Jira</li>
-                </ul>
-              </div>
-              <div>
-                <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">Outros</h4>
-                <ul style="list-style: disc; padding-left: 1.5rem;">
-                  <li>ServiceNow</li>
-                  <li>Salesforce</li>
-                  <li>SAP</li>
-                  <li>Azure Services</li>
-                </ul>
-              </div>
             </div>
           </div>
         </div>
@@ -606,58 +319,21 @@ fetch("https://api.powerautomate.com/v2.0/flows", requestOptions)
           <div class="practice-card">
             <h3>Documentação incorporada</h3>
             <p>Documente o fluxo utilizando descrições em cada ação e incluindo comentários explicativos. Isso facilita a manutenção por outros membros da equipe.</p>
-            <div style="background-color: #f5f5f5; padding: 1rem; border-radius: 0.25rem; margin-top: 1rem;">
-              <strong>Dica:</strong> Adicione descrições em todas as ações importantes e use a ação "Adicionar comentário" para documentar seções complexas do fluxo.
-            </div>
           </div>
 
           <div class="practice-card">
             <h3>Tratamento de erros</h3>
             <p>Implemente tratamento de erros adequado para lidar com falhas na execução. Utilize ações de "Scope" com configurações de tratamento de erro para isolar e gerenciar falhas.</p>
-            <div style="background-color: #f5f5f5; padding: 1rem; border-radius: 0.25rem; margin-top: 1rem;">
-              <strong>Recomendação:</strong> Configure notificações de erro e registre detalhes da falha em um sistema de log para facilitar a resolução de problemas.
-            </div>
           </div>
 
           <div class="practice-card">
             <h3>Segmentação de fluxos complexos</h3>
             <p>Divida automações complexas em fluxos menores e mais gerenciáveis que se comunicam entre si. Isso melhora a manutenção e o desempenho.</p>
-            <div style="background-color: #f5f5f5; padding: 1rem; border-radius: 0.25rem; margin-top: 1rem;">
-              <strong>Técnica:</strong> Use gatilhos HTTP para permitir que um fluxo chame outro, passando parâmetros entre eles.
-            </div>
           </div>
 
           <div class="practice-card">
             <h3>Variáveis para valores reutilizáveis</h3>
             <p>Utilize variáveis para armazenar valores que são utilizados múltiplas vezes no fluxo, facilitando a manutenção e reduzindo a chance de erros.</p>
-          </div>
-          
-          <div class="practice-card">
-            <h3>Minimize o uso de expressões complexas</h3>
-            <p>Evite expressões muito longas e complexas diretamente nas ações. Se necessário, divida o processamento em várias etapas usando variáveis intermediárias.</p>
-          </div>
-          
-          <div class="practice-card">
-            <h3>Controle de concorrência em loops</h3>
-            <p>Em ações "Apply to each", configure o controle de concorrência para otimizar o desempenho sem sobrecarregar os sistemas de destino.</p>
-            <div style="background-color: #f5f5f5; padding: 1rem; border-radius: 0.25rem; margin-top: 1rem;">
-              <strong>Configuração:</strong> Para integrações com APIs externas, limite a concorrência para evitar erros de limitação de taxa (rate limiting).
-            </div>
-          </div>
-          
-          <div class="practice-card">
-            <h3>Minimize chamadas de API desnecessárias</h3>
-            <p>Armazene resultados de chamadas de API em variáveis quando precisar reutilizá-los, em vez de fazer várias chamadas para o mesmo recurso.</p>
-          </div>
-          
-          <div class="practice-card">
-            <h3>Use ambientes de desenvolvimento e produção</h3>
-            <p>Desenvolva e teste os fluxos em ambientes separados antes de implantá-los em produção. Isso minimiza riscos e interrupções.</p>
-          </div>
-          
-          <div class="practice-card">
-            <h3>Implemente monitoramento proativo</h3>
-            <p>Configure mecanismos de alerta e monitoramento para ser notificado sobre falhas ou problemas de desempenho nos fluxos críticos.</p>
           </div>
         </div>
 
@@ -665,161 +341,55 @@ fetch("https://api.powerautomate.com/v2.0/flows", requestOptions)
           <h2 class="section-title">Exemplos de Automação</h2>
           <p class="section-description">Casos de uso reais implementados com Power Automate para a Engenharia de Plataforma do Bradesco.</p>
 
-          <div class="examples-grid">
-            <div class="example-card">
-              <div class="example-header">
+          <div class="row" style="display: flex; flex-wrap: wrap; gap: 2rem; margin-bottom: 3rem;">
+            <div style="flex: 1; min-width: 300px; background-color: white; border-radius: 1rem; overflow: hidden; box-shadow: var(--shadow-subtle);">
+              <div style="background: linear-gradient(to right, #0066FF, #2B88D8); padding: 2rem; color: white;">
                 <h3>Fluxo de Aprovação de Pull Requests</h3>
                 <p style="color: rgba(255, 255, 255, 0.8); margin-top: 0.5rem;">Automação do processo de revisão e aprovação de código</p>
               </div>
-              <div class="example-body">
+              <div style="padding: 2rem;">
                 <h4 style="margin-bottom: 1rem;">Funcionalidades</h4>
-                <ul>
+                <ul style="padding-left: 1.5rem; margin-bottom: 1.5rem;">
                   <li>Notificação automática ao criar um novo PR</li>
                   <li>Formulário de aprovação via e-mail ou Teams</li>
                   <li>Consolidação de comentários de revisão</li>
                   <li>Métricas de tempo de aprovação</li>
-                  <li>Integração com status checks do GitHub/Azure DevOps</li>
-                  <li>Lembretes automáticos para PRs pendentes</li>
                 </ul>
                 <h4 style="margin-bottom: 1rem;">Tecnologias integradas</h4>
-                <div class="example-tech">
-                  <span>GitHub</span>
-                  <span>Azure DevOps</span>
-                  <span>Teams</span>
-                  <span>Outlook</span>
-                  <span>Power BI</span>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                  <span class="feature-tag">GitHub</span>
+                  <span class="feature-tag">Azure DevOps</span>
+                  <span class="feature-tag">Teams</span>
+                  <span class="feature-tag">Outlook</span>
                 </div>
               </div>
             </div>
 
-            <div class="example-card">
-              <div class="example-header">
+            <div style="flex: 1; min-width: 300px; background-color: white; border-radius: 1rem; overflow: hidden; box-shadow: var(--shadow-subtle);">
+              <div style="background: linear-gradient(to right, #0066FF, #2B88D8); padding: 2rem; color: white;">
                 <h3>Monitoramento de Ambientes</h3>
                 <p style="color: rgba(255, 255, 255, 0.8); margin-top: 0.5rem;">Automação para alertas e relatórios sobre ambientes de desenvolvimento</p>
               </div>
-              <div class="example-body">
+              <div style="padding: 2rem;">
                 <h4 style="margin-bottom: 1rem;">Funcionalidades</h4>
-                <ul>
+                <ul style="padding-left: 1.5rem; margin-bottom: 1.5rem;">
                   <li>Verificação periódica de status dos serviços</li>
                   <li>Alertas automáticos em caso de falha</li>
                   <li>Dashboard de métricas em tempo real</li>
                   <li>Relatórios semanais de disponibilidade</li>
-                  <li>Escalação automática de incidentes</li>
-                  <li>Análise de tendências de problemas</li>
                 </ul>
                 <h4 style="margin-bottom: 1rem;">Tecnologias integradas</h4>
-                <div class="example-tech">
-                  <span>Azure Monitor</span>
-                  <span>Teams</span>
-                  <span>Power BI</span>
-                  <span>SharePoint</span>
-                  <span>ServiceNow</span>
-                </div>
-              </div>
-            </div>
-            
-            <div class="example-card">
-              <div class="example-header">
-                <h3>Sincronização de Ambientes</h3>
-                <p style="color: rgba(255, 255, 255, 0.8); margin-top: 0.5rem;">Automatização da configuração consistente entre ambientes</p>
-              </div>
-              <div class="example-body">
-                <h4 style="margin-bottom: 1rem;">Funcionalidades</h4>
-                <ul>
-                  <li>Sincronização automática de configurações</li>
-                  <li>Validação de consistência entre ambientes</li>
-                  <li>Promoção controlada de mudanças</li>
-                  <li>Auditoria de modificações</li>
-                  <li>Rollback automatizado em caso de falha</li>
-                </ul>
-                <h4 style="margin-bottom: 1rem;">Tecnologias integradas</h4>
-                <div class="example-tech">
-                  <span>Azure DevOps</span>
-                  <span>Azure Key Vault</span>
-                  <span>Git</span>
-                  <span>PowerShell</span>
-                  <span>Teams</span>
-                </div>
-              </div>
-            </div>
-            
-            <div class="example-card">
-              <div class="example-header">
-                <h3>Processamento de Documentação Técnica</h3>
-                <p style="color: rgba(255, 255, 255, 0.8); margin-top: 0.5rem;">Automatização de gestão de documentação de sistemas</p>
-              </div>
-              <div class="example-body">
-                <h4 style="margin-bottom: 1rem;">Funcionalidades</h4>
-                <ul>
-                  <li>Extração de documentação de código-fonte</li>
-                  <li>Geração automática de wiki e manuais</li>
-                  <li>Verificação de links quebrados e referências</li>
-                  <li>Conversão entre formatos de documento</li>
-                  <li>Notificação sobre documentação desatualizada</li>
-                </ul>
-                <h4 style="margin-bottom: 1rem;">Tecnologias integradas</h4>
-                <div class="example-tech">
-                  <span>SharePoint</span>
-                  <span>GitHub</span>
-                  <span>Markdown</span>
-                  <span>Azure DevOps Wiki</span>
-                  <span>Office 365</span>
-                </div>
-              </div>
-            </div>
-            
-            <div class="example-card">
-              <div class="example-header">
-                <h3>Gestão de Ambientes Efêmeros</h3>
-                <p style="color: rgba(255, 255, 255, 0.8); margin-top: 0.5rem;">Automação de ciclo de vida de ambientes de teste</p>
-              </div>
-              <div class="example-body">
-                <h4 style="margin-bottom: 1rem;">Funcionalidades</h4>
-                <ul>
-                  <li>Provisionamento automático sob demanda</li>
-                  <li>Destruição programada após uso</li>
-                  <li>Monitoramento de recursos e custos</li>
-                  <li>Integração com pipelines de CI/CD</li>
-                  <li>Restauração de dados de teste padronizados</li>
-                </ul>
-                <h4 style="margin-bottom: 1rem;">Tecnologias integradas</h4>
-                <div class="example-tech">
-                  <span>Azure Resource Manager</span>
-                  <span>Terraform</span>
-                  <span>Azure DevOps</span>
-                  <span>Power BI</span>
-                  <span>Teams</span>
-                </div>
-              </div>
-            </div>
-            
-            <div class="example-card">
-              <div class="example-header">
-                <h3>Onboarding de Desenvolvedores</h3>
-                <p style="color: rgba(255, 255, 255, 0.8); margin-top: 0.5rem;">Automação do processo de integração de novos devs</p>
-              </div>
-              <div class="example-body">
-                <h4 style="margin-bottom: 1rem;">Funcionalidades</h4>
-                <ul>
-                  <li>Provisionamento coordenado de acessos</li>
-                  <li>Criação automática de contas em sistemas</li>
-                  <li>Sequência de e-mails informativos</li>
-                  <li>Agendamento de reuniões de introdução</li>
-                  <li>Acompanhamento de conclusão do processo</li>
-                </ul>
-                <h4 style="margin-bottom: 1rem;">Tecnologias integradas</h4>
-                <div class="example-tech">
-                  <span>Azure AD</span>
-                  <span>ServiceNow</span>
-                  <span>SharePoint</span>
-                  <span>Teams</span>
-                  <span>Outlook</span>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                  <span class="feature-tag">Azure Monitor</span>
+                  <span class="feature-tag">Teams</span>
+                  <span class="feature-tag">Power BI</span>
+                  <span class="feature-tag">SharePoint</span>
                 </div>
               </div>
             </div>
           </div>
 
-          <div style="background-color: #f7f7f7; padding: 2rem; border-radius: 1rem; margin-top: 3rem;">
+          <div style="background-color: #f7f7f7; padding: 2rem; border-radius: 1rem;">
             <h3 style="margin-bottom: 1.5rem;">Entre em contato com nossa equipe</h3>
             <p style="margin-bottom: 1.5rem;">Precisa implementar uma automação com Power Automate? Nossa equipe pode ajudar a avaliar a viabilidade e desenvolver a solução ideal para o seu caso.</p>
             <a href="mailto:lowcodehub@bradesco.com.br" class="btn btn-primary">Solicitar automação</a>
