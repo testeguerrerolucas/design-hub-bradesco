@@ -1,4 +1,3 @@
-
 /* Base Styles */
 :root {
   --bradesco-red: #CC092F;
@@ -29,6 +28,7 @@ body {
   color: #333;
   line-height: 1.6;
   background-color: #fff;
+  text-align: center;
 }
 
 .container {
@@ -36,6 +36,9 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -47,6 +50,10 @@ h1, h2, h3, h4, h5, h6 {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+ul {
+  list-style-position: inside;
 }
 
 /* Buttons */
@@ -285,12 +292,14 @@ a {
   padding: 7rem 0 5rem;
   background-image: linear-gradient(135deg, #f5f7fa 0%, #f0f2f5 100%);
   overflow: hidden;
+  text-align: center;
 }
 
 .hero-content {
   max-width: 700px;
   position: relative;
   z-index: 10;
+  margin: 0 auto;
 }
 
 .badge {
@@ -422,6 +431,8 @@ a {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 2rem;
+  margin: 0 auto;
+  max-width: 1200px;
 }
 
 .project-card {
@@ -473,6 +484,8 @@ a {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 2rem;
+  margin: 0 auto;
+  max-width: 1200px;
 }
 
 .platform-card {
@@ -543,6 +556,67 @@ a {
 
 .platform-card .btn {
   align-self: flex-start;
+}
+
+/* Testimonials Section */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.testimonial-quote::before {
+  content: "\201C";
+  font-size: 3rem;
+  color: rgba(204, 9, 47, 0.1);
+  position: absolute;
+  left: -1rem;
+  top: -1rem;
+  font-family: serif;
+}
+
+/* CTA Section */
+.cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: var(--transition-standard);
+  cursor: pointer;
+}
+
+.cta-btn-primary {
+  background: linear-gradient(to right, var(--bradesco-red), var(--bradesco-darkred));
+  color: white;
+  border: none;
+}
+
+.cta-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(204, 9, 47, 0.3);
+}
+
+.cta-btn-secondary {
+  background-color: white;
+  color: #333;
+  border: 1px solid #e2e2e2;
+}
+
+.cta-btn-secondary:hover {
+  background-color: #f9f9f9;
+  transform: translateY(-2px);
 }
 
 /* Footer */
@@ -687,4 +761,197 @@ a {
 
 .delay-3 {
   animation-delay: 0.6s;
+}
+
+/* Platform Page Specific Styles */
+.platform-hero {
+  background: linear-gradient(135deg, #0066FF 0%, #2B88D8 100%);
+  color: white;
+  padding: 8rem 0 5rem;
+  text-align: center;
+}
+
+.platform-hero h1 {
+  color: white;
+  margin: 0 auto;
+}
+
+.platform-hero p {
+  max-width: 800px;
+  margin: 1rem auto;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 2rem;
+}
+
+.api-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem auto;
+}
+
+.api-card {
+  background: #fff;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  border: 1px solid #eee;
+  margin-bottom: 1.5rem;
+  text-align: left;
+  transition: var(--transition-standard);
+  box-shadow: var(--shadow-subtle);
+}
+
+.api-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-elevated);
+  border-color: rgba(204, 9, 47, 0.2);
+}
+
+.api-card h3 {
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.api-method {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  background-color: #e2f5ff;
+  color: #0075ca;
+}
+
+.api-endpoint {
+  font-family: monospace;
+  background-color: #f5f5f5;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  margin: 0.75rem 0 1rem;
+  font-size: 0.875rem;
+  overflow-x: auto;
+}
+
+.code-block {
+  background-color: #2d2d2d;
+  color: #f8f8f2;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  overflow-x: auto;
+  font-family: monospace;
+  margin: 1.5rem 0;
+  text-align: left;
+}
+
+.examples-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+  margin: 2rem auto;
+}
+
+.example-card {
+  background-color: white;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-subtle);
+  transition: var(--transition-standard);
+  border: 1px solid #eee;
+  text-align: left;
+}
+
+.example-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-elevated);
+  border-color: rgba(204, 9, 47, 0.2);
+}
+
+.example-header {
+  background: linear-gradient(to right, var(--bradesco-red), var(--bradesco-darkred));
+  padding: 1.5rem;
+  color: white;
+}
+
+.example-body {
+  padding: 1.5rem;
+}
+
+.example-body ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.example-body li {
+  margin-bottom: 0.5rem;
+}
+
+.example-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.example-tech span {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  background-color: #f0f0f0;
+  border-radius: 0.25rem;
+  color: #555;
+}
+
+.tab-content {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.section-tabs {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1rem;
+  justify-content: center;
+}
+
+.section-tab {
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: var(--transition-standard);
+}
+
+.section-tab.active {
+  background-color: var(--bradesco-red);
+  color: white;
+}
+
+.section-tab:not(.active):hover {
+  background-color: #f0f0f0;
+}
+
+.practice-card {
+  background-color: white;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-subtle);
+  margin-bottom: 1.5rem;
+  border-left: 4px solid var(--bradesco-red);
+  text-align: left;
+  transition: var(--transition-standard);
+}
+
+.practice-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-elevated);
 }

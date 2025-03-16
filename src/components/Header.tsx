@@ -30,8 +30,6 @@ const Header = () => {
     setIsMobileMenuOpen(false);
   }, [location.pathname]);
 
-  console.log("Current location in Header:", location.pathname);
-
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -57,15 +55,12 @@ const Header = () => {
               key={item.name}
               to={item.path}
               className={`relative font-medium text-sm transition-colors hover:text-bradesco-red ${
-                location.pathname === item.path || location.pathname.startsWith(`${item.path}/`)
+                location.pathname === item.path
                   ? "text-bradesco-red"
                   : "text-gray-800"
               } after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-bradesco-red after:transition-transform after:duration-300 hover:after:origin-bottom-left hover:after:scale-x-100 ${
-                location.pathname === item.path || location.pathname.startsWith(`${item.path}/`) 
-                  ? "after:scale-x-100" 
-                  : ""
+                location.pathname === item.path ? "after:scale-x-100" : ""
               }`}
-              onClick={() => console.log(`Clicked on nav item: ${item.path}`)}
             >
               {item.name}
             </Link>
@@ -76,6 +71,7 @@ const Header = () => {
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           className="md:hidden text-gray-800 focus:outline-none"
+          aria-label="Toggle mobile menu"
         >
           {isMobileMenuOpen ? (
             <X className="h-6 w-6" />
@@ -97,15 +93,12 @@ const Header = () => {
             <Link
               key={item.name}
               to={item.path}
-              className={`text-xl font-medium ${
-                location.pathname === item.path || location.pathname.startsWith(`${item.path}/`)
+              className={`text-xl font-medium text-center ${
+                location.pathname === item.path
                   ? "text-bradesco-red"
                   : "text-gray-800"
               }`}
-              onClick={() => {
-                console.log(`Clicked on mobile nav item: ${item.path}`);
-                setIsMobileMenuOpen(false);
-              }}
+              onClick={() => setIsMobileMenuOpen(false)}
             >
               {item.name}
             </Link>
