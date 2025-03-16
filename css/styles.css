@@ -723,7 +723,7 @@ ul {
 }
 
 .testimonial-quote::before {
-  content: """;
+  content: "\201C"; /* Fixed: Using proper Unicode for opening double quote */
   font-size: 3rem;
   color: rgba(204, 9, 47, 0.1);
   position: absolute;
