@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Low Code Hub - Bradesco</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="css/styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -19,10 +19,10 @@
         <span class="logo-text">Low Code Hub</span>
       </div>
       <nav class="nav-desktop">
-        <a href="#home" class="nav-link active">Home</a>
-        <a href="#team" class="nav-link">Equipe</a>
-        <a href="#projects" class="nav-link">Projetos</a>
-        <a href="#platforms" class="nav-link">Plataformas</a>
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="index.html#team" class="nav-link">Equipe</a>
+        <a href="index.html#projects" class="nav-link">Projetos</a>
+        <a href="index.html#platforms" class="nav-link">Plataformas</a>
       </nav>
       <button class="menu-toggle">
         <span></span>
@@ -31,10 +31,10 @@
       </button>
     </div>
     <nav class="nav-mobile">
-      <a href="#home" class="nav-link">Home</a>
-      <a href="#team" class="nav-link">Equipe</a>
-      <a href="#projects" class="nav-link">Projetos</a>
-      <a href="#platforms" class="nav-link">Plataformas</a>
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="index.html#team" class="nav-link">Equipe</a>
+      <a href="index.html#projects" class="nav-link">Projetos</a>
+      <a href="index.html#platforms" class="nav-link">Plataformas</a>
     </nav>
   </header>
 
@@ -45,7 +45,7 @@
         <div class="hero-content">
           <span class="badge">Low Code Hub</span>
           <h1>Automatizando processos para os desenvolvedores do Bradesco</h1>
-          <p>Nossa squad é especializada em criar automações que facilitam o trabalho dos desenvolvedores da tribo de Engenharia de Plataforma.</p>
+          <p>Nossa squad é especializada em criar automações que facilitam o trabalho dos desenvolvedores da tribo de Engenharia de Plataforma, reduzindo tarefas repetitivas e acelerando entregas de valor.</p>
           <div class="hero-buttons">
             <a href="#platforms" class="btn btn-primary">Conheça nossas plataformas</a>
             <a href="#team" class="btn btn-secondary">Nossa equipe</a>
@@ -55,8 +55,87 @@
       <div class="hero-overlay"></div>
     </section>
 
+    <!-- About Section -->
+    <section id="about" class="about section">
+      <div class="container">
+        <span class="section-tag">Sobre Nós</span>
+        <h2 class="section-title">Impulsionando o desenvolvimento ágil</h2>
+        <p class="section-description">A squad Low Code Hub é responsável por automatizar processos internos e recomendar soluções de baixo código para os desenvolvedores do Bradesco. Nosso foco é remover barreiras técnicas e acelerar a entrega de valor.</p>
+        
+        <div class="about-grid">
+          <div class="about-card">
+            <div class="about-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 7V12L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>Economia de tempo</h3>
+            <p>Nossas automações economizam em média 15 horas por semana para cada desenvolvedor da equipe.</p>
+          </div>
+          
+          <div class="about-card">
+            <div class="about-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M9.09 9C9.3251 8.33167 9.78915 7.76811 10.4 7.40913C11.0108 7.05016 11.7289 6.91894 12.4272 7.03871C13.1255 7.15849 13.7588 7.52152 14.2151 8.06353C14.6713 8.60553 14.9211 9.29152 14.92 10C14.92 12 11.92 13 11.92 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 17H12.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>Consultoria especializada</h3>
+            <p>Ajudamos os desenvolvedores a escolher as melhores soluções para cada caso de uso, com base em critérios técnicos e práticos.</p>
+          </div>
+          
+          <div class="about-card">
+            <div class="about-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20.24 12.24C21.3658 11.1142 21.9983 9.58722 21.9983 7.99504C21.9983 6.40285 21.3658 4.87588 20.24 3.75004C19.1142 2.62419 17.5872 1.9917 15.995 1.9917C14.4028 1.9917 12.8758 2.62419 11.75 3.75004L5 10.5V19H13.5L20.24 12.24Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16 8L2 22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M17.5 15H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>Soluções personalizadas</h3>
+            <p>Desenvolvemos ferramentas adaptadas às necessidades específicas de cada equipe dentro da tribo de Engenharia de Plataforma.</p>
+          </div>
+          
+          <div class="about-card">
+            <div class="about-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 8C19.6569 8 21 6.65685 21 5C21 3.34315 19.6569 2 18 2C16.3431 2 15 3.34315 15 5C15 6.65685 16.3431 8 18 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M6 15C7.65685 15 9 13.6569 9 12C9 10.3431 7.65685 9 6 9C4.34315 9 3 10.3431 3 12C3 13.6569 4.34315 15 6 15Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M18 22C19.6569 22 21 20.6569 21 19C21 17.3431 19.6569 16 18 16C16.3431 16 15 17.3431 15 19C15 20.6569 16.3431 22 18 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8.59 13.51L15.42 17.49" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M15.41 6.51L8.59 10.49" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>Compartilhamento de conhecimento</h3>
+            <p>Promovemos workshops e documentações detalhadas para disseminar o conhecimento sobre automação em toda a organização.</p>
+          </div>
+        </div>
+        
+        <div class="about-stats">
+          <div class="stat-item">
+            <div class="stat-number">350+</div>
+            <div class="stat-label">Processos Automatizados</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">6</div>
+            <div class="stat-label">Especialistas</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Plataformas</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">98%</div>
+            <div class="stat-label">Satisfação</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Team Section -->
-    <section id="team" class="team section">
+    <section id="team" class="team section bg-light">
       <div class="container">
         <span class="section-tag">Nossa Equipe</span>
         <h2 class="section-title">Conheça os integrantes da squad</h2>
@@ -69,7 +148,12 @@
             </div>
             <h3>Elson Soares</h3>
             <p class="team-role">Product Owner</p>
-            <p class="team-description">Responsável pela priorização e gerenciamento das demandas da squad.</p>
+            <p class="team-description">Responsável pela priorização e gerenciamento das demandas da squad, com foco na entrega de valor para os desenvolvedores do Bradesco.</p>
+            <div class="team-skills">
+              <span class="skill-tag">Product Management</span>
+              <span class="skill-tag">Agile</span>
+              <span class="skill-tag">Kanban</span>
+            </div>
           </div>
           
           <div class="team-card">
@@ -78,7 +162,12 @@
             </div>
             <h3>Viviane Gaspar</h3>
             <p class="team-role">Scrum Master</p>
-            <p class="team-description">Garante a aplicação dos métodos ágeis e facilita o trabalho da equipe.</p>
+            <p class="team-description">Garante a aplicação dos métodos ágeis e facilita o trabalho da equipe, removendo impedimentos e otimizando os processos internos.</p>
+            <div class="team-skills">
+              <span class="skill-tag">Scrum</span>
+              <span class="skill-tag">Facilitação</span>
+              <span class="skill-tag">Liderança</span>
+            </div>
           </div>
           
           <div class="team-card">
@@ -87,7 +176,12 @@
             </div>
             <h3>Bruno</h3>
             <p class="team-role">Desenvolvedor</p>
-            <p class="team-description">Especialista em automações e desenvolvimento de soluções low-code.</p>
+            <p class="team-description">Especialista em automações e desenvolvimento de soluções low-code, com foco em Power Automate e integrações com sistemas Microsoft.</p>
+            <div class="team-skills">
+              <span class="skill-tag">Power Automate</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">APIs</span>
+            </div>
           </div>
           
           <div class="team-card">
@@ -96,7 +190,12 @@
             </div>
             <h3>Ana</h3>
             <p class="team-role">Desenvolvedora</p>
-            <p class="team-description">Trabalha com a criação de automações e interfaces para nossas ferramentas.</p>
+            <p class="team-description">Trabalha com a criação de automações e interfaces para nossas ferramentas, especializada em Automation Anywhere e processos de RPA.</p>
+            <div class="team-skills">
+              <span class="skill-tag">Automation Anywhere</span>
+              <span class="skill-tag">RPA</span>
+              <span class="skill-tag">UX/UI</span>
+            </div>
           </div>
           
           <div class="team-card">
@@ -105,14 +204,33 @@
             </div>
             <h3>Pedro</h3>
             <p class="team-role">Desenvolvedor</p>
-            <p class="team-description">Foca na integração de sistemas e criação de soluções de automação.</p>
+            <p class="team-description">Foca na integração de sistemas e criação de soluções de automação, com especialidade em ServiceNow e fluxos de trabalho avançados.</p>
+            <div class="team-skills">
+              <span class="skill-tag">ServiceNow</span>
+              <span class="skill-tag">Integrações</span>
+              <span class="skill-tag">Java</span>
+            </div>
+          </div>
+          
+          <div class="team-card">
+            <div class="team-avatar">
+              <div class="team-avatar-placeholder">CS</div>
+            </div>
+            <h3>Carla</h3>
+            <p class="team-role">Analista de Dados</p>
+            <p class="team-description">Responsável por analisar os dados de uso das plataformas e criar dashboards para mensurar o impacto das automações.</p>
+            <div class="team-skills">
+              <span class="skill-tag">Power BI</span>
+              <span class="skill-tag">Analytics</span>
+              <span class="skill-tag">SQL</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="projects section bg-light">
+    <section id="projects" class="projects section">
       <div class="container">
         <span class="section-tag">Nossos Projetos</span>
         <h2 class="section-title">Ferramentas que desenvolvemos</h2>
@@ -132,7 +250,13 @@
             </div>
             <h3>Calculadora de Plataformas</h3>
             <p>Ferramenta que recomenda qual plataforma de automação é mais adequada para cada caso de uso, considerando diversos fatores técnicos e de negócio.</p>
-            <a href="calculator.html" class="btn-link">Experimente agora <span class="arrow-right">→</span></a>
+            <ul class="project-features">
+              <li>Análise de requisitos técnicos</li>
+              <li>Consideração de prazos e orçamentos</li>
+              <li>Avaliação de complexidade</li>
+              <li>Recomendações personalizadas</li>
+            </ul>
+            <a href="pages/calculator.html" class="btn-link">Experimente agora <span class="arrow-right">→</span></a>
           </div>
           
           <div class="project-card">
@@ -144,14 +268,41 @@
             </div>
             <h3>Pesquisa de Satisfação</h3>
             <p>Formulário para coletar feedback dos usuários sobre as plataformas de automação, ajudando a melhorar continuamente nossas recomendações.</p>
-            <a href="survey.html" class="btn-link">Responder pesquisa <span class="arrow-right">→</span></a>
+            <ul class="project-features">
+              <li>Avaliação de usabilidade</li>
+              <li>Feedback sobre suporte</li>
+              <li>Sugestões de melhorias</li>
+              <li>Análise de dados em tempo real</li>
+            </ul>
+            <a href="pages/survey.html" class="btn-link">Responder pesquisa <span class="arrow-right">→</span></a>
+          </div>
+          
+          <div class="project-card">
+            <div class="project-icon documentation-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M14 2V8H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16 13H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16 17H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M10 9H9H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>Base de Conhecimento</h3>
+            <p>Documentação completa sobre as plataformas de automação, com tutoriais, exemplos de código e melhores práticas para desenvolvedores.</p>
+            <ul class="project-features">
+              <li>Tutoriais passo a passo</li>
+              <li>Exemplos de código</li>
+              <li>Resolução de problemas comuns</li>
+              <li>Atualizações frequentes</li>
+            </ul>
+            <a href="pages/knowledge-base.html" class="btn-link">Acessar base de conhecimento <span class="arrow-right">→</span></a>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Platforms Section -->
-    <section id="platforms" class="platforms section">
+    <section id="platforms" class="platforms section bg-light">
       <div class="container">
         <span class="section-tag">Nossas Plataformas</span>
         <h2 class="section-title">Conheça as plataformas que utilizamos</h2>
@@ -171,7 +322,27 @@
               <span class="feature-tag">Integrações Microsoft</span>
               <span class="feature-tag">Interface visual</span>
             </div>
-            <a href="power-automate.html" class="btn btn-outlined">Saiba mais</a>
+            <div class="platform-comparison">
+              <div class="comparison-item">
+                <span class="comparison-label">Facilidade de uso</span>
+                <div class="comparison-bar">
+                  <div class="comparison-fill" style="width: 90%"></div>
+                </div>
+              </div>
+              <div class="comparison-item">
+                <span class="comparison-label">Integrações</span>
+                <div class="comparison-bar">
+                  <div class="comparison-fill" style="width: 85%"></div>
+                </div>
+              </div>
+              <div class="comparison-item">
+                <span class="comparison-label">Complexidade</span>
+                <div class="comparison-bar">
+                  <div class="comparison-fill" style="width: 40%"></div>
+                </div>
+              </div>
+            </div>
+            <a href="pages/power-automate.html" class="btn btn-outlined">Saiba mais</a>
           </div>
           
           <div class="platform-card">
@@ -189,7 +360,27 @@
               <span class="feature-tag">Sistemas legados</span>
               <span class="feature-tag">OCR/Processamento</span>
             </div>
-            <a href="automation-anywhere.html" class="btn btn-outlined">Saiba mais</a>
+            <div class="platform-comparison">
+              <div class="comparison-item">
+                <span class="comparison-label">Facilidade de uso</span>
+                <div class="comparison-bar">
+                  <div class="comparison-fill" style="width: 70%"></div>
+                </div>
+              </div>
+              <div class="comparison-item">
+                <span class="comparison-label">Integrações</span>
+                <div class="comparison-bar">
+                  <div class="comparison-fill" style="width: 75%"></div>
+                </div>
+              </div>
+              <div class="comparison-item">
+                <span class="comparison-label">Complexidade</span>
+                <div class="comparison-bar">
+                  <div class="comparison-fill" style="width: 65%"></div>
+                </div>
+              </div>
+            </div>
+            <a href="pages/automation-anywhere.html" class="btn btn-outlined">Saiba mais</a>
           </div>
           
           <div class="platform-card">
@@ -206,8 +397,83 @@
               <span class="feature-tag">Portais de TI</span>
               <span class="feature-tag">Fluxos de aprovação</span>
             </div>
-            <a href="service-now.html" class="btn btn-outlined">Saiba mais</a>
+            <div class="platform-comparison">
+              <div class="comparison-item">
+                <span class="comparison-label">Facilidade de uso</span>
+                <div class="comparison-bar">
+                  <div class="comparison-fill" style="width: 65%"></div>
+                </div>
+              </div>
+              <div class="comparison-item">
+                <span class="comparison-label">Integrações</span>
+                <div class="comparison-bar">
+                  <div class="comparison-fill" style="width: 95%"></div>
+                </div>
+              </div>
+              <div class="comparison-item">
+                <span class="comparison-label">Complexidade</span>
+                <div class="comparison-bar">
+                  <div class="comparison-fill" style="width: 80%"></div>
+                </div>
+              </div>
+            </div>
+            <a href="pages/service-now.html" class="btn btn-outlined">Saiba mais</a>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section">
+      <div class="container">
+        <span class="section-tag">Depoimentos</span>
+        <h2 class="section-title">O que dizem nossos usuários</h2>
+        <p class="section-description">Veja como nossas soluções impactam o dia a dia dos desenvolvedores do Bradesco.</p>
+        
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-quote">"A calculadora de plataformas nos ajudou a escolher a solução certa para automatizar nosso processo de deploy, economizando semanas de pesquisa e testes."</div>
+            <div class="testimonial-author">
+              <div class="author-avatar">MR</div>
+              <div class="author-info">
+                <div class="author-name">Marcelo Rodrigues</div>
+                <div class="author-role">Tech Lead - Squad Backend</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="testimonial-card">
+            <div class="testimonial-quote">"As automações desenvolvidas pela equipe do Low Code Hub reduziram em 70% o tempo que gastávamos com tarefas administrativas no nosso pipeline de CI/CD."</div>
+            <div class="testimonial-author">
+              <div class="author-avatar">CP</div>
+              <div class="author-info">
+                <div class="author-name">Carolina Pereira</div>
+                <div class="author-role">DevOps Engineer</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="testimonial-card">
+            <div class="testimonial-quote">"O suporte da equipe é excelente. Sempre que temos dúvidas sobre qual ferramenta usar para um caso específico, eles nos auxiliam com recomendações baseadas em experiências reais."</div>
+            <div class="testimonial-author">
+              <div class="author-avatar">RT</div>
+              <div class="author-info">
+                <div class="author-name">Rafael Torres</div>
+                <div class="author-role">Arquiteto de Soluções</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="cta" class="cta section">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Precisa de uma automação para seu time?</h2>
+          <p>Nossa equipe está pronta para ajudar a identificar oportunidades de automação e recomendar a melhor plataforma para o seu caso.</p>
+          <a href="mailto:lowcodehub@bradesco.com.br" class="btn btn-primary">Entre em contato</a>
         </div>
       </div>
     </section>
@@ -225,15 +491,15 @@
       <div class="footer-bottom">
         <p class="copyright">© 2023 Bradesco. Todos os direitos reservados.</p>
         <div class="footer-links">
-          <a href="#home">Home</a>
-          <a href="#team">Equipe</a>
-          <a href="#projects">Projetos</a>
-          <a href="#platforms">Plataformas</a>
+          <a href="index.html">Home</a>
+          <a href="index.html#team">Equipe</a>
+          <a href="index.html#projects">Projetos</a>
+          <a href="index.html#platforms">Plataformas</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
