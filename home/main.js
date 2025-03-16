@@ -54,6 +54,8 @@ document.addEventListener('DOMContentLoaded', function() {
           link.classList.remove('active');
           if (link.getAttribute('href') === `#${sectionId}`) {
             link.classList.add('active');
+          } else if (link.getAttribute('href') === `index.html#${sectionId}`) {
+            link.classList.add('active');
           }
         });
       }
@@ -68,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Animate elements on scroll
   const animateOnScroll = function() {
-    const elements = document.querySelectorAll('.team-card, .project-card, .platform-card');
+    const elements = document.querySelectorAll('.team-card, .project-card, .platform-card, .about-card, .testimonial-card');
     
     elements.forEach(element => {
       const elementPosition = element.getBoundingClientRect().top;
@@ -85,4 +87,39 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Initial animation check
   animateOnScroll();
+  
+  // Counter animation for stats
+  const stats = document.querySelectorAll('.stat-number');
+  
+  if (stats.length) {
+    const animateStats = function() {
+      stats.forEach(stat => {
+        const elementPosition = stat.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        
+        if (elementPosition < windowHeight - 50 && !stat.classList.contains('animated')) {
+          const target = parseInt(stat.innerText);
+          let count = 0;
+          const duration = 2000; // ms
+          const frameRate = 30; // fps
+          const increment = target / (duration / 1000 * frameRate);
+          
+          stat.classList.add('animated');
+          
+          const counter = setInterval(() => {
+            count += increment;
+            if (count >= target) {
+              clearInterval(counter);
+              stat.innerText = target + (stat.innerText.includes('%') ? '%' : '');
+            } else {
+              stat.innerText = Math.floor(count) + (stat.innerText.includes('%') ? '%' : '');
+            }
+          }, 1000 / frameRate);
+        }
+      });
+    };
+    
+    window.addEventListener('scroll', animateStats);
+    animateStats();
+  }
 });

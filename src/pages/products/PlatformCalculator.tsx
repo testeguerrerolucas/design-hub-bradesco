@@ -2,7 +2,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Calculator, ArrowRight, Check, Zap, Bot, Cloud } from "lucide-react";
-import { Link } from "react-router-dom";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -18,6 +17,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Progress } from "@/components/ui/progress";
 
+import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import PlatformBreadcrumb from "../../components/PlatformBreadcrumb";
 import PageTransition from "../../components/PageTransition";
@@ -437,24 +437,8 @@ const PlatformCalculator = () => {
 
   return (
     <PageTransition>
-      <div className="w-full bg-white shadow-md py-4 mb-10">
-        <div className="container mx-auto px-6 flex justify-between items-center">
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 rounded-full bg-bradesco-red flex items-center justify-center">
-              <span className="text-white font-display font-bold text-sm">L</span>
-            </div>
-            <span className="font-display font-semibold text-lg">
-              Low Code Hub
-            </span>
-          </Link>
-          <nav className="flex items-center space-x-8">
-            <Link to="/power-automate" className="font-medium text-sm hover:text-bradesco-red">Power Automate</Link>
-            <Link to="/automation-anywhere" className="font-medium text-sm hover:text-bradesco-red">Automation Anywhere</Link>
-            <Link to="/service-now" className="font-medium text-sm hover:text-bradesco-red">ServiceNow</Link>
-          </nav>
-        </div>
-      </div>
-      <main className="min-h-screen">
+      <Header />
+      <main className="pt-20 min-h-screen">
         <section className="py-10 px-6 bg-gray-50">
           <div className="container mx-auto">
             <PlatformBreadcrumb

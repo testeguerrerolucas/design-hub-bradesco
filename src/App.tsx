@@ -3,7 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import PowerAutomate from "./pages/PowerAutomate";
 import AutomationAnywhere from "./pages/AutomationAnywhere";
@@ -27,7 +27,7 @@ const App = () => {
           <AnimatePresence mode="wait">
             <Routes>
               {/* Define PowerAutomate as the initial page */}
-              <Route path="/" element={<Navigate to="/power-automate" replace />} />
+              <Route path="/" element={<PowerAutomate />} />
               <Route path="/power-automate" element={<PowerAutomate />} />
               <Route path="/power-automate/*" element={<PowerAutomate />} />
               <Route path="/automation-anywhere" element={<AutomationAnywhere />} />
