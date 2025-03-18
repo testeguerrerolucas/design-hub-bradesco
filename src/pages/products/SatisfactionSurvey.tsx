@@ -17,15 +17,14 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 
-import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import PlatformBreadcrumb from "../../components/PlatformBreadcrumb";
 import PageTransition from "../../components/PageTransition";
+import { Link } from "react-router-dom";
 
 const formSchema = z.object({
   nome: z.string().min(2, { message: "Nome deve ter pelo menos 2 caracteres" }),
@@ -70,8 +69,24 @@ const SatisfactionSurvey = () => {
 
   return (
     <PageTransition>
-      <Header />
-      <main className="pt-20 min-h-screen">
+      <div className="w-full bg-white shadow-md py-4 mb-10">
+        <div className="container mx-auto px-6 flex justify-between items-center">
+          <Link to="/" className="flex items-center space-x-2">
+            <div className="w-8 h-8 rounded-full bg-bradesco-red flex items-center justify-center">
+              <span className="text-white font-display font-bold text-sm">L</span>
+            </div>
+            <span className="font-display font-semibold text-lg">
+              Low Code Hub
+            </span>
+          </Link>
+          <nav className="flex items-center space-x-8">
+            <Link to="/power-automate" className="font-medium text-sm hover:text-bradesco-red">Power Automate</Link>
+            <Link to="/automation-anywhere" className="font-medium text-sm hover:text-bradesco-red">Automation Anywhere</Link>
+            <Link to="/service-now" className="font-medium text-sm hover:text-bradesco-red">ServiceNow</Link>
+          </nav>
+        </div>
+      </div>
+      <main className="min-h-screen">
         <section className="py-10 px-6 bg-gray-50">
           <div className="container mx-auto">
             <PlatformBreadcrumb

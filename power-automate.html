@@ -7,249 +7,1324 @@
   <title>Power Automate - Low Code Hub</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="platform.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <header class="platform-header">
-    <div class="container">
-      <div class="logo">
-        <div class="logo-icon">L</div>
-        <span class="logo-text">Low Code Hub</span>
+  <div class="container">
+    <!-- Platform Navigation -->
+    <nav class="platform-nav">
+      <div class="platform-nav-brand">
+        <a href="index.html">
+          <div class="logo-circle">L</div>
+          <span>Low Code Hub</span>
+        </a>
       </div>
-      <nav class="nav-desktop">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="power-automate.html" class="nav-link active">Power Automate</a>
-        <a href="automation-anywhere.html" class="nav-link">Automation Anywhere</a>
-        <a href="service-now.html" class="nav-link">ServiceNow</a>
-      </nav>
-      <button class="menu-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-    <nav class="nav-mobile">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="power-automate.html" class="nav-link">Power Automate</a>
-      <a href="automation-anywhere.html" class="nav-link">Automation Anywhere</a>
-      <a href="service-now.html" class="nav-link">ServiceNow</a>
+      <div class="platform-nav-menu">
+        <a href="power-automate.html" class="active">
+          <i class="fas fa-bolt"></i> Power Automate
+        </a>
+        <a href="automation-anywhere.html">
+          <i class="fas fa-robot"></i> Automation Anywhere
+        </a>
+        <a href="service-now.html">
+          <i class="fas fa-cloud"></i> ServiceNow
+        </a>
+      </div>
     </nav>
-  </header>
 
-  <main class="platform-main">
-    <section class="platform-hero">
-      <div class="container">
-        <div class="breadcrumb">
-          <a href="index.html">Home</a> / <span>Power Automate</span>
-        </div>
-        <div class="platform-header-content">
-          <div class="platform-icon-container">
-            <div class="platform-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-          </div>
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+      <a href="index.html"><i class="fas fa-home"></i></a>
+      <span>/</span>
+      <span>Power Automate</span>
+    </div>
+
+    <!-- Platform Tabs -->
+    <div class="platform-tabs">
+      <button class="tab-button active" data-tab="overview">Visão Geral</button>
+      <button class="tab-button" data-tab="apis">APIs</button>
+      <button class="tab-button" data-tab="use-cases">Casos de Uso</button>
+      <button class="tab-button" data-tab="templates">Templates</button>
+      <button class="tab-button" data-tab="best-practices">Boas Práticas</button>
+    </div>
+
+    <!-- Platform Content -->
+    <div class="platform-content">
+      <!-- Overview Tab -->
+      <div class="tab-content active" id="overview">
+        <div class="page-header">
           <h1>Power Automate</h1>
+          <p>Automatize processos e fluxos de trabalho sem código</p>
         </div>
-        <p class="platform-description">
-          Plataforma de automação de processos da Microsoft para criar fluxos automatizados entre aplicativos e serviços. 
-          Permite automatizar fluxos de trabalho repetitivos sem necessidade de codificação avançada.
-        </p>
-      </div>
-    </section>
 
-    <section class="platform-tabs">
-      <div class="container">
-        <nav class="tabs-nav">
-          <a href="power-automate.html" class="tab active">Visão Geral</a>
-          <a href="power-automate-use-cases.html" class="tab">Casos de Uso</a>
-          <a href="power-automate-templates.html" class="tab">Templates</a>
-          <a href="power-automate-best-practices.html" class="tab">Boas Práticas</a>
-          <a href="power-automate-apis.html" class="tab">APIs</a>
-        </nav>
-      </div>
-    </section>
-
-    <section class="platform-content">
-      <div class="container">
-        <div class="content-grid">
-          <div class="main-content">
+        <div class="overview-grid">
+          <div class="overview-content">
             <h2>O que é o Power Automate?</h2>
             <p>
-              Power Automate (anteriormente conhecido como Microsoft Flow) é uma plataforma de automação de processos de
-              negócios que permite aos usuários criar fluxos de trabalho automatizados entre diferentes aplicativos e
-              serviços. Com uma interface intuitiva de arrastar e soltar, é possível automatizar tarefas repetitivas sem
-              necessidade de conhecimento profundo de programação.
+              O Microsoft Power Automate (anteriormente conhecido como Microsoft Flow) é uma plataforma de automação de processos de negócios (BPA) que permite aos usuários criar fluxos de trabalho automatizados entre diferentes aplicativos e serviços. Desde a automação de notificações simples até complexos fluxos de aprovação de documentos, o Power Automate fornece as ferramentas para otimizar processos e aumentar a produtividade.
             </p>
             <p>
-              A plataforma oferece centenas de conectores pré-construídos para serviços Microsoft e de
-              terceiros, permitindo integrações rápidas com sistemas como Office 365, SharePoint, Teams, SQL
-              Server, Salesforce, e muitos outros.
+              Com o Power Automate, você pode automatizar tarefas repetitivas, processos de negócios e fluxos de trabalho. A plataforma oferece mais de 400 conectores pré-construídos para serviços como Microsoft 365, Dynamics 365, Salesforce, e muitos outros.
             </p>
-
-            <h2>Como utilizamos no Bradesco</h2>
-            <p>
-              No Bradesco, o Power Automate é utilizado como uma ferramenta estratégica para automatização de processos
-              internos, especialmente aqueles relacionados ao ambiente Microsoft 365. A plataforma tem sido
-              fundamental para melhorar a eficiência operacional em diversas áreas.
-            </p>
-            <p>
-              A squad Low Code Hub desenvolveu uma série de templates, conectores customizados e boas práticas
-              para garantir que as automações criadas sejam seguras, escaláveis e alinhadas às políticas de governança do
-              banco. Também oferecemos suporte técnico e treinamentos regulares para capacitar os colaboradores.
-            </p>
-
-            <h2>Principais recursos</h2>
-            <div class="feature-grid">
-              <div class="feature-card">
-                <div class="feature-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </div>
-                <h3>Fluxos automatizados</h3>
-                <p>Crie automações baseadas em triggers de sistemas ou executadas em intervalos regulares.</p>
-              </div>
-              <div class="feature-card">
-                <div class="feature-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M16 18L22 12L16 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M8 6L2 12L8 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </div>
-                <h3>UI Flows (RPA)</h3>
-                <p>Automatize interações com interfaces de usuário de aplicações desktop ou web.</p>
-              </div>
-              <div class="feature-card">
-                <div class="feature-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M9 11L12 14L22 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M21 12V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </div>
-                <h3>Aprovações</h3>
-                <p>Sistema de aprovações integrado para automatizar processos de decisão.</p>
-              </div>
-              <div class="feature-card">
-                <div class="feature-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M18 20V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M12 20V4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M6 20V14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </div>
-                <h3>Conectores premium</h3>
-                <p>Acesso a conectores avançados para integrações com sistemas corporativos.</p>
-              </div>
-            </div>
-
-            <h2>Casos de Uso</h2>
-            <p>Conheça alguns exemplos de como o Power Automate tem sido utilizado para resolver desafios reais no Bradesco.</p>
-            <div class="use-case-grid">
-              <div class="use-case-card">
-                <div class="use-case-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </div>
-                <h3>Integração entre Sistemas</h3>
-                <p>Necessidade de integrar dados entre sistemas internos sem desenvolvimento de APIs customizadas.</p>
-                <div class="use-case-solution">
-                  <h4>Solução:</h4>
-                  <p>Fluxos de Power Automate utilizando conectores prontos para sincronizar dados entre sistemas.</p>
+            
+            <div class="feature-list">
+              <div class="feature">
+                <i class="fas fa-check-circle"></i>
+                <div>
+                  <h3>Automação sem código</h3>
+                  <p>Crie fluxos automatizados sem precisar escrever código, usando uma interface visual intuitiva.</p>
                 </div>
               </div>
-              <div class="use-case-card">
-                <div class="use-case-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M9 11L12 14L22 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M21 12V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
+              
+              <div class="feature">
+                <i class="fas fa-check-circle"></i>
+                <div>
+                  <h3>Conectores pré-construídos</h3>
+                  <p>Mais de 400 conectores para serviços populares e aplicativos empresariais.</p>
                 </div>
-                <h3>Automação de Aprovações</h3>
-                <p>Processo manual de aprovação de documentos e requisições causando atrasos operacionais.</p>
-                <div class="use-case-solution">
-                  <h4>Solução:</h4>
-                  <p>Fluxo de aprovação automatizado com notificações e registro de auditoria em SharePoint.</p>
+              </div>
+              
+              <div class="feature">
+                <i class="fas fa-check-circle"></i>
+                <div>
+                  <h3>Fluxos baseados em templates</h3>
+                  <p>Use templates pré-configurados ou crie seus próprios para acelerar o desenvolvimento.</p>
+                </div>
+              </div>
+              
+              <div class="feature">
+                <i class="fas fa-check-circle"></i>
+                <div>
+                  <h3>Automação desktop</h3>
+                  <p>Automatize aplicativos de desktop com o recurso de automação UI.</p>
                 </div>
               </div>
             </div>
-            <a href="power-automate-use-cases.html" class="btn btn-primary">Ver todos os casos de uso</a>
           </div>
-          <div class="sidebar">
-            <div class="sidebar-box">
-              <h3>Links Rápidos</h3>
-              <ul class="quick-links">
-                <li>
-                  <a href="#">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M19 21L12 16L5 21V5C5 4.46957 5.21071 3.96086 5.58579 3.58579C5.96086 3.21071 6.46957 3 7 3H17C17.5304 3 18.0391 3.21071 18.4142 3.58579C18.7893 3.96086 19 4.46957 19 5V21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    Portal Power Automate
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M19 21L12 16L5 21V5C5 4.46957 5.21071 3.96086 5.58579 3.58579C5.96086 3.21071 6.46957 3 7 3H17C17.5304 3 18.0391 3.21071 18.4142 3.58579C18.7893 3.96086 19 4.46957 19 5V21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    Documentação Técnica
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M19 21L12 16L5 21V5C5 4.46957 5.21071 3.96086 5.58579 3.58579C5.96086 3.21071 6.46957 3 7 3H17C17.5304 3 18.0391 3.21071 18.4142 3.58579C18.7893 3.96086 19 4.46957 19 5V21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    Solicitação de Licença
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M19 21L12 16L5 21V5C5 4.46957 5.21071 3.96086 5.58579 3.58579C5.96086 3.21071 6.46957 3 7 3H17C17.5304 3 18.0391 3.21071 18.4142 3.58579C18.7893 3.96086 19 4.46957 19 5V21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    Treinamentos
-                  </a>
-                </li>
-              </ul>
-              <div class="support-box">
-                <h4>Precisa de ajuda?</h4>
-                <p>Nossa equipe está disponível para auxiliar no desenvolvimento de fluxos e resolver dúvidas técnicas.</p>
-                <a href="#" class="btn btn-white">Fale Conosco</a>
+          
+          <div class="overview-image">
+            <img src="https://via.placeholder.com/600x400?text=Power+Automate" alt="Power Automate">
+            <div class="overview-card">
+              <h3>Comece a automatizar</h3>
+              <p>Explore nossos recursos para começar a criar seus primeiros fluxos de trabalho automatizados</p>
+              <div class="card-links">
+                <a href="#apis" class="card-link" onclick="changeTab('apis')">
+                  <i class="fas fa-code"></i> Ver APIs
+                </a>
+                <a href="#templates" class="card-link" onclick="changeTab('templates')">
+                  <i class="fas fa-file-alt"></i> Templates
+                </a>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  </main>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-logo">
-          <div class="logo-icon">L</div>
-          <span class="logo-text">Low Code Hub</span>
+      <!-- APIs Tab -->
+      <div class="tab-content" id="apis">
+        <div class="page-header">
+          <h1>APIs e Conectores</h1>
+          <p>Conecte-se a serviços e sistemas através de APIs e conectores prontos</p>
         </div>
-        <p class="footer-description">Squad de automação da tribo de Engenharia de Plataforma do Bradesco.</p>
+
+        <div class="search-box">
+          <input type="text" id="api-search" placeholder="Buscar APIs...">
+          <i class="fas fa-search"></i>
+        </div>
+
+        <div class="apis-grid">
+          <!-- API 1 -->
+          <div class="api-card" data-api="microsoft">
+            <div class="api-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="api-content">
+              <h3>Microsoft Graph API</h3>
+              <p>Acesse dados e funcionalidades do Microsoft 365, incluindo Office, Outlook, OneDrive e Teams.</p>
+              <div class="api-endpoint">
+                <code>https://graph.microsoft.com/v1.0/</code>
+              </div>
+              <a href="#" class="api-docs">
+                <i class="fas fa-external-link-alt"></i> Documentação
+              </a>
+            </div>
+          </div>
+
+          <!-- API 2 -->
+          <div class="api-card" data-api="sharepoint">
+            <div class="api-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="api-content">
+              <h3>SharePoint API</h3>
+              <p>Manipule listas, documentos e conteúdo do SharePoint através de APIs REST.</p>
+              <div class="api-endpoint">
+                <code>https://{tenant}.sharepoint.com/_api/</code>
+              </div>
+              <a href="#" class="api-docs">
+                <i class="fas fa-external-link-alt"></i> Documentação
+              </a>
+            </div>
+          </div>
+
+          <!-- API 3 -->
+          <div class="api-card" data-api="azure">
+            <div class="api-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="api-content">
+              <h3>Azure Functions API</h3>
+              <p>Integre com Azure Functions para executar funções personalizadas e código complexo.</p>
+              <div class="api-endpoint">
+                <code>https://{function-app}.azurewebsites.net/api/{function}</code>
+              </div>
+              <a href="#" class="api-docs">
+                <i class="fas fa-external-link-alt"></i> Documentação
+              </a>
+            </div>
+          </div>
+
+          <!-- API 4 -->
+          <div class="api-card" data-api="dynamics">
+            <div class="api-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="api-content">
+              <h3>Dynamics 365 API</h3>
+              <p>Acesse e manipule dados do Dynamics 365 para automação de processos de negócios.</p>
+              <div class="api-endpoint">
+                <code>https://{org}.api.crm.dynamics.com/api/data/v9.2/</code>
+              </div>
+              <a href="#" class="api-docs">
+                <i class="fas fa-external-link-alt"></i> Documentação
+              </a>
+            </div>
+          </div>
+
+          <!-- API 5 -->
+          <div class="api-card" data-api="sql">
+            <div class="api-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="api-content">
+              <h3>SQL Server Connector</h3>
+              <p>Conecte-se a bancos de dados SQL Server para consultar e manipular dados.</p>
+              <div class="api-endpoint">
+                <code>Conector nativo para SQL Server</code>
+              </div>
+              <a href="#" class="api-docs">
+                <i class="fas fa-external-link-alt"></i> Documentação
+              </a>
+            </div>
+          </div>
+
+          <!-- API 6 -->
+          <div class="api-card" data-api="common">
+            <div class="api-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="api-content">
+              <h3>Common Data Service</h3>
+              <p>Acesse o Common Data Service para integração com toda a plataforma Power Platform.</p>
+              <div class="api-endpoint">
+                <code>https://{org}.api.crm.dynamics.com/api/data/v9.2/</code>
+              </div>
+              <a href="#" class="api-docs">
+                <i class="fas fa-external-link-alt"></i> Documentação
+              </a>
+            </div>
+          </div>
+
+          <!-- API 7 -->
+          <div class="api-card" data-api="onedrive">
+            <div class="api-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="api-content">
+              <h3>OneDrive API</h3>
+              <p>Gerencie arquivos e pastas no OneDrive e SharePoint através de APIs REST.</p>
+              <div class="api-endpoint">
+                <code>https://graph.microsoft.com/v1.0/me/drive</code>
+              </div>
+              <a href="#" class="api-docs">
+                <i class="fas fa-external-link-alt"></i> Documentação
+              </a>
+            </div>
+          </div>
+
+          <!-- API 8 -->
+          <div class="api-card" data-api="teams">
+            <div class="api-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="api-content">
+              <h3>Microsoft Teams API</h3>
+              <p>Integre com Microsoft Teams para automação de mensagens e webhooks.</p>
+              <div class="api-endpoint">
+                <code>https://graph.microsoft.com/v1.0/teams</code>
+              </div>
+              <a href="#" class="api-docs">
+                <i class="fas fa-external-link-alt"></i> Documentação
+              </a>
+            </div>
+          </div>
+
+          <!-- API 9 -->
+          <div class="api-card" data-api="outlook">
+            <div class="api-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="api-content">
+              <h3>Outlook API</h3>
+              <p>Acesse emails, calendários e contatos do Outlook para automação de processos.</p>
+              <div class="api-endpoint">
+                <code>https://graph.microsoft.com/v1.0/me/messages</code>
+              </div>
+              <a href="#" class="api-docs">
+                <i class="fas fa-external-link-alt"></i> Documentação
+              </a>
+            </div>
+          </div>
+
+          <!-- API 10 -->
+          <div class="api-card" data-api="excel">
+            <div class="api-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="api-content">
+              <h3>Excel API</h3>
+              <p>Manipule planilhas do Excel online para automação de cálculos e relatórios.</p>
+              <div class="api-endpoint">
+                <code>https://graph.microsoft.com/v1.0/me/drive/items/{id}/workbook</code>
+              </div>
+              <a href="#" class="api-docs">
+                <i class="fas fa-external-link-alt"></i> Documentação
+              </a>
+            </div>
+          </div>
+
+          <!-- Adicione mais 10 API cards para completar 20 -->
+          <!-- API 11 -->
+          <div class="api-card" data-api="powerbi">
+            <div class="api-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="api-content">
+              <h3>Power BI API</h3>
+              <p>Integre com relatórios e dashboards do Power BI para automação de análises.</p>
+              <div class="api-endpoint">
+                <code>https://api.powerbi.com/v1.0/myorg/</code>
+              </div>
+              <a href="#" class="api-docs">
+                <i class="fas fa-external-link-alt"></i> Documentação
+              </a>
+            </div>
+          </div>
+
+          <!-- API 12 -->
+          <div class="api-card" data-api="azure-storage">
+            <div class="api-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="api-content">
+              <h3>Azure Storage API</h3>
+              <p>Acesse e gerencie dados em blobs, filas e tabelas do Azure Storage.</p>
+              <div class="api-endpoint">
+                <code>https://{account}.blob.core.windows.net/</code>
+              </div>
+              <a href="#" class="api-docs">
+                <i class="fas fa-external-link-alt"></i> Documentação
+              </a>
+            </div>
+          </div>
+
+          <!-- API 13 -->
+          <div class="api-card" data-api="http">
+            <div class="api-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="api-content">
+              <h3>HTTP Connector</h3>
+              <p>Conecte-se a qualquer API RESTful através do conector HTTP genérico.</p>
+              <div class="api-endpoint">
+                <code>Qualquer endpoint HTTP/HTTPS</code>
+              </div>
+              <a href="#" class="api-docs">
+                <i class="fas fa-external-link-alt"></i> Documentação
+              </a>
+            </div>
+          </div>
+
+          <!-- API 14 -->
+          <div class="api-card" data-api="forms">
+            <div class="api-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="api-content">
+              <h3>Microsoft Forms API</h3>
+              <p>Colete e processe dados de formulários utilizando a API do Microsoft Forms.</p>
+              <div class="api-endpoint">
+                <code>https://graph.microsoft.com/v1.0/me/drive/items/{id}/form</code>
+              </div>
+              <a href="#" class="api-docs">
+                <i class="fas fa-external-link-alt"></i> Documentação
+              </a>
+            </div>
+          </div>
+
+          <!-- API 15 -->
+          <div class="api-card" data-api="planner">
+            <div class="api-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="api-content">
+              <h3>Planner API</h3>
+              <p>Gerencie tarefas e planos no Microsoft Planner para automação de projetos.</p>
+              <div class="api-endpoint">
+                <code>https://graph.microsoft.com/v1.0/planner/plans</code>
+              </div>
+              <a href="#" class="api-docs">
+                <i class="fas fa-external-link-alt"></i> Documentação
+              </a>
+            </div>
+          </div>
+
+          <!-- API 16 -->
+          <div class="api-card" data-api="cosmos">
+            <div class="api-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="api-content">
+              <h3>Cosmos DB Connector</h3>
+              <p>Acesse e gerencie dados no Azure Cosmos DB para aplicações escaláveis.</p>
+              <div class="api-endpoint">
+                <code>Conector nativo para Cosmos DB</code>
+              </div>
+              <a href="#" class="api-docs">
+                <i class="fas fa-external-link-alt"></i> Documentação
+              </a>
+            </div>
+          </div>
+
+          <!-- API 17 -->
+          <div class="api-card" data-api="approval">
+            <div class="api-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="api-content">
+              <h3>Approvals API</h3>
+              <p>Crie e gerencie fluxos de aprovação dentro do Power Automate.</p>
+              <div class="api-endpoint">
+                <code>Conector nativo para Approvals</code>
+              </div>
+              <a href="#" class="api-docs">
+                <i class="fas fa-external-link-alt"></i> Documentação
+              </a>
+            </div>
+          </div>
+
+          <!-- API 18 -->
+          <div class="api-card" data-api="dataverse">
+            <div class="api-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="api-content">
+              <h3>Dataverse API</h3>
+              <p>Acesse e manipule dados no Microsoft Dataverse (antigo CDS).</p>
+              <div class="api-endpoint">
+                <code>https://{org}.api.crm.dynamics.com/api/data/v9.2/</code>
+              </div>
+              <a href="#" class="api-docs">
+                <i class="fas fa-external-link-alt"></i> Documentação
+              </a>
+            </div>
+          </div>
+
+          <!-- API 19 -->
+          <div class="api-card" data-api="ai-builder">
+            <div class="api-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="api-content">
+              <h3>AI Builder API</h3>
+              <p>Utilize recursos de IA para processamento de formulários, reconhecimento de imagens e mais.</p>
+              <div class="api-endpoint">
+                <code>Conector nativo para AI Builder</code>
+              </div>
+              <a href="#" class="api-docs">
+                <i class="fas fa-external-link-alt"></i> Documentação
+              </a>
+            </div>
+          </div>
+
+          <!-- API 20 -->
+          <div class="api-card" data-api="service-bus">
+            <div class="api-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="api-content">
+              <h3>Azure Service Bus</h3>
+              <p>Conecte-se ao Azure Service Bus para mensageria entre aplicações.</p>
+              <div class="api-endpoint">
+                <code>https://{namespace}.servicebus.windows.net/</code>
+              </div>
+              <a href="#" class="api-docs">
+                <i class="fas fa-external-link-alt"></i> Documentação
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="footer-bottom">
-        <p class="copyright">© 2023 Bradesco. Todos os direitos reservados.</p>
-        <div class="footer-links">
-          <a href="index.html">Home</a>
-          <a href="index.html#team">Equipe</a>
-          <a href="index.html#projects">Projetos</a>
-          <a href="index.html#platforms">Plataformas</a>
+
+      <!-- Use Cases Tab -->
+      <div class="tab-content" id="use-cases">
+        <div class="page-header">
+          <h1>Casos de Uso</h1>
+          <p>Exemplos práticos de como o Power Automate está sendo utilizado</p>
+        </div>
+
+        <div class="use-cases-grid">
+          <!-- Use Case 1 -->
+          <div class="use-case-card">
+            <div class="use-case-icon">
+              <i class="fas fa-file-invoice"></i>
+            </div>
+            <h3>Aprovação de Despesas</h3>
+            <p>Fluxo de trabalho automatizado para aprovação de despesas de funcionários, com notificações e integrações com sistemas financeiros.</p>
+            <div class="use-case-solution">
+              <p class="solution-label">Solução:</p>
+              <p class="solution-text">Fluxo de aprovação com integração ao SharePoint e SAP</p>
+            </div>
+            <a href="#" class="use-case-link">Ver detalhes <i class="fas fa-arrow-right"></i></a>
+          </div>
+
+          <!-- Use Case 2 -->
+          <div class="use-case-card">
+            <div class="use-case-icon">
+              <i class="fas fa-user-plus"></i>
+            </div>
+            <h3>Onboarding de Funcionários</h3>
+            <p>Automatização do processo de integração de novos funcionários, com criação de contas, notificações e tarefas de boas-vindas.</p>
+            <div class="use-case-solution">
+              <p class="solution-label">Solução:</p>
+              <p class="solution-text">Fluxo acionado por formulário Microsoft Forms</p>
+            </div>
+            <a href="#" class="use-case-link">Ver detalhes <i class="fas fa-arrow-right"></i></a>
+          </div>
+
+          <!-- Use Case 3 -->
+          <div class="use-case-card">
+            <div class="use-case-icon">
+              <i class="fas fa-file-signature"></i>
+            </div>
+            <h3>Aprovação de Documentos</h3>
+            <p>Fluxo de aprovação de documentos com múltiplos níveis de aprovação, comentários e controle de versão.</p>
+            <div class="use-case-solution">
+              <p class="solution-label">Solução:</p>
+              <p class="solution-text">Integração SharePoint com aprovações em paralelo</p>
+            </div>
+            <a href="#" class="use-case-link">Ver detalhes <i class="fas fa-arrow-right"></i></a>
+          </div>
+
+          <!-- Use Case 4 -->
+          <div class="use-case-card">
+            <div class="use-case-icon">
+              <i class="fas fa-headset"></i>
+            </div>
+            <h3>Atendimento ao Cliente</h3>
+            <p>Automação de respostas a solicitações de clientes, com roteamento inteligente e base de conhecimento.</p>
+            <div class="use-case-solution">
+              <p class="solution-label">Solução:</p>
+              <p class="solution-text">Integração com Dynamics 365 e AI Builder</p>
+            </div>
+            <a href="#" class="use-case-link">Ver detalhes <i class="fas fa-arrow-right"></i></a>
+          </div>
+
+          <!-- Adicione mais 16 use cases para completar 20 -->
+          <!-- Use Case 5 -->
+          <div class="use-case-card">
+            <div class="use-case-icon">
+              <i class="fas fa-calendar-check"></i>
+            </div>
+            <h3>Agendamento de Reuniões</h3>
+            <p>Automação para agendamento de reuniões com verificação de disponibilidade e confirmações automáticas.</p>
+            <div class="use-case-solution">
+              <p class="solution-label">Solução:</p>
+              <p class="solution-text">Integração Outlook Calendar e Teams</p>
+            </div>
+            <a href="#" class="use-case-link">Ver detalhes <i class="fas fa-arrow-right"></i></a>
+          </div>
+
+          <!-- Use Case 6 -->
+          <div class="use-case-card">
+            <div class="use-case-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3>Relatórios Automáticos</h3>
+            <p>Geração e distribuição automatizada de relatórios com dados de múltiplas fontes em períodos programados.</p>
+            <div class="use-case-solution">
+              <p class="solution-label">Solução:</p>
+              <p class="solution-text">Integração Excel Online e Power BI</p>
+            </div>
+            <a href="#" class="use-case-link">Ver detalhes <i class="fas fa-arrow-right"></i></a>
+          </div>
+
+          <!-- Use Case 7 -->
+          <div class="use-case-card">
+            <div class="use-case-icon">
+              <i class="fas fa-clipboard-list"></i>
+            </div>
+            <h3>Gestão de Projetos</h3>
+            <p>Automação de atualizações de status, notificações e criação de tarefas para gerenciamento de projetos.</p>
+            <div class="use-case-solution">
+              <p class="solution-label">Solução:</p>
+              <p class="solution-text">Integração Microsoft Planner e Teams</p>
+            </div>
+            <a href="#" class="use-case-link">Ver detalhes <i class="fas fa-arrow-right"></i></a>
+          </div>
+
+          <!-- Use Case 8 -->
+          <div class="use-case-card">
+            <div class="use-case-icon">
+              <i class="fas fa-comments"></i>
+            </div>
+            <h3>Feedback de Clientes</h3>
+            <p>Coleta e análise automatizada de feedback de clientes com alertas para avaliações negativas.</p>
+            <div class="use-case-solution">
+              <p class="solution-label">Solução:</p>
+              <p class="solution-text">Microsoft Forms com análise de sentimento</p>
+            </div>
+            <a href="#" class="use-case-link">Ver detalhes <i class="fas fa-arrow-right"></i></a>
+          </div>
+
+          <!-- Use Case 9 -->
+          <div class="use-case-card">
+            <div class="use-case-icon">
+              <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <h3>Monitoramento de Sistemas</h3>
+            <p>Alertas automáticos para problemas em sistemas com escalonamento baseado em gravidade.</p>
+            <div class="use-case-solution">
+              <p class="solution-label">Solução:</p>
+              <p class="solution-text">Integração Azure Monitor e Teams</p>
+            </div>
+            <a href="#" class="use-case-link">Ver detalhes <i class="fas fa-arrow-right"></i></a>
+          </div>
+
+          <!-- Use Case 10 -->
+          <div class="use-case-card">
+            <div class="use-case-icon">
+              <i class="fas fa-bullhorn"></i>
+            </div>
+            <h3>Comunicações Internas</h3>
+            <p>Distribuição automatizada de comunicados internos através de múltiplos canais.</p>
+            <div class="use-case-solution">
+              <p class="solution-label">Solução:</p>
+              <p class="solution-text">Integração SharePoint, Teams e Email</p>
+            </div>
+            <a href="#" class="use-case-link">Ver detalhes <i class="fas fa-arrow-right"></i></a>
+          </div>
+
+          <!-- Use Case 11 -->
+          <div class="use-case-card">
+            <div class="use-case-icon">
+              <i class="fas fa-shopping-cart"></i>
+            </div>
+            <h3>Processamento de Pedidos</h3>
+            <p>Automação do fluxo de pedidos desde a entrada até o faturamento e despacho.</p>
+            <div class="use-case-solution">
+              <p class="solution-label">Solução:</p>
+              <p class="solution-text">Integração ERP com Dynamics 365</p>
+            </div>
+            <a href="#" class="use-case-link">Ver detalhes <i class="fas fa-arrow-right"></i></a>
+          </div>
+
+          <!-- Use Case 12 -->
+          <div class="use-case-card">
+            <div class="use-case-icon">
+              <i class="fas fa-id-card"></i>
+            </div>
+            <h3>Gestão de Contratos</h3>
+            <p>Automação de ciclo de vida de contratos com alertas de vencimento e renovação.</p>
+            <div class="use-case-solution">
+              <p class="solution-label">Solução:</p>
+              <p class="solution-text">SharePoint com assinaturas digitais</p>
+            </div>
+            <a href="#" class="use-case-link">Ver detalhes <i class="fas fa-arrow-right"></i></a>
+          </div>
+
+          <!-- Use Case 13 -->
+          <div class="use-case-card">
+            <div class="use-case-icon">
+              <i class="fas fa-database"></i>
+            </div>
+            <h3>Sincronização de Dados</h3>
+            <p>Sincronização automatizada de dados entre diversos sistemas corporativos.</p>
+            <div class="use-case-solution">
+              <p class="solution-label">Solução:</p>
+              <p class="solution-text">Dataverse com conectores personalizados</p>
+            </div>
+            <a href="#" class="use-case-link">Ver detalhes <i class="fas fa-arrow-right"></i></a>
+          </div>
+
+          <!-- Use Case 14 -->
+          <div class="use-case-card">
+            <div class="use-case-icon">
+              <i class="fas fa-file-alt"></i>
+            </div>
+            <h3>Extração de Dados de PDF</h3>
+            <p>Extração automática de informações de documentos PDF para sistemas de gestão.</p>
+            <div class="use-case-solution">
+              <p class="solution-label">Solução:</p>
+              <p class="solution-text">AI Builder com processamento de formulários</p>
+            </div>
+            <a href="#" class="use-case-link">Ver detalhes <i class="fas fa-arrow-right"></i></a>
+          </div>
+
+          <!-- Use Case 15 -->
+          <div class="use-case-card">
+            <div class="use-case-icon">
+              <i class="fas fa-tasks"></i>
+            </div>
+            <h3>Gestão de Requisições</h3>
+            <p>Automação de fluxo de requisições internas com aprovações e acompanhamento.</p>
+            <div class="use-case-solution">
+              <p class="solution-label">Solução:</p>
+              <p class="solution-text">Microsoft Forms com fluxo de aprovação</p>
+            </div>
+            <a href="#" class="use-case-link">Ver detalhes <i class="fas fa-arrow-right"></i></a>
+          </div>
+
+          <!-- Use Case 16 -->
+          <div class="use-case-card">
+            <div class="use-case-icon">
+              <i class="fas fa-sort-amount-up"></i>
+            </div>
+            <h3>Classificação de Emails</h3>
+            <p>Classificação e roteamento automático de emails baseado em conteúdo e remetente.</p>
+            <div class="use-case-solution">
+              <p class="solution-label">Solução:</p>
+              <p class="solution-text">Outlook com análise de conteúdo AI Builder</p>
+            </div>
+            <a href="#" class="use-case-link">Ver detalhes <i class="fas fa-arrow-right"></i></a>
+          </div>
+
+          <!-- Use Case 17 -->
+          <div class="use-case-card">
+            <div class="use-case-icon">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <h3>Treinamentos Corporativos</h3>
+            <p>Gestão automatizada de treinamentos com inscrições, lembretes e certificados.</p>
+            <div class="use-case-solution">
+              <p class="solution-label">Solução:</p>
+              <p class="solution-text">SharePoint com Microsoft Forms e Teams</p>
+            </div>
+            <a href="#" class="use-case-link">Ver detalhes <i class="fas fa-arrow-right"></i></a>
+          </div>
+
+          <!-- Use Case 18 -->
+          <div class="use-case-card">
+            <div class="use-case-icon">
+              <i class="fas fa-user-shield"></i>
+            </div>
+            <h3>Gestão de Acesso</h3>
+            <p>Automatização de solicitações e aprovações de acesso a sistemas e recursos.</p>
+            <div class="use-case-solution">
+              <p class="solution-label">Solução:</p>
+              <p class="solution-text">Integração Azure AD e fluxos de aprovação</p>
+            </div>
+            <a href="#" class="use-case-link">Ver detalhes <i class="fas fa-arrow-right"></i></a>
+          </div>
+
+          <!-- Use Case 19 -->
+          <div class="use-case-card">
+            <div class="use-case-icon">
+              <i class="fas fa-share-alt"></i>
+            </div>
+            <h3>Gestão de Mídias Sociais</h3>
+            <p>Automação de publicações e monitoramento de engajamento em mídias sociais.</p>
+            <div class="use-case-solution">
+              <p class="solution-label">Solução:</p>
+              <p class="solution-text">Conectores de mídias sociais com análise</p>
+            </div>
+            <a href="#" class="use-case-link">Ver detalhes <i class="fas fa-arrow-right"></i></a>
+          </div>
+
+          <!-- Use Case 20 -->
+          <div class="use-case-card">
+            <div class="use-case-icon">
+              <i class="fas fa-hand-holding-usd"></i>
+            </div>
+            <h3>Processamento de Faturas</h3>
+            <p>Extração automática de dados de faturas com integração a sistemas financeiros.</p>
+            <div class="use-case-solution">
+              <p class="solution-label">Solução:</p>
+              <p class="solution-text">AI Builder com integração ERP</p>
+            </div>
+            <a href="#" class="use-case-link">Ver detalhes <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Templates Tab -->
+      <div class="tab-content" id="templates">
+        <div class="page-header">
+          <h1>Templates</h1>
+          <p>Templates prontos para acelerar suas automações</p>
+        </div>
+
+        <div class="filter-bar">
+          <span>Filtrar por categoria:</span>
+          <div class="filter-buttons">
+            <button class="filter-button active" data-filter="all">Todos</button>
+            <button class="filter-button" data-filter="approval">Aprovações</button>
+            <button class="filter-button" data-filter="notification">Notificações</button>
+            <button class="filter-button" data-filter="data">Dados</button>
+            <button class="filter-button" data-filter="document">Documentos</button>
+          </div>
+        </div>
+
+        <div class="templates-grid">
+          <!-- Template 1 -->
+          <div class="template-card" data-category="approval">
+            <div class="template-image">
+              <img src="https://via.placeholder.com/400x200?text=Approval+Flow" alt="Template de Aprovação">
+            </div>
+            <div class="template-content">
+              <h3>Fluxo de Aprovação de Documentos</h3>
+              <p>Template completo para aprovação de documentos com múltiplos níveis e notificações automáticas.</p>
+              <div class="template-actions">
+                <a href="#" class="btn btn-outline">
+                  <i class="fas fa-eye"></i> Visualizar
+                </a>
+                <a href="#" class="btn btn-primary">
+                  <i class="fas fa-download"></i> Download
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Template 2 -->
+          <div class="template-card" data-category="notification">
+            <div class="template-image">
+              <img src="https://via.placeholder.com/400x200?text=Notification+Flow" alt="Template de Notificação">
+            </div>
+            <div class="template-content">
+              <h3>Notificações Automáticas Teams</h3>
+              <p>Template para envio de notificações personalizadas no Microsoft Teams baseado em eventos.</p>
+              <div class="template-actions">
+                <a href="#" class="btn btn-outline">
+                  <i class="fas fa-eye"></i> Visualizar
+                </a>
+                <a href="#" class="btn btn-primary">
+                  <i class="fas fa-download"></i> Download
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Template 3 -->
+          <div class="template-card" data-category="data">
+            <div class="template-image">
+              <img src="https://via.placeholder.com/400x200?text=Data+Sync" alt="Template de Sincronização">
+            </div>
+            <div class="template-content">
+              <h3>Sincronização SQL-SharePoint</h3>
+              <p>Template para sincronização bidirecional entre banco de dados SQL e listas do SharePoint.</p>
+              <div class="template-actions">
+                <a href="#" class="btn btn-outline">
+                  <i class="fas fa-eye"></i> Visualizar
+                </a>
+                <a href="#" class="btn btn-primary">
+                  <i class="fas fa-download"></i> Download
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Template 4 -->
+          <div class="template-card" data-category="document">
+            <div class="template-image">
+              <img src="https://via.placeholder.com/400x200?text=Document+Processing" alt="Template de Processamento">
+            </div>
+            <div class="template-content">
+              <h3>Processamento de Documentos PDF</h3>
+              <p>Template para extração automatizada de dados de documentos PDF com IA.</p>
+              <div class="template-actions">
+                <a href="#" class="btn btn-outline">
+                  <i class="fas fa-eye"></i> Visualizar
+                </a>
+                <a href="#" class="btn btn-primary">
+                  <i class="fas fa-download"></i> Download
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Adicione mais 16 templates para completar 20 -->
+          <!-- Template 5 -->
+          <div class="template-card" data-category="approval">
+            <div class="template-image">
+              <img src="https://via.placeholder.com/400x200?text=Expense+Approval" alt="Template de Aprovação">
+            </div>
+            <div class="template-content">
+              <h3>Aprovação de Despesas</h3>
+              <p>Template para fluxo de aprovação de despesas com notificações e integrações financeiras.</p>
+              <div class="template-actions">
+                <a href="#" class="btn btn-outline">
+                  <i class="fas fa-eye"></i> Visualizar
+                </a>
+                <a href="#" class="btn btn-primary">
+                  <i class="fas fa-download"></i> Download
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Template 6 -->
+          <div class="template-card" data-category="notification">
+            <div class="template-image">
+              <img src="https://via.placeholder.com/400x200?text=Email+Alerts" alt="Template de Alertas">
+            </div>
+            <div class="template-content">
+              <h3>Alertas por Email</h3>
+              <p>Template para envio de alertas por email baseados em condições e eventos do sistema.</p>
+              <div class="template-actions">
+                <a href="#" class="btn btn-outline">
+                  <i class="fas fa-eye"></i> Visualizar
+                </a>
+                <a href="#" class="btn btn-primary">
+                  <i class="fas fa-download"></i> Download
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Template 7 -->
+          <div class="template-card" data-category="data">
+            <div class="template-image">
+              <img src="https://via.placeholder.com/400x200?text=Report+Generator" alt="Template de Relatórios">
+            </div>
+            <div class="template-content">
+              <h3>Gerador de Relatórios</h3>
+              <p>Template para geração e distribuição automatizada de relatórios em Excel e PDF.</p>
+              <div class="template-actions">
+                <a href="#" class="btn btn-outline">
+                  <i class="fas fa-eye"></i> Visualizar
+                </a>
+                <a href="#" class="btn btn-primary">
+                  <i class="fas fa-download"></i> Download
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Template 8 -->
+          <div class="template-card" data-category="document">
+            <div class="template-image">
+              <img src="https://via.placeholder.com/400x200?text=Document+Review" alt="Template de Revisão">
+            </div>
+            <div class="template-content">
+              <h3>Revisão de Documentos</h3>
+              <p>Template para ciclo de revisão de documentos com controle de versão e comentários.</p>
+              <div class="template-actions">
+                <a href="#" class="btn btn-outline">
+                  <i class="fas fa-eye"></i> Visualizar
+                </a>
+                <a href="#" class="btn btn-primary">
+                  <i class="fas fa-download"></i> Download
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Template 9 -->
+          <div class="template-card" data-category="approval">
+            <div class="template-image">
+              <img src="https://via.placeholder.com/400x200?text=Vacation+Request" alt="Template de Férias">
+            </div>
+            <div class="template-content">
+              <h3>Solicitação de Férias</h3>
+              <p>Template para fluxo de solicitação e aprovação de férias com verificação de calendário.</p>
+              <div class="template-actions">
+                <a href="#" class="btn btn-outline">
+                  <i class="fas fa-eye"></i> Visualizar
+                </a>
+                <a href="#" class="btn btn-primary">
+                  <i class="fas fa-download"></i> Download
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Template 10 -->
+          <div class="template-card" data-category="notification">
+            <div class="template-image">
+              <img src="https://via.placeholder.com/400x200?text=System+Monitoring" alt="Template de Monitoramento">
+            </div>
+            <div class="template-content">
+              <h3>Monitoramento de Sistemas</h3>
+              <p>Template para monitoramento de sistemas com alertas e escalonamento automático.</p>
+              <div class="template-actions">
+                <a href="#" class="btn btn-outline">
+                  <i class="fas fa-eye"></i> Visualizar
+                </a>
+                <a href="#" class="btn btn-primary">
+                  <i class="fas fa-download"></i> Download
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Template 11 -->
+          <div class="template-card" data-category="data">
+            <div class="template-image">
+              <img src="https://via.placeholder.com/400x200?text=Data+Backup" alt="Template de Backup">
+            </div>
+            <div class="template-content">
+              <h3>Backup Automático de Dados</h3>
+              <p>Template para backup automático de dados entre sistemas e notificação de conclusão.</p>
+              <div class="template-actions">
+                <a href="#" class="btn btn-outline">
+                  <i class="fas fa-eye"></i> Visualizar
+                </a>
+                <a href="#" class="btn btn-primary">
+                  <i class="fas fa-download"></i> Download
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Template 12 -->
+          <div class="template-card" data-category="document">
+            <div class="template-image">
+              <img src="https://via.placeholder.com/400x200?text=Contract+Generator" alt="Template de Contrato">
+            </div>
+            <div class="template-content">
+              <h3>Gerador de Contratos</h3>
+              <p>Template para geração automatizada de contratos a partir de dados de clientes.</p>
+              <div class="template-actions">
+                <a href="#" class="btn btn-outline">
+                  <i class="fas fa-eye"></i> Visualizar
+                </a>
+                <a href="#" class="btn btn-primary">
+                  <i class="fas fa-download"></i> Download
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Template 13 -->
+          <div class="template-card" data-category="approval">
+            <div class="template-image">
+              <img src="https://via.placeholder.com/400x200?text=Purchase+Request" alt="Template de Compras">
+            </div>
+            <div class="template-content">
+              <h3>Requisição de Compras</h3>
+              <p>Template para fluxo de requisição e aprovação de compras com integração a fornecedores.</p>
+              <div class="template-actions">
+                <a href="#" class="btn btn-outline">
+                  <i class="fas fa-eye"></i> Visualizar
+                </a>
+                <a href="#" class="btn btn-primary">
+                  <i class="fas fa-download"></i> Download
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Template 14 -->
+          <div class="template-card" data-category="notification">
+            <div class="template-image">
+              <img src="https://via.placeholder.com/400x200?text=Birthday+Notifications" alt="Template de Aniversários">
+            </div>
+            <div class="template-content">
+              <h3>Lembretes de Aniversários</h3>
+              <p>Template para envio automático de lembretes de aniversários de equipe e clientes.</p>
+              <div class="template-actions">
+                <a href="#" class="btn btn-outline">
+                  <i class="fas fa-eye"></i> Visualizar
+                </a>
+                <a href="#" class="btn btn-primary">
+                  <i class="fas fa-download"></i> Download
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Template 15 -->
+          <div class="template-card" data-category="data">
+            <div class="template-image">
+              <img src="https://via.placeholder.com/400x200?text=Lead+Management" alt="Template de Leads">
+            </div>
+            <div class="template-content">
+              <h3>Gestão de Leads</h3>
+              <p>Template para captação e processamento de leads com integração a CRM.</p>
+              <div class="template-actions">
+                <a href="#" class="btn btn-outline">
+                  <i class="fas fa-eye"></i> Visualizar
+                </a>
+                <a href="#" class="btn btn-primary">
+                  <i class="fas fa-download"></i> Download
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Template 16 -->
+          <div class="template-card" data-category="document">
+            <div class="template-image">
+              <img src="https://via.placeholder.com/400x200?text=File+Organizer" alt="Template de Organização">
+            </div>
+            <div class="template-content">
+              <h3>Organizador de Arquivos</h3>
+              <p>Template para classificação e organização automática de arquivos no OneDrive e SharePoint.</p>
+              <div class="template-actions">
+                <a href="#" class="btn btn-outline">
+                  <i class="fas fa-eye"></i> Visualizar
+                </a>
+                <a href="#" class="btn btn-primary">
+                  <i class="fas fa-download"></i> Download
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Template 17 -->
+          <div class="template-card" data-category="approval">
+            <div class="template-image">
+              <img src="https://via.placeholder.com/400x200?text=Project+Approval" alt="Template de Projetos">
+            </div>
+            <div class="template-content">
+              <h3>Aprovação de Projetos</h3>
+              <p>Template para submissão e aprovação de propostas de projetos com estimativas de recursos.</p>
+              <div class="template-actions">
+                <a href="#" class="btn btn-outline">
+                  <i class="fas fa-eye"></i> Visualizar
+                </a>
+                <a href="#" class="btn btn-primary">
+                  <i class="fas fa-download"></i> Download
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Template 18 -->
+          <div class="template-card" data-category="notification">
+            <div class="template-image">
+              <img src="https://via.placeholder.com/400x200?text=Meeting+Reminders" alt="Template de Reuniões">
+            </div>
+            <div class="template-content">
+              <h3>Lembretes de Reuniões</h3>
+              <p>Template para lembretes automáticos de reuniões com preparação de agenda e materiais.</p>
+              <div class="template-actions">
+                <a href="#" class="btn btn-outline">
+                  <i class="fas fa-eye"></i> Visualizar
+                </a>
+                <a href="#" class="btn btn-primary">
+                  <i class="fas fa-download"></i> Download
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Template 19 -->
+          <div class="template-card" data-category="data">
+            <div class="template-image">
+              <img src="https://via.placeholder.com/400x200?text=Social+Media+Analytics" alt="Template de Análise">
+            </div>
+            <div class="template-content">
+              <h3>Análise de Mídias Sociais</h3>
+              <p>Template para coleta e análise de dados de mídias sociais com relatórios automáticos.</p>
+              <div class="template-actions">
+                <a href="#" class="btn btn-outline">
+                  <i class="fas fa-eye"></i> Visualizar
+                </a>
+                <a href="#" class="btn btn-primary">
+                  <i class="fas fa-download"></i> Download
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Template 20 -->
+          <div class="template-card" data-category="document">
+            <div class="template-image">
+              <img src="https://via.placeholder.com/400x200?text=Invoice+Processing" alt="Template de Faturas">
+            </div>
+            <div class="template-content">
+              <h3>Processamento de Faturas</h3>
+              <p>Template para processamento automático de faturas com extração de dados e integração contábil.</p>
+              <div class="template-actions">
+                <a href="#" class="btn btn-outline">
+                  <i class="fas fa-eye"></i> Visualizar
+                </a>
+                <a href="#" class="btn btn-primary">
+                  <i class="fas fa-download"></i> Download
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Best Practices Tab -->
+      <div class="tab-content" id="best-practices">
+        <div class="page-header">
+          <h1>Boas Práticas</h1>
+          <p>Melhores práticas para desenvolvimento com Power Automate</p>
+        </div>
+
+        <div class="best-practices-grid">
+          <!-- Practice 1 -->
+          <div class="practice-card do">
+            <div class="practice-header">
+              <i class="fas fa-check"></i>
+              <h3>Use conectores padrão</h3>
+            </div>
+            <div class="practice-content">
+              <p>Utilize conectores padrão sempre que possível em vez de soluções personalizadas para garantir compatibilidade e facilitar a manutenção.</p>
+            </div>
+          </div>
+
+          <!-- Practice 2 -->
+          <div class="practice-card dont">
+            <div class="practice-header">
+              <i class="fas fa-times"></i>
+              <h3>Evite loops infinitos</h3>
+            </div>
+            <div class="practice-content">
+              <p>Sempre configure condições claras de saída em loops para evitar ciclos infinitos que podem consumir recursos e exceder limites.</p>
+            </div>
+          </div>
+
+          <!-- Practice 3 -->
+          <div class="practice-card tip">
+            <div class="practice-header">
+              <i class="fas fa-lightbulb"></i>
+              <h3>Documente seus fluxos</h3>
+            </div>
+            <div class="practice-content">
+              <p>Adicione notas e comentários em cada etapa importante do fluxo para facilitar o entendimento e a manutenção por outras pessoas.</p>
+            </div>
+          </div>
+
+          <!-- Practice 4 -->
+          <div class="practice-card do">
+            <div class="practice-header">
+              <i class="fas fa-check"></i>
+              <h3>Teste em ambiente controlado</h3>
+            </div>
+            <div class="practice-content">
+              <p>Sempre teste seus fluxos em ambientes de teste ou com dados de teste antes de implantar em produção para evitar problemas reais.</p>
+            </div>
+          </div>
+
+          <!-- Practice 5 -->
+          <div class="practice-card dont">
+            <div class="practice-header">
+              <i class="fas fa-times"></i>
+              <h3>Não armazene senhas em texto plano</h3>
+            </div>
+            <div class="practice-content">
+              <p>Nunca armazene senhas ou informações sensíveis diretamente nos fluxos. Utilize variáveis de ambiente ou Azure Key Vault.</p>
+            </div>
+          </div>
+
+          <!-- Practice 6 -->
+          <div class="practice-card tip">
+            <div class="practice-header">
+              <i class="fas fa-lightbulb"></i>
+              <h3>Monitore o desempenho</h3>
+            </div>
+            <div class="practice-content">
+              <p>Configure monitoramento e alertas para seus fluxos críticos a fim de identificar problemas rapidamente.</p>
+            </div>
+          </div>
+
+          <!-- Practice 7 -->
+          <div class="practice-card do">
+            <div class="practice-header">
+              <i class="fas fa-check"></i>
+              <h3>Implemente tratamento de erros</h3>
+            </div>
+            <div class="practice-content">
+              <p>Adicione etapas de tratamento de erros em seus fluxos para capturar falhas e notificar responsáveis automaticamente.</p>
+            </div>
+          </div>
+
+          <!-- Practice 8 -->
+          <div class="practice-card dont">
+            <div class="practice-header">
+              <i class="fas fa-times"></i>
+              <h3>Evite fluxos muito complexos</h3>
+            </div>
+            <div class="practice-content">
+              <p>Divida fluxos complexos em fluxos menores e mais gerenciáveis para facilitar manutenção e solução de problemas.</p>
+            </div>
+          </div>
+
+          <!-- Practice 9 -->
+          <div class="practice-card tip">
+            <div class="practice-header">
+              <i class="fas fa-lightbulb"></i>
+              <h3>Padronize a nomenclatura</h3>
+            </div>
+            <div class="practice-content">
+              <p>Adote um padrão de nomenclatura para seus fluxos, variáveis e conexões para facilitar a organização e busca.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </footer>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="footer-logo">
+              <div class="logo-circle">L</div>
+              <span>Low Code Hub</span>
+            </div>
+            <p>Automatizando e facilitando o desenvolvimento para a tribo de Engenharia de Plataforma do Bradesco</p>
+            <div class="social-icons">
+              <div class="social-icon">B</div>
+            </div>
+          </div>
+
+          <div class="footer-links">
+            <h5>Plataformas</h5>
+            <ul>
+              <li><a href="power-automate.html">Power Automate</a></li>
+              <li><a href="automation-anywhere.html">Automation Anywhere</a></li>
+              <li><a href="service-now.html">ServiceNow</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-links">
+            <h5>Links Rápidos</h5>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="#">Tribo de Engenharia</a></li>
+              <li><a href="#">Bradesco</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© <span id="current-year"></span> Low Code Hub - Todos os direitos reservados</p>
+          <div class="footer-legal">
+            <a href="#">Termos de Uso</a>
+            <a href="#">Privacidade</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
 
   <script src="script.js"></script>
+  <script src="platform.js"></script>
 </body>
 </html>
