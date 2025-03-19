@@ -9,13 +9,41 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="header-logo">
+        <div class="header-logo-icon">L</div>
+        <span>Low Code Hub</span>
+      </a>
+      <nav>
+        <button class="mobile-menu-btn" id="mobile-menu-toggle">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="nav-links" id="nav-links">
+          <a href="#platforms" class="nav-link">Plataformas</a>
+          <a href="#about" class="nav-link">Sobre</a>
+          <a href="power-automate.html" class="nav-link">Power Automate</a>
+          <a href="automation-anywhere.html" class="nav-link">Automation Anywhere</a>
+          <a href="service-now.html" class="nav-link">ServiceNow</a>
+          <a href="#contact" class="nav-btn">Fale Conosco</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
   <div class="container">
     <!-- Hero Section -->
     <section class="hero">
-      <div class="glass-effect hero-content">
-        <h1 class="gradient-text">Low Code Hub da Engenharia de Plataforma</h1>
-        <p>Automatizando e facilitando o trabalho dos desenvolvedores da tribo de Engenharia de Plataforma do Bradesco</p>
-        <div class="hero-buttons">
+      <!-- Floating elements -->
+      <div class="floating-circle floating-circle-1"></div>
+      <div class="floating-circle floating-circle-2"></div>
+      <div class="floating-circle floating-circle-3"></div>
+
+      <div class="hero-content">
+        <h1 class="gradient-text fadeInUp">Low Code Hub da Engenharia de Plataforma</h1>
+        <p class="fadeInUp delay-1">Automatizando e facilitando o trabalho dos desenvolvedores da tribo de Engenharia de Plataforma do Bradesco</p>
+        <div class="hero-buttons fadeInUp delay-2">
           <a href="#platforms" class="btn btn-primary">Conheça nossas plataformas <i class="fas fa-arrow-right"></i></a>
           <a href="#about" class="btn btn-secondary">Sobre a squad</a>
         </div>
@@ -34,39 +62,39 @@
 
       <div class="platforms-grid">
         <div class="platform-card">
+          <div class="card-highlight"></div>
           <div class="platform-icon red">
             <i class="fas fa-bolt"></i>
           </div>
           <h3>Power Automate</h3>
           <p>Crie fluxos automatizados entre aplicativos e serviços para sincronizar arquivos, receber notificações e coletar dados.</p>
           <a href="power-automate.html" class="platform-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
-          <div class="card-highlight"></div>
         </div>
 
         <div class="platform-card">
+          <div class="card-highlight"></div>
           <div class="platform-icon blue">
             <i class="fas fa-robot"></i>
           </div>
           <h3>Automation Anywhere</h3>
           <p>Plataforma de automação robótica de processos (RPA) que usa bots de software para automatizar tarefas repetitivas.</p>
           <a href="automation-anywhere.html" class="platform-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
-          <div class="card-highlight"></div>
         </div>
 
         <div class="platform-card">
+          <div class="card-highlight"></div>
           <div class="platform-icon green">
             <i class="fas fa-cloud"></i>
           </div>
           <h3>ServiceNow</h3>
           <p>Plataforma cloud de gestão de serviços que automatiza fluxos de trabalho de TI e melhora a experiência operacional.</p>
           <a href="service-now.html" class="platform-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
-          <div class="card-highlight"></div>
         </div>
       </div>
     </section>
 
     <!-- Features Section -->
-    <section class="features-section bg-light">
+    <section class="features-section bg-light" id="about">
       <div class="features-grid">
         <div class="features-content">
           <span class="badge">O que fazemos</span>
@@ -145,7 +173,7 @@
     </section>
 
     <!-- Technologies Section -->
-    <section class="technologies-section">
+    <section class="technologies-section" id="technologies">
       <div class="section-header">
         <span class="badge">Nossas Plataformas</span>
         <h2>Conheça as tecnologias que utilizamos</h2>
@@ -195,6 +223,80 @@
       </div>
     </section>
 
+    <!-- Contact Section (New) -->
+    <section class="contact-section" id="contact">
+      <div class="section-header">
+        <span class="badge">Fale Conosco</span>
+        <h2>Entre em contato com a nossa equipe</h2>
+        <p>Estamos sempre à disposição para ajudar com seus projetos e esclarecer dúvidas sobre nossas plataformas.</p>
+      </div>
+      
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-text">
+              <h3>Email</h3>
+              <p>lowcodehub@bradesco.com.br</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div class="contact-text">
+              <h3>Telefone</h3>
+              <p>(11) 3684-9000</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="contact-text">
+              <h3>Localização</h3>
+              <p>Cidade de Deus, Osasco - SP</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="contact-form">
+          <form id="contact-form">
+            <div class="form-group">
+              <label for="name">Nome</label>
+              <input type="text" id="name" placeholder="Seu nome completo">
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" placeholder="Seu email corporativo">
+            </div>
+            
+            <div class="form-group">
+              <label for="subject">Assunto</label>
+              <input type="text" id="subject" placeholder="Assunto da mensagem">
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Mensagem</label>
+              <textarea id="message" rows="5" placeholder="Sua mensagem"></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Enviar mensagem</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Back to top button -->
+    <div class="back-to-top" id="back-to-top">
+      <i class="fas fa-arrow-up"></i>
+    </div>
+
     <!-- Footer -->
     <footer class="footer">
       <div class="footer-content">
@@ -206,7 +308,10 @@
             </div>
             <p>Automatizando e facilitando o desenvolvimento para a tribo de Engenharia de Plataforma do Bradesco</p>
             <div class="social-icons">
-              <div class="social-icon">B</div>
+              <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+              <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+              <a href="#" class="social-icon"><i class="fab fa-slack"></i></a>
             </div>
           </div>
 
@@ -222,9 +327,20 @@
           <div class="footer-links">
             <h5>Links Rápidos</h5>
             <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="#">Tribo de Engenharia</a></li>
-              <li><a href="#">Bradesco</a></li>
+              <li><a href="#platforms">Plataformas</a></li>
+              <li><a href="#about">Sobre nós</a></li>
+              <li><a href="#technologies">Tecnologias</a></li>
+              <li><a href="#contact">Contato</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-links">
+            <h5>Recursos</h5>
+            <ul>
+              <li><a href="#">Documentação</a></li>
+              <li><a href="#">Base de conhecimento</a></li>
+              <li><a href="#">Treinamentos</a></li>
+              <li><a href="#">FAQ</a></li>
             </ul>
           </div>
         </div>
@@ -234,6 +350,7 @@
           <div class="footer-legal">
             <a href="#">Termos de Uso</a>
             <a href="#">Privacidade</a>
+            <a href="#">Cookies</a>
           </div>
         </div>
       </div>
